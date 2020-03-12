@@ -3184,7 +3184,7 @@ form small a:hover {
 }
 
 .offer {
-  padding: 50px 0;
+  padding: 80px 0;
 }
 
 .offer-head {
@@ -3193,6 +3193,7 @@ form small a:hover {
 
 .offer-head h2 {
   font-size: 52px;
+  line-height: 1.2;
 }
 
 .offer-head .descr {
@@ -3250,6 +3251,93 @@ form small a:hover {
   color: #333;
 }
 
+.maps {
+  padding: 50px 0 0;
+}
+
+.maps .dealer {
+  background-color: #F6F7F8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.maps .dealer:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.maps .dealer-info {
+  width: 50%;
+  min-height: 500px;
+  height: 75vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 100px;
+}
+
+.maps .dealer-info h2 {
+  font-size: 42px;
+  color: #000;
+}
+
+.maps .dealer-contacts {
+  margin: 30px 0;
+}
+
+.maps .dealer-contacts a {
+  display: block;
+  color: #333;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.maps .dealer-address {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.maps .dealer-time {
+  font-size: 18px;
+}
+
+.maps .dealer-map {
+  background-color: #ccc;
+  width: 50%;
+  min-height: 500px;
+  height: 75vh;
+}
+
+.footer {
+  padding: 50px 0;
+  background-color: #0d0d0d;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #9d9d9d;
+}
+
+.footer img {
+  margin: 0 auto;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 991.98px) {
   .container {
@@ -3266,6 +3354,9 @@ form small a:hover {
   }
   .header-logo img {
     width: 80px;
+  }
+  .maps .dealer-info {
+    padding-left: 50px;
   }
 }
 
@@ -3319,6 +3410,16 @@ form small a:hover {
     -webkit-animation-iteration-count: inherit;
             animation-iteration-count: inherit;
   }
+  .maps .dealer, .maps .dealer:nth-child(even) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .maps .dealer-info, .maps .dealer-map {
+    width: 100%;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -3348,6 +3449,22 @@ form small a:hover {
   }
   .t-radio__control, form small {
     font-size: 14px;
+  }
+  .offer-head .descr {
+    font-size: 20px;
+  }
+  .maps .dealer-info {
+    padding-left: 5%;
+  }
+  .maps .dealer-info, .maps .dealer-map {
+    min-height: auto;
+    height: 400px;
+  }
+  .maps .dealer-info h2 {
+    line-height: 1.2;
+  }
+  .maps .dealer-contacts a {
+    font-size: 18px;
   }
 }
 

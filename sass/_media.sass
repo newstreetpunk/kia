@@ -15,6 +15,8 @@
 		font-size: 2.1vmax
 	.header-logo img
 		width: 80px
+	.maps .dealer-info
+		padding-left: 50px
 
 
 // ≥768px
@@ -46,6 +48,10 @@
 		font-size: 24px
 	.hero-form button
 		animation-iteration-count: inherit
+	.maps .dealer, .maps .dealer:nth-child(even)
+		flex-direction: column
+	.maps .dealer-info, .maps .dealer-map
+		width: 100%
 	
 // ≥576px
 +media-breakpoint-down(xs)
@@ -65,6 +71,17 @@
 		padding: 25px 20px
 	.t-radio__control, form small
 		font-size: 14px
+	.offer-head .descr
+		font-size: 20px
+	.maps .dealer-info
+		padding-left: 5%
+	.maps .dealer-info, .maps .dealer-map
+		min-height: auto
+		height: 400px
+	.maps .dealer-info h2
+		line-height: 1.2
+	.maps .dealer-contacts a
+		font-size: 18px
 
 
 /*==========  Mobile First  ==========*/
