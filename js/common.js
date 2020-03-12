@@ -1,5 +1,7 @@
 $(function() {
 
+	$("section h2").animated("slideInUp", "slideInDown");
+
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
 		var arr = [];
