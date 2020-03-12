@@ -2969,7 +2969,7 @@ strong {
 .hero-form {
   background-color: #fff;
   color: #333;
-  max-width: 360px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   padding: 34px;
@@ -2980,8 +2980,15 @@ strong {
 .hero-form button {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+}
+
+.hero-form button:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .hero-form h2 {
@@ -3158,6 +3165,22 @@ form small a:hover {
   font-size: 16px;
   display: block;
   margin: 25px 15px 0;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cars-links a:hover {
+  -webkit-transform: translateY(-0.125em);
+      -ms-transform: translateY(-0.125em);
+          transform: translateY(-0.125em);
+}
+
+.cars-list {
+  padding: 80px 0;
+  background-color: #f1f1f1;
 }
 
 /*==========  Desktop First  ==========*/

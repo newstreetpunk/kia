@@ -118,14 +118,17 @@ b, strong
 	&-form
 		background-color: #fff
 		color: $text
-		max-width: 360px
+		max-width: 400px
 		width: 100%
 		height: auto
 		padding: 34px
 		animation-duration: 1.8s
 		button
 			animation-duration: 1s
+			animation-delay: 5s
 			animation-iteration-count: infinite
+			&:hover
+				animation-play-state: paused
 		h2
 			font-size: 18px
 			color: #000
@@ -250,6 +253,12 @@ form
 			font-size: 16px
 			display: block
 			margin: 25px 15px 0
+			transition: transform .3s cubic-bezier(.25,.1,.25,1),box-shadow .3s cubic-bezier(.25,.1,.25,1)
+			&:hover
+				transform: translateY(-.125em)
+	&-list
+		padding: 80px 0
+		background-color: #f1f1f1
 
 
 
