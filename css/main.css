@@ -3180,7 +3180,111 @@ form small a:hover {
 
 .cars-list {
   padding: 80px 0;
-  background-color: #f1f1f1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.car {
+  width: 30%;
+  color: #333;
+  font-weight: 300;
+}
+
+.car:hover {
+  color: #333;
+}
+
+.car strong {
+  background-color: #bb162a;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: initial;
+  color: #fff;
+  height: 50px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.car strong:after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: -10%;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  background-color: inherit;
+  -webkit-transform: skewX(-10deg);
+      -ms-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+}
+
+.car .photo {
+  position: relative;
+  display: block;
+  height: 200px;
+}
+
+.car .photo:hover img:first-child {
+  opacity: 0;
+}
+
+.car .photo:hover img:last-child {
+  opacity: 1;
+}
+
+.car .photo img {
+  -webkit-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.car .photo img:last-child {
+  opacity: 0;
+}
+
+.car h3 {
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.car .descr {
+  font-size: 16px;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.car .price {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.car .price s {
+  color: #ccc;
+  margin-left: 13px;
 }
 
 .offer {
