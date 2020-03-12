@@ -3104,6 +3104,62 @@ form small a:hover {
   color: #000;
 }
 
+.cars-head {
+  padding: 50px 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cars-head:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(187, 22, 42, 0.8);
+  z-index: -1;
+}
+
+.cars-head h2 {
+  max-width: 680px;
+  width: 100%;
+  font-size: 36px;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.cars-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.cars-links a {
+  background-color: #fff;
+  padding: 10px 30px;
+  -webkit-box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+  color: #3e4757;
+  font-size: 16px;
+  display: block;
+  margin: 25px 15px 0;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 991.98px) {
   .container {
@@ -3168,6 +3224,10 @@ form small a:hover {
   }
   .subtitle {
     font-size: 24px;
+  }
+  .hero-form button {
+    -webkit-animation-iteration-count: inherit;
+            animation-iteration-count: inherit;
   }
 }
 
