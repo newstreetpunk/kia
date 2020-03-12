@@ -1,6 +1,6 @@
 $(function() {
 
-	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeOutDown");
+	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle").animated("fadeInLeft", "fadeOutLeft");
 	$(".hero-form").animated("fadeInRight", "fadeOutRight");
 
