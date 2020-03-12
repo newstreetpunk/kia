@@ -2930,7 +2930,7 @@ strong {
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 97px;
   position: relative;
   color: #fff;
@@ -3113,6 +3113,13 @@ form small a:hover {
   }
   .hero {
     padding-top: 0;
+    background-image: url(../img/mob-bg.jpg) !important;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  .hero:before {
+    z-index: -1;
   }
 }
 

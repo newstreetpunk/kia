@@ -14,7 +14,10 @@ $(function() {
 		}
 	});
 
-	$('.player').mb_YTPlayer();
+	if ($(window).width() > 768) {
+		$('.player').mb_YTPlayer();
+	}
+	
 
 
 });
