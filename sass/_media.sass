@@ -5,13 +5,25 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+	.container
+		max-width: 97%
 
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.header-wrap
+		flex-direction: column
+		padding: 15px 0
+	.header-logo img, .header-phones
+		margin-bottom: 15px
 	
 // ≥576px
 +media-breakpoint-down(xs)
+	.header-phones
+		flex-direction: column
+		margin-bottom: 5px
+	.header .phone
+		margin-bottom: 15px
 
 
 /*==========  Mobile First  ==========*/
