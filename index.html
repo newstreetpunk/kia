@@ -202,7 +202,32 @@
 					<span class="dealer-address">г. Самара, Ново-Урицкая, 22</span>
 					<sapn class="dealer-time">пн — вс: 8:00 — 20:00</sapn>
 				</span>
-				<span class="dealer-map"></span>
+				<span id="map1" class="dealer-map"></span>
+				<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+				<script type="text/javascript">
+					ymaps.ready(init);
+					function init() {    
+						var saMap = new ymaps.Map("map1", {
+							center: [53.1836,50.1530], 
+							zoom: 17					
+						});
+						saMap.behaviors.disable('scrollZoom');
+
+						var saPin = new ymaps.GeoObjectCollection({}, {
+							preset: 'islands#blueAutoIcon',
+							iconColor: '#bb162a'
+						});
+
+						var saPlacemark = new ymaps.Placemark([53.1836,50.1530], {
+							balloonContentHeader: 'КИА Центр Самара',
+							balloonContentBody: '123',
+							balloonContentFooter: '321',
+							hintContent: 'КИА Центр Самара'
+						});
+
+						saPin.add(saPlacemark);
+						saMap.geoObjects.add(saPin); }
+				</script>
 			</div>
 			<!-- /.dealer -->
 
@@ -216,7 +241,32 @@
 					<span class="dealer-address">Московское шоссе, 262 А</span>
 					<sapn class="dealer-time">пн — вс: 8:00 — 20:00</sapn>
 				</span>
-				<span class="dealer-map"></span>
+				<span id="map2" class="dealer-map"></span>
+				<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script> -->
+				<script type="text/javascript">
+					ymaps.ready(init);
+					function init() {    
+						var saMap = new ymaps.Map("map2", {
+							center: [53.2487,50.2155], 
+							zoom: 17					
+						});
+						saMap.behaviors.disable('scrollZoom');
+
+						var saPin = new ymaps.GeoObjectCollection({}, {
+							preset: 'islands#blueAutoIcon',
+							iconColor: '#bb162a'
+						});
+
+						var saPlacemark = new ymaps.Placemark([53.2487,50.2155], {
+							balloonContentHeader: 'КИА Центр на Московском',
+							balloonContentBody: '123',
+							balloonContentFooter: '321',
+							hintContent: 'КИА Центр на Московском'
+						});
+
+						saPin.add(saPlacemark);
+						saMap.geoObjects.add(saPin); }
+				</script>
 			</div>
 			<!-- /.dealer -->
 

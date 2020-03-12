@@ -2963,7 +2963,7 @@ strong {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 8%;
+  padding-top: 6%;
 }
 
 .hero-form {
@@ -3200,16 +3200,16 @@ form small a:hover {
   font-size: 24px;
   margin: 30px 0;
   display: block;
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
 }
 
 .offer-form {
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  -webkit-animation-delay: .6s;
-          animation-delay: .6s;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
 }
 
 .offer-form form input, .offer-form form textarea {
@@ -3469,3 +3469,8 @@ form small a:hover {
 }
 
 /*==========  Mobile First  ==========*/
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
