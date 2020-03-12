@@ -1,6 +1,6 @@
 $(function() {
 
-	$("section h2").animated("fadeInUpBig", "fadeInUpBig");
+	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUpBig", "fadeInUpBig");
 
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
