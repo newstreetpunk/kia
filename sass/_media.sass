@@ -2,6 +2,16 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+	.car
+		padding-bottom: 120px
+		.btn-wrap
+			flex-direction: column
+			.btn
+				display: block
+				width: 100%
+				text-align: center
+				&-white
+					margin-bottom: 10px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -52,6 +62,10 @@
 		flex-direction: column
 	.maps .dealer-info, .maps .dealer-map
 		width: 100%
+	.cars-list
+		justify-content: space-around
+	.car
+		width: 45%
 	
 // ≥576px
 +media-breakpoint-down(xs)
@@ -82,6 +96,14 @@
 		line-height: 1.2
 	.maps .dealer-contacts a
 		font-size: 18px
+	.cars-list
+		justify-content: center
+	.car
+		width: 100%
+	.car .photo
+		height: 50vw
+	.offer
+		padding: 25px 0
 
 
 /*==========  Mobile First  ==========*/

@@ -2846,13 +2846,21 @@ strong {
   font-weight: 500;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
 .btn:hover {
   color: #fff;
   background-color: #ad1427;
+}
+
+.btn-white {
+  background-color: transparent;
+  color: #bb162a;
+  border: 1px solid #bb162a;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .header {
@@ -2973,8 +2981,7 @@ strong {
   width: 100%;
   height: auto;
   padding: 34px;
-  -webkit-animation-duration: 1.8s;
-          animation-duration: 1.8s;
+  opacity: 0;
 }
 
 .hero-form button {
@@ -3004,15 +3011,11 @@ strong {
 h1 {
   font-size: 52px;
   margin-top: -15px;
-  -webkit-animation-duration: 1.3s;
-          animation-duration: 1.3s;
 }
 
 .subtitle {
   font-size: 26px;
   display: block;
-  -webkit-animation-duration: 1.6s;
-          animation-duration: 1.6s;
 }
 
 .t-radio__control {
@@ -3179,7 +3182,7 @@ form small a:hover {
 }
 
 .cars-list {
-  padding: 80px 0;
+  padding: 80px 0 30px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3194,12 +3197,43 @@ form small a:hover {
 }
 
 .car {
-  width: 30%;
+  width: 31%;
+  margin-bottom: 40px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+.car .btn-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.car .btn-wrap .btn {
+  font-size: 14px;
+  text-transform: none;
+  padding: 12px 30px;
+}
+
+.car-link {
   color: #333;
   font-weight: 300;
 }
 
-.car:hover {
+.car-link:hover {
   color: #333;
 }
 
@@ -3218,7 +3252,7 @@ form small a:hover {
   text-align: center;
   padding: 0 10px;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .car strong:after {
@@ -3250,9 +3284,9 @@ form small a:hover {
 }
 
 .car .photo img {
-  -webkit-transition: all .1s;
-  -o-transition: all .1s;
-  transition: all .1s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
   opacity: 1;
   position: absolute;
   top: 0;
@@ -3443,6 +3477,27 @@ form small a:hover {
 }
 
 /*==========  Desktop First  ==========*/
+@media (max-width: 1199.98px) {
+  .car {
+    padding-bottom: 120px;
+  }
+  .car .btn-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .car .btn-wrap .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .car .btn-wrap .btn-white {
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .container {
     max-width: 97%;
@@ -3524,6 +3579,14 @@ form small a:hover {
   .maps .dealer-info, .maps .dealer-map {
     width: 100%;
   }
+  .cars-list {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .car {
+    width: 45%;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -3569,6 +3632,21 @@ form small a:hover {
   }
   .maps .dealer-contacts a {
     font-size: 18px;
+  }
+  .cars-list {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .car {
+    width: 100%;
+  }
+  .car .photo {
+    height: 50vw;
+  }
+  .offer {
+    padding: 25px 0;
   }
 }
 
