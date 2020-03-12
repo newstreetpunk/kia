@@ -50,6 +50,8 @@ b, strong
 	text-transform: uppercase
 	font-weight: 500
 	box-shadow: 0 0 30px rgba(#000, .3)
+	border: none
+	cursor: pointer
 	&:hover
 		color: #fff
 		background-color: darken($accent, 3)
@@ -108,15 +110,100 @@ b, strong
 		z-index: 1
 	.container
 		z-index: 2
-		height: 100%
 	&-wrap
 		height: 100%
-		//display: flex
-		padding-top: 5%
+		display: flex
+		justify-content: space-between
+		padding-top: 8%
+	&-form
+		background-color: #fff
+		color: $text
+		max-width: 360px
+		width: 100%
+		height: auto
+		padding: 34px
+		h2
+			font-size: 18px
+			color: #000
+		p
+			font-size: 14px
+			line-height: 1.55
 h1
 	font-size: 52px
+	margin-top: -15px
 .subtitle
 	font-size: 26px
+
+.t-radio__control 
+	display: table
+	position: relative
+	cursor: pointer
+	margin: 0 0 10px 0
+.t-radio
+	position: absolute
+	z-index: -1
+	opacity: 0
+.t-radio__indicator
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	height: 20px
+	width: 20px
+	border-color: #000
+	border-style: solid
+	border-width: 2px
+	box-sizing: border-box
+	border-radius: 50%
+	margin-right: 10px
+	-webkit-transition: all 0.2s
+	transition: all 0.2s
+	opacity: 0.6
+	&:after
+		content: ''
+		width: 10px
+		height: 10px
+		background: #000
+		border-radius: 50%
+		position: absolute
+		top: 0
+		bottom: 0px
+		left: 0
+		right: 0
+		margin: auto
+		opacity: 0
+		transition: all 0.2s
+.t-radio__control .t-radio:checked ~ .t-radio__indicator:after
+	opacity: 1
+
+form
+	input, button, small
+		display: block
+		width: 100%
+	input
+		font-size: 16px
+		font-weight: 300
+		background-color: #f0f0f0
+		padding: 10px 18px
+		border: none
+		margin-bottom: 20px
+	.dealer-choice
+		font-size: 14px
+		margin-bottom: 10px
+		display: block
+	button
+		margin: 20px 0
+	small
+		font-size: 16px
+		font-weight: 300
+		a
+			text-decoration: none
+			border-bottom: 1px solid #000000
+			box-shadow: inset 0px -0px 0px 0px #000
+			color: #ff8562
+			font-weight: 300
+			&:hover
+				color: #000
+
 
 
 
