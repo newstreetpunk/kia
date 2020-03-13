@@ -3338,16 +3338,12 @@ form small a:hover {
   font-size: 24px;
   margin: 30px 0;
   display: block;
-  -webkit-animation-delay: .3s;
-          animation-delay: .3s;
 }
 
 .offer-form {
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
 }
 
 .offer-form form input, .offer-form form textarea {
@@ -3586,6 +3582,9 @@ form small a:hover {
   }
   .car {
     width: 45%;
+  }
+  .player {
+    display: none;
   }
 }
 

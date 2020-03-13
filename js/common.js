@@ -1,8 +1,8 @@
 $(function() {
 
 	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
-	$("h1, .subtitle").animated("fadeInLeft", "fadeOutLeft");
-	$(".hero-form").animated("fadeInRight", "fadeOutRight");
+	$("h1, .subtitle, .dealer-info").animated("fadeInLeft", "fadeInLeft");
+	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
 
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
