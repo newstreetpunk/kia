@@ -150,8 +150,8 @@
 						<a href="#" id="SELTOS" class="car-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
-								<img src="img/cars/Seltos-1.png" alt="KIA SELTOS">
-								<img src="img/cars/Seltos-2.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-2.png" alt="KIA SELTOS">
 							</span>
 							<h3>SELTOS</h3>
 							<span class="descr">
@@ -172,8 +172,8 @@
 						<a href="#" id="SELTOS" class="car-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
-								<img src="img/cars/Seltos-1.png" alt="KIA SELTOS">
-								<img src="img/cars/Seltos-2.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-2.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="KIA SELTOS">
 							</span>
 							<h3>SELTOS</h3>
 							<span class="descr">
@@ -194,8 +194,8 @@
 						<a href="#" id="SELTOS" class="car-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
-								<img src="img/cars/Seltos-1.png" alt="KIA SELTOS">
-								<img src="img/cars/Seltos-2.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-2.png" alt="KIA SELTOS">
+								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="KIA SELTOS">
 							</span>
 							<h3>SELTOS</h3>
 							<span class="descr">
@@ -319,7 +319,15 @@
 	<script src="js/scripts.min.js"></script>
 	<script src="js/kia-map.js"></script>
 	<script src="js/kia-map-mosc.js"></script>
+	<script src="js/lazyload.min.js"></script>
 	<script src="js/common.js"></script>
+
+	<script>
+		var lazyLoadInstance = new LazyLoad({
+			elements_selector: ".lazy"
+			// ... more custom settings?
+		});
+	</script>
 
 </body>
 </html>
