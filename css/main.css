@@ -3609,6 +3609,10 @@ form small a:hover {
   width: 100%;
 }
 
+.modal h2, .modal p {
+  text-align: center;
+}
+
 .modal.privacy {
   max-width: 960px;
   width: 97%;
@@ -3617,6 +3621,10 @@ form small a:hover {
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+}
+
+.modal.credit {
+  padding: 25px 30px;
 }
 
 /*==========  Desktop First  ==========*/

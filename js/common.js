@@ -22,10 +22,10 @@ $(function() {
 		$('.player').mb_YTPlayer();
 	}
 		
-	$('a[href*=#]').bind("click", function(e){
+	$('a[href*=#].scroll').bind("click", function(e){
 		var anchor = $(this);
 		$('html, body').stop().animate({
-			scrollTop: $(anchor.attr('href')).offset().top - 70
+			scrollTop: $(anchor.attr('href')).offset().top - 120
 		}, 700);
 		e.preventDefault();
 	});

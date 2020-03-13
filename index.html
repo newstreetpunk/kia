@@ -17,7 +17,6 @@
 	<!-- Custom Browsers Color End -->
 
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
 	<link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -123,23 +122,23 @@
 			</div>
 			<!-- /.cars-head -->
 			<ul class="cars-links">
-				<li><a href="#SELTOS">SELTOS</a></li>
-				<li><a href="#SPORTAGE">SPORTAGE</a></li>
-				<li><a href="#SOUL">SOUL</a></li>
-				<li><a href="#RIO">RIO</a></li>
-				<li><a href="#CEED">CEED</a></li>
-				<li><a href="#CERATO_NEW">CERATO NEW</a></li>
-				<li><a href="#OPTIMA">OPTIMA</a></li>
-				<li><a href="#PROCEED">PROCEED</a></li>
-				<li><a href="#STINGER">STINGER</a></li>
-				<li><a href="#SORENTO">SORENTO</a></li>
-				<li><a href="#SORENTO_PRIME">SORENTO PRIME</a></li>
-				<li><a href="#MOHAVE">MOHAVE</a></li>
-				<li><a href="#RIO_X_LINE">RIO X LINE</a></li>
-				<li><a href="#PICANTO">PICANTO</a></li>
-				<li><a href="#CERATO_CLASSIC">CERATO CLASSIC</a></li>
-				<li><a href="#CEED_SW">CEED SW</a></li>
-				<li><a href="#K900">K900</a></li>
+				<li><a class="scroll" href="#SELTOS">SELTOS</a></li>
+				<li><a class="scroll" href="#SPORTAGE">SPORTAGE</a></li>
+				<li><a class="scroll" href="#SOUL">SOUL</a></li>
+				<li><a class="scroll" href="#RIO">RIO</a></li>
+				<li><a class="scroll" href="#CEED">CEED</a></li>
+				<li><a class="scroll" href="#CERATO_NEW">CERATO NEW</a></li>
+				<li><a class="scroll" href="#OPTIMA">OPTIMA</a></li>
+				<li><a class="scroll" href="#PROCEED">PROCEED</a></li>
+				<li><a class="scroll" href="#STINGER">STINGER</a></li>
+				<li><a class="scroll" href="#SORENTO">SORENTO</a></li>
+				<li><a class="scroll" href="#SORENTO_PRIME">SORENTO PRIME</a></li>
+				<li><a class="scroll" href="#MOHAVE">MOHAVE</a></li>
+				<li><a class="scroll" href="#RIO_X_LINE">RIO X LINE</a></li>
+				<li><a class="scroll" href="#PICANTO">PICANTO</a></li>
+				<li><a class="scroll" href="#CERATO_CLASSIC">CERATO CLASSIC</a></li>
+				<li><a class="scroll" href="#CEED_SW">CEED SW</a></li>
+				<li><a class="scroll" href="#K900">K900</a></li>
 			</ul>
 			<!-- /.cars-links -->
 			
@@ -147,7 +146,7 @@
 				<div class="cars-list">
 					
 					<div class="car">
-						<a href="#" id="SELTOS" class="car-link">
+						<a href="#cheaper" id="SELTOS" class="car-link modal-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
 								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="KIA SELTOS">
@@ -163,13 +162,13 @@
 							</span>
 						</a>
 						<div class="btn-wrap">
-							<a href="#offer" class="btn btn-white">Хочу дешевле</a>
-							<a href="#" class="btn">Расчитать кредит</a>
+							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
+							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
 					<div class="car">
-						<a href="#" id="SELTOS" class="car-link">
+						<a href="#cheaper" id="SELTOS" class="car-link modal-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
 								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-2.png" alt="KIA SELTOS">
@@ -185,13 +184,13 @@
 							</span>
 						</a>
 						<div class="btn-wrap">
-							<a href="#offer" class="btn btn-white">Хочу дешевле</a>
-							<a href="#" class="btn">Расчитать кредит</a>
+							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
+							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
 					<div class="car">
-						<a href="#" id="SELTOS" class="car-link">
+						<a href="#cheaper" id="SELTOS" class="car-link modal-link">
 							<strong>SELTOS</strong>
 							<span class="photo">
 								<img class="lazy" src="img/loading.gif" data-src="img/cars/Seltos-2.png" alt="KIA SELTOS">
@@ -207,8 +206,8 @@
 							</span>
 						</a>
 						<div class="btn-wrap">
-							<a href="#offer" class="btn btn-white">Хочу дешевле</a>
-							<a href="#" class="btn">Расчитать кредит</a>
+							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
+							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
@@ -329,6 +328,64 @@
 		<h2>Перезвоните мне</h2>
 		<p>Можем предложить специальные условия именно для вас!</p>
 		<form action="#">
+			<input type="text" placeholder="Ваше имя*" required>
+			<input type="tel" placeholder="+7 (999)999-99-99 " required>
+			<span class="dealer-choice">выберите дилерский центр:</span>
+			<div class="rand">
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Самара
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+			</div>
+			<button class="btn">Подписаться</button>
+			<small>Нажимая на кнопку "Подписаться", я даю согласие на <a class="modal-link" href="#popup">обработку персональных данных</a></small>
+		</form>
+	</div>
+
+	<!-- Хочу Дешевле -->
+	<div class="modal mfp-hide white-popup-block" id="cheaper">
+		<h2>Хотите дешевле?</h2>
+		<p>Оставьте заявку и мы сформируем для Вас персональное предложение</p>
+		<form action="#">
+			<input type="text" placeholder="Ваше имя*" required>
+			<input type="tel" placeholder="+7 (999)999-99-99 " required>
+			<span class="dealer-choice">выберите дилерский центр:</span>
+			<div class="rand">
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Самара
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+			</div>
+			<button class="btn">Подписаться</button>
+			<small>Нажимая на кнопку "Подписаться", я даю согласие на <a class="modal-link" href="#popup">обработку персональных данных</a></small>
+		</form>
+	</div>
+
+	<!-- Расчитать кредит -->
+	<div class="modal mfp-hide white-popup-block credit" id="credit">
+		<h2>Рассчитать кредит</h2>
+		<p>Оставьте заявку и мы сформируем для Вас персональное предложение</p>
+		<form action="#">
+			<p>Первоначальный взнос</p>
+			<input type="range" min="0" max="1054900">
+			<p>Срок кредитования</p>
+			<input class="kia-range">
 			<input type="text" placeholder="Ваше имя*" required>
 			<input type="tel" placeholder="+7 (999)999-99-99 " required>
 			<span class="dealer-choice">выберите дилерский центр:</span>
