@@ -4,24 +4,27 @@
   font-family: "KIA";
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/KIA-Light/KIA-Light.eot");
-  src: url("../fonts/KIA-Light/KIA-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Light/KIA-Light.woff") format("woff"), url("../fonts/KIA-Light/KIA-Light.woff2") format("woff2"), url("../fonts/KIA-Light/KIA-Light.ttf") format("truetype");
+  src: url("../fonts/KIA-Light/KIA-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Light/KIA-Light.woff") format("woff"), url("../fonts/KIA-Light/KIA-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "KIA";
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/KIA-Medium/KIA-Medium.eot");
-  src: url("../fonts/KIA-Medium/KIA-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Medium/KIA-Medium.woff") format("woff"), url("../fonts/KIA-Medium/KIA-Medium.woff2") format("woff2"), url("../fonts/KIA-Medium/KIA-Medium.ttf") format("truetype");
+  src: url("../fonts/KIA-Medium/KIA-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Medium/KIA-Medium.woff") format("woff"), url("../fonts/KIA-Medium/KIA-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "KIA";
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/KIA-Bold/KIA-Bold.eot");
-  src: url("../fonts/KIA-Bold/KIA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Bold/KIA-Bold.woff") format("woff"), url("../fonts/KIA-Bold/KIA-Bold.woff2") format("woff2"), url("../fonts/KIA-Bold/KIA-Bold.ttf") format("truetype");
+  src: url("../fonts/KIA-Bold/KIA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/KIA-Bold/KIA-Bold.woff") format("woff"), url("../fonts/KIA-Bold/KIA-Bold.ttf") format("truetype");
 }
 
 /*!
