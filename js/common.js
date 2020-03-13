@@ -1,9 +1,5 @@
 $(function() {
 
-	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
-	$("h1, .subtitle, .dealer-info").animated("fadeInLeft", "fadeInLeft");
-	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
-
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
 		var arr = [];
@@ -17,6 +13,10 @@ $(function() {
 			$(this).append(arr[index]);
 		}
 	});
+
+	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
+	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
+	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
 
 	if ($(window).width() > 768) {
 		$('.player').mb_YTPlayer();
