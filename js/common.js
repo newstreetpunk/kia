@@ -21,7 +21,24 @@ $(function() {
 	if ($(window).width() > 768) {
 		$('.player').mb_YTPlayer();
 	}
-	
+		
+	$('a[href*=#]').bind("click", function(e){
+		var anchor = $(this);
+		$('html, body').stop().animate({
+			scrollTop: $(anchor.attr('href')).offset().top - 70
+		}, 700);
+		e.preventDefault();
+	});
 
+	$('.top').click(function() {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > $(window).height()) {
+			$('.top').addClass("active");
+		} else {
+			$('.top').removeClass("active");
+		};
+	});
 
 });

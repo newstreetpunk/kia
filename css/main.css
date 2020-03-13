@@ -1,4 +1,5 @@
 @import url(../libs/animate.css);
+@import url(../libs/Magnific-Popup-master/magnific-popup.css);
 @font-face {
   font-family: "KIA";
   font-weight: 300;
@@ -3470,6 +3471,26 @@ form small a:hover {
 
 .footer img {
   margin: 0 auto;
+}
+
+.top {
+  position: fixed;
+  bottom: 15px;
+  left: -300px;
+  z-index: 100;
+  opacity: .7;
+  cursor: pointer;
+  -webkit-transition: all .7s ease-in-out;
+  -o-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+}
+
+.top:hover {
+  opacity: 1;
+}
+
+.top.active {
+  left: 20px;
 }
 
 /*==========  Desktop First  ==========*/

@@ -438,7 +438,18 @@ form
 	img
 		margin: 0 auto
 
-
+.top
+	position: fixed
+	bottom: 15px
+	left: -300px
+	z-index: 100
+	opacity: .7
+	cursor: pointer
+	transition: all .7s ease-in-out
+	&:hover
+		opacity: 1
+	&.active
+		left: 20px
 
 
 
