@@ -3795,7 +3795,9 @@ form small a:hover {
     font-size: 22px;
   }
   .hero {
-    background-position: top -200px center;
+    background-position: top -270px center;
+    background-repeat: no-repeat;
+    background-color: #93989e;
   }
   .hero-form {
     padding: 25px 20px;
@@ -3839,6 +3841,16 @@ form small a:hover {
   }
   .modal .range__title {
     font-size: 16px;
+  }
+  .modal.privacy {
+    padding: 40px 12px;
+  }
+  .modal.privacy h2 {
+    font-size: 18px;
+  }
+  .modal.privacy p {
+    font-size: 15px;
+    text-align: left;
   }
 }
 
