@@ -3759,7 +3759,7 @@ form small a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .maps .dealer-info, .maps .dealer-map {
+  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2 {
     width: 100%;
   }
   .cars-list {
@@ -3809,7 +3809,7 @@ form small a:hover {
   .maps .dealer-info {
     padding-left: 5%;
   }
-  .maps .dealer-info, .maps .dealer-map {
+  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2 {
     min-height: auto;
     height: 400px;
   }
@@ -3833,6 +3833,12 @@ form small a:hover {
   }
   .offer {
     padding: 25px 0;
+  }
+  .modal {
+    top: 65%;
+  }
+  .modal .range__title {
+    font-size: 16px;
   }
 }
 
