@@ -163,7 +163,7 @@
 						</a>
 						<div class="btn-wrap">
 							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
-							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
+							<a href="#credit" class="btn modal-link credit-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
@@ -185,7 +185,7 @@
 						</a>
 						<div class="btn-wrap">
 							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
-							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
+							<a href="#credit" class="btn modal-link credit-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
@@ -207,7 +207,7 @@
 						</a>
 						<div class="btn-wrap">
 							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
-							<a href="#credit" class="btn modal-link">Расчитать кредит</a>
+							<a href="#credit" class="btn modal-link credit-link">Расчитать кредит</a>
 						</div>
 					</div>
 					<!-- /.car -->
@@ -381,11 +381,29 @@
 	<div class="modal mfp-hide white-popup-block credit" id="credit">
 		<h2>Рассчитать кредит</h2>
 		<p>Оставьте заявку и мы сформируем для Вас персональное предложение</p>
-		<form action="#">
-			<p>Первоначальный взнос</p>
-			<input type="range" min="0" max="1054900">
-			<p>Срок кредитования</p>
-			<input class="kia-range">
+		<form action="#" method="GET" class="kia-form" style="display: block; width: 100%">
+			<div class="contribution" data-input-lid="contribution">
+				<p class="range__title">Первоначальный взнос</p>
+				<div class="range__wrapper">
+					<input name="Взнос" class="range" type="range" min="0" max="1249900" step="10000" value="500000">
+					<div class="range__value-txt t-descr" style="display: none;"></div>
+					<div class="range__interval-txt-wrapper">
+						<div class="range__interval-txt range__interval-txt_min t-descr">0</div>
+						<div class="range__interval-txt range__interval-txt_max t-descr">1249900</div>
+					</div>
+				</div>				
+			</div>
+			<div class="term" data-input-lid="term">
+				<p class="range__title">Срок кредитования</p>
+				<div class="range__wrapper">
+					<input name="Срок" class="range" type="range" min="0" max="72" step="1" value="36">
+					<div class="range__value-txt t-descr" style="display: none;"></div>
+					<div class="range__interval-txt-wrapper">
+						<div class="range__interval-txt range__interval-txt_min t-descr">0</div>
+						<div class="range__interval-txt range__interval-txt_max t-descr">72</div>
+					</div>
+				</div>
+			</div>
 			<input type="text" placeholder="Ваше имя*" required>
 			<input type="tel" placeholder="+7 (999)999-99-99 " required>
 			<span class="dealer-choice">выберите дилерский центр:</span>

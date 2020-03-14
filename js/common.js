@@ -45,6 +45,16 @@ $(function() {
 		type: 'inline',
 		preloader: false,
 	});
+
+	$('.credit-link').click(function(){
+		try {
+			t_input_range_init('.kia-form', '.contribution');
+		} catch (err) {};
+		try {
+			t_input_range_init('.kia-form', '.term');
+		} catch (err) {};
+	});
+
 });
 
 var lazyLoadInstance = new LazyLoad({

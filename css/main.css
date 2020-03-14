@@ -1,5 +1,6 @@
-@import url(../libs/animate.css);
 @import url(../libs/Magnific-Popup-master/magnific-popup.css);
+@import url(../libs/animate.css);
+@import url(../libs/range/range.css);
 @font-face {
   font-family: "KIA";
   font-weight: 300;
@@ -3613,6 +3614,19 @@ form small a:hover {
   text-align: center;
 }
 
+.modal p {
+  font-size: 16px;
+}
+
+.modal .range__title {
+  text-align: left;
+  font-size: 18px;
+}
+
+.modal .range__wrapper {
+  margin-bottom: 40px;
+}
+
 .modal.privacy {
   max-width: 960px;
   width: 97%;
@@ -3625,6 +3639,24 @@ form small a:hover {
 
 .modal.credit {
   padding: 25px 30px;
+  max-width: 560px;
+  top: 40px;
+  position: relative;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.range__interval-txt-wrapper {
+  font-size: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /*==========  Desktop First  ==========*/
