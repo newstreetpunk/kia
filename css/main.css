@@ -3255,7 +3255,7 @@ form small a:hover {
   text-align: center;
   padding: 0 10px;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 55px;
 }
 
 .car h2:after {
@@ -3333,6 +3333,7 @@ form small a:hover {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 3px;
 }
 
 .car .descr-item img {
@@ -3370,6 +3371,9 @@ form small a:hover {
   font-weight: bold;
   color: #bb162a;
   margin-bottom: 20px;
+  position: absolute;
+  top: 60px;
+  left: -12px;
 }
 
 .offer {
