@@ -266,7 +266,7 @@ form
 
 .car
 	width: 30%
-	margin-bottom: 40px
+	margin-bottom: 90px
 	padding-bottom: 70px
 	position: relative
 	margin-left: 1.65%
@@ -314,6 +314,17 @@ form
 			width: 100%
 			background-color: inherit
 			transform: skewX(-10deg)
+		&:before
+			position: absolute
+			z-index: -1
+			content: ""
+			left: -10%
+			top: 0
+			height: 50px
+			width: 100%
+			background-color: inherit
+			transform: skewX(-10deg)
+
 	.photo
 		position: relative
 		display: block
@@ -334,20 +345,36 @@ form
 			height: auto
 			&:last-child()
 				opacity: 0
-	h3
-		font-size: 20px
-		line-height: 1.35
 	.descr
 		font-size: 16px
 		line-height: 1.6
 		display: block
 		margin-bottom: 15px
-	.price
-		font-size: 16px
 		font-weight: 500
+		&-item
+			display: flex
+			align-items: center
+			img
+				width: 26px
+				height: auto
+				margin-right: 12px
+	.price
+		font-size: 18px
+		font-weight: bold
+		display: flex
+		align-items: center
+		img
+			width: 35px
+			height: auto
+			margin-right: 15px
 		s
 			color: #ccc
 			margin-left: 13px
+.benefit
+	display: block
+	font-weight: bold
+	color: $accent
+	margin-bottom: 20px
 
 //OFFER
 .offer

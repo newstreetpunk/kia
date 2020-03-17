@@ -3199,7 +3199,7 @@ form small a:hover {
 
 .car {
   width: 30%;
-  margin-bottom: 40px;
+  margin-bottom: 90px;
   padding-bottom: 70px;
   position: relative;
   margin-left: 1.65%;
@@ -3272,6 +3272,20 @@ form small a:hover {
           transform: skewX(-10deg);
 }
 
+.car h2:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  left: -10%;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  background-color: inherit;
+  -webkit-transform: skewX(-10deg);
+      -ms-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+}
+
 .car .photo {
   position: relative;
   display: block;
@@ -3302,26 +3316,60 @@ form small a:hover {
   opacity: 0;
 }
 
-.car h3 {
-  font-size: 20px;
-  line-height: 1.35;
-}
-
 .car .descr {
   font-size: 16px;
   line-height: 1.6;
   display: block;
   margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.car .descr-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.car .descr-item img {
+  width: 26px;
+  height: auto;
+  margin-right: 12px;
 }
 
 .car .price {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.car .price img {
+  width: 35px;
+  height: auto;
+  margin-right: 15px;
 }
 
 .car .price s {
   color: #ccc;
   margin-left: 13px;
+}
+
+.benefit {
+  display: block;
+  font-weight: bold;
+  color: #bb162a;
+  margin-bottom: 20px;
 }
 
 .offer {
