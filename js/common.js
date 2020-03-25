@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
@@ -14,7 +14,29 @@ $(function() {
 		}
 	});
 
-	$("section h2, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
+	//E-mail Ajax Send
+	$("form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "/kia/inc/mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			setTimeout(function() {
+				$.magnificPopup.close();
+				$.magnificPopup.open({
+					items: {
+						src: '.thanks',
+						type: 'inline'
+					}
+				});
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
+
+	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
 	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
 
@@ -24,9 +46,16 @@ $(function() {
 		
 	$('a[href*=#].scroll').bind("click", function(e){
 		var anchor = $(this);
+		var id = anchor.attr('data');
 		$('html, body').stop().animate({
 			scrollTop: $(anchor.attr('href')).offset().top - 120
 		}, 700);
+		$(anchor.attr('href')).parent().addClass('active');
+		$(anchor.attr('href')).children('h2').addClass('mypulse').removeClass('fadeInUp');
+		setTimeout(function(){
+			$(anchor.attr('href')).parent().removeClass('active');
+			$(anchor.attr('href')).children('h2').removeClass('mypulse');
+		}, 5000);
 		e.preventDefault();
 	});
 
@@ -43,10 +72,30 @@ $(function() {
 
 	$('.modal-link').magnificPopup({
 		type: 'inline',
+		fixedContentPos: true,
 		preloader: false,
 	});
 
+	$('a[href="#popup"]').on('click', function(){
+		$('.overlay').show();
+		$('.privacy-wrap').show();
+		$('html').css({
+			'margin-right': '17px',
+			'overflow': 'hidden'
+		});
+		return false;
+	});
+	$('.overlay, .privacy-close').on('click', function(){
+		$('.overlay').hide();
+		$('.privacy-wrap').hide();
+		$('html').removeAttr('style');
+	});
+
 	$('.credit-link').click(function(){
+		var price = $(this).parent().prev().find('.relevant-price').text();
+		var str = price.replace(/[^\d]/g, '');
+		$('.contribution').find('.range').attr('max', str);
+		$('.contribution').find('.range__interval-txt_max').text(str);
 		try {
 			t_input_range_init('.kia-form', '.contribution');
 		} catch (err) {};
@@ -55,9 +104,6 @@ $(function() {
 		} catch (err) {};
 	});
 
-});
+	$('.lazyload').lazyload();
 
-var lazyLoadInstance = new LazyLoad({
-	elements_selector: ".lazy"
-	// ... more custom settings?
-	});
+});

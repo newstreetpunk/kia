@@ -2918,10 +2918,8 @@ strong {
 }
 
 .header .phone {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 25px;
 }
 
@@ -2937,6 +2935,13 @@ strong {
   width: 35px;
   height: auto;
   margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header .phone-info {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .header .phone-info small {
@@ -3164,6 +3169,13 @@ form small a:hover {
   padding: 0;
 }
 
+.cars-links li {
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+}
+
 .cars-links a {
   background-color: #fff;
   padding: 10px 30px;
@@ -3369,6 +3381,26 @@ form small a:hover {
   margin-left: 13px;
 }
 
+.car.active h2.mypulse {
+  background-color: #000;
+  -webkit-animation-name: mypulse;
+          animation-name: mypulse;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.car.active .benefit {
+  color: #000;
+}
+
+.car.active .photo img {
+  opacity: 0;
+}
+
+.car.active .photo img:last-child {
+  opacity: 1;
+}
+
 .benefit {
   display: block;
   font-weight: bold;
@@ -3377,6 +3409,21 @@ form small a:hover {
   position: absolute;
   top: 60px;
   left: -12px;
+}
+
+@-webkit-keyframes mypulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
 }
 
 .offer {
