@@ -1,0 +1,41 @@
+// HEADER
+.header
+	background-color: #fff
+	box-shadow: 0 5px 50px rgba(#000, .3)
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 10
+	&-logo
+		img
+			width: 120px
+	&-wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 18px 0
+	&-right
+		display: flex
+		align-items: center
+	&-phones
+		display: flex
+	.phone
+		display: inline-block
+		vertical-align: middle
+		margin-right: 25px
+		&:last-child()
+			margin-right: 0
+		a:hover
+			color: $text	
+		img
+			width: 35px
+			height: auto
+			margin-right: 5px
+			display: inline-block
+			vertical-align: middle
+		&-info
+			display: inline-block
+			vertical-align: middle
+			small
+				display: block
