@@ -73,6 +73,8 @@
 	
 // ≥576px
 +media-breakpoint-down(xs)
+	.cars-links li
+		flex: none
 	.header-phones
 		flex-direction: column
 		margin-bottom: 5px
@@ -140,3 +142,19 @@
 +media-breakpoint-up(xl)
 	body
 		font-size: 20px
+
+@media (min-width: 1600px) 
+	.container 
+		max-width: 1560px
+	body 
+		font-size: 22px
+	.car
+		width: 21%
+	.car .btn-wrap .btn
+		padding: 12px 25px
+	.cars-links li
+		flex: none
+	.car .descr
+		font-size: 17px
+	
+

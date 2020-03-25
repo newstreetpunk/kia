@@ -3318,10 +3318,12 @@ form small a:hover {
   transition: all .3s;
   opacity: 1;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 50%;
+  left: 50%;
   height: auto;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .car .photo img:last-child {
@@ -3878,6 +3880,12 @@ form small a:hover {
 }
 
 @media (max-width: 575.98px) {
+  .cars-links li {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+        -ms-flex: none;
+            flex: none;
+  }
   .header-phones {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3962,5 +3970,29 @@ form small a:hover {
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1560px;
+  }
+  body {
+    font-size: 22px;
+  }
+  .car {
+    width: 21%;
+  }
+  .car .btn-wrap .btn {
+    padding: 12px 25px;
+  }
+  .cars-links li {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+        -ms-flex: none;
+            flex: none;
+  }
+  .car .descr {
+    font-size: 17px;
   }
 }
