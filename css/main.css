@@ -6785,6 +6785,7 @@ strong {
 
 .header .phone-info small {
   display: block;
+  white-space: nowrap;
 }
 
 .hero {
