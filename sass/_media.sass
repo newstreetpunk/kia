@@ -3,7 +3,7 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 	.car
-		padding-bottom: 120px
+		padding-bottom: 150px
 		.btn-wrap
 			flex-direction: column
 			.btn
@@ -12,6 +12,8 @@
 				text-align: center
 				&-white
 					margin-bottom: 10px
+		.price
+			bottom: 120px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -70,6 +72,11 @@
 		margin-right: 2%	
 	.player
 		display: none
+	.modal
+		position: relative
+		top: 30px
+		transform: translate(-50%, 0%)
+		padding: 25px 15px
 	
 // ≥576px
 +media-breakpoint-down(xs)
@@ -89,6 +96,8 @@
 		background-position: top -270px center
 		background-repeat: no-repeat
 		background-color: #93989e
+		min-height: 0
+		height: auto
 	.hero-form
 		padding: 25px 20px
 	.t-radio__control, form small
@@ -110,15 +119,22 @@
 		width: 100%
 		margin-left: 0
 		margin-right: 0
+		margin-bottom: 50px
 	.car .photo
 		height: 50vw
+	.car h2
+		margin-left: 15px
+	.car h2:before
+		left: -10px
+	.car h2:after
+		right: -10px
+	.benefit
+		left: 0
 	.offer
 		padding: 25px 0
-	.modal
-		top: 65%
 	.modal .range__title
 		font-size: 16px
-	.modal.privacy
+	.privacy
 		padding: 40px 12px
 		h2
 			font-size: 18px

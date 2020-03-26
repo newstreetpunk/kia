@@ -25,12 +25,13 @@
 			line-height: 1.35
 	&-links
 		display: flex
-		justify-content: space-around
+		justify-content: center
 		flex-wrap: wrap
 		list-style-type: none
 		padding: 0
 		li
 			flex: auto
+			text-align: center
 		a
 			background-color: #fff
 			padding: 10px 30px
@@ -140,8 +141,10 @@
 			margin-bottom: 3px
 			img
 				width: 26px
-				height: auto
+				height: 100%
 				margin-right: 12px
+		&-text
+			flex: auto
 	.price
 		font-size: 18px
 		font-weight: bold
@@ -162,6 +165,7 @@
 			background-color: #000
 			animation-name: mypulse
 			animation-iteration-count: infinite
+			animation-delay: .2s
 		.benefit
 			color: #000
 		.photo img
