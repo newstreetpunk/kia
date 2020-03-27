@@ -80,19 +80,18 @@ jQuery(function($) {
 
 	//при клике на заголовок ТО
 	$('.services-item__title').on('click', function(){
-		$('.services-item__car').removeClass('active');
-		$('.serv-table').slideUp(100);
-
 		var th = $(this);
 		var parent = th.parent();
+		th.closest('.services-item').find('.services-item__car').removeClass('active');
+		th.closest('.services-item').find('.serv-table').slideUp(100);
 
 		if (parent.hasClass('active')) {
 			parent.removeClass('active');
-			$('.services-item').removeClass('active');
+			th.closest('.services-item').find('.services-item').removeClass('active');
 			th.next().slideUp(100);
 		}else{
-			$('.services-item').removeClass('active');
-			$('.services-item__car--list').slideUp(100);
+			th.closest('.services-item').find('.services-item').removeClass('active');
+			th.closest('.services-item').find('.services-item__car--list').slideUp(100);
 			parent.addClass('active');
 			th.next().slideDown(300);
 		}
@@ -103,15 +102,15 @@ jQuery(function($) {
 		var th = $(this);
 		var id = th.attr('id');
 
-		$('.serv-table').slideUp(100);
+		th.closest('.services-item').find('.serv-table').slideUp(100);
 
 		if (th.hasClass('active')) {
 			th.removeClass('active');
-			$('.services-item__car').removeClass('active');
-			$('.serv-table').slideUp(100);
+			th.closest('.services-item').find('.services-item__car').removeClass('active');
+			th.closest('.services-item').find('.serv-table').slideUp(100);
 		}else{
-			$('.services-item__car').removeClass('active');
-			$('.serv-table').slideUp(100);
+			th.closest('.services-item').find('.services-item__car').removeClass('active');
+			th.closest('.services-item').find('.serv-table').slideUp(100);
 			th.addClass('active');
 			th.closest('.services-item').find('.serv-table[data-id="'+ id +'"]').slideDown(300);
 		}
