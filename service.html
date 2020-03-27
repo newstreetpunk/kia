@@ -336,7 +336,6 @@
 		var models = ["Ceed", "Ceed SW", "Cerato New", "Cerato Classic", "Mohave","Optima","Picanto","Proceed","Rio","Rio X-Line","Sorento Prime","Sorento","Soul","Sportage","Stringer","K900","Seltos"];
 		var table = {
 		"rows" : [
-		{"name": "Виды работ", "val1": "Эконом", "val2": "Стандарт", "val3": "Стандарт+"},
 		{"name": "Проверка", "val1": "", "val2": "", "val3": ""},
 		{"name": "Фильтр воздухоочистителя", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
 		{"name": "Хладагент и компрессор системы кондиционирования воздуха (при наличии)", "val1": "<svg class='o-svg'><circle></circle></svg>", "val2": "<svg><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
@@ -359,6 +358,7 @@
 			$.each(table, function(key, rows){
 				for (var i = 0; i <= models.length; i++) {
 					out += '<span class="serv-table" data-id="'+ i +'">';
+					out += '<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span><span class="serv-table-td"></span><span class="serv-table-td"></span><span class="serv-table-td"></span></span>';
 					$.each(rows, function(index, row){
 						if(row['val1'] === "" & row['val2'] === "" & row['val3'] === ""){
 							out += '<span class="serv-table-name serv-table-row">';
