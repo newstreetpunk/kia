@@ -6966,6 +6966,8 @@ form small a:hover {
 
 .hero {
   z-index: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero:before {
