@@ -7040,6 +7040,7 @@ form small a:hover {
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  white-space: nowrap;
 }
 
 .services-item__car:hover, .services-item__car.active {
