@@ -582,26 +582,49 @@
 
 	<script>
 		
-		var services = {
-			"ТО-0": [
-			{"id":"1", "title":"Picanto"},
-			{"id":"2", "title":"Rio"},
-			{"id":"3", "title":"Ceed"}
-			],
-			"ТО-1": [
-			{"id":"1", "title":"Rio"},
-			{"id":"2", "title":"Picanto"}
-			]  
+		var services = ["ТО-0", "ТО-1", "ТО-2", "ТО-3", "ТО-4", "ТО-5", "Постгарантия"];
+		var models = ["Ceed", "Ceed SW", "Cerato New", "Cerato Classic", "Mohave","Optima","Picanto","Proceed","Rio","Rio X-Line","Sorento Prime","Sorento","Soul","Sportage","Stringer","K900","Seltos"];
+		var table = {
+		"rows" : [
+		{"name": "Виды работ", "val1": "Эконом", "val2": "Стандарт", "val3": "Стандарт+"},
+		{"name": "Проверка", "val1": "", "val2": "", "val3": ""},
+		{"name": "Фильтр воздухоочистителя", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Хладагент и компрессор системы кондиционирования воздуха (при наличии)", "val1": "<svg class='o-svg'><circle></circle></svg>", "val2": "<svg><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Сосотояние аккумуляторной батареи", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Фильтр воздухоочистителя", "val1": "<svg class='o-svg'><circle></circle></svg>", "val2": "<svg><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Замена", "val1": "", "val2": "", "val3": ""},
+		{"name": "Фильтр воздухоочистителя", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Сосотояние аккумуляторной батареи", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		]
 		};
-		$.each(services, function(service, cars){
+
+		$.each(services, function(key, val){
 			out = '<div class="services-item">';
-			out += '<h2 class="services-item__title">'+ service +'</h2>';
+			out += '<h2 class="services-item__title">'+ val +'</h2>';
 			out += '<ul class="services-item__car--list">';
-			$.each(cars, function(index, car){
-				console.log(cars.length);
-				out += '<li class="services-item__car" id="'+ car['id'] +'">'+ car['title'] +'</li>';
+			$.each(models, function(index, car){
+				out += '<li class="services-item__car" id="'+ index +'">'+ car +'</li>';
 			});
 			out += '</ul>';
+			$.each(table, function(key, rows){
+				for (var i = 0; i <= models.length; i++) {
+					out += '<span class="serv-table" data-id="'+ i +'">';
+					$.each(rows, function(index, row){
+						if(row['val1'] === "" & row['val2'] === "" & row['val3'] === ""){
+							out += '<span class="serv-table-name serv-table-row">';
+						}else{
+							out += '<span class="serv-table-row">';
+						}
+						out += '<span class="serv-table-td">'+ row['name'] +'</span>';
+						out += '<span class="serv-table-td">'+ row['val1'] +'</span>';
+						out += '<span class="serv-table-td">'+ row['val2'] +'</span>';
+						out += '<span class="serv-table-td">'+ row['val3'] +'</span>';
+						out += '</span>';							
+					});
+					out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span></span>';
+					out += '</span>';
+				}
+			});
 			out += '</div>';
 			$('.services-list').append(out);
 		});

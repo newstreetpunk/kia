@@ -84,7 +84,7 @@
 	&:nth-child(odd)
 		background-color: #F2F2F2
 
-	&.serv-table-head
+	&:first-child
 		background-color: #BB9B6A
 		color: #fff
 
@@ -109,7 +109,7 @@
 		top: -50px
 		right: 0
 
-.serv-table-row.serv-table-head .serv-table-td
+.serv-table-row:first-child() .serv-table-td
 	padding-left: 0
 	min-height: 0
 
@@ -119,11 +119,10 @@
 .serv-table-td
 	&:last-child:before
 		display: none
-
 	&:nth-child(1)
 		width: 55%
 
-.serv-table-head .serv-table-td
+.serv-table-row:first-child() .serv-table-td
 	text-align: center
 	font-weight: bold
 	font-size: 15px
