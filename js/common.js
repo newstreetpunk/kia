@@ -97,10 +97,10 @@ jQuery(function($) {
 		$('.contribution').find('.range').attr('max', str);
 		$('.contribution').find('.range__interval-txt_max').text(str);
 		try {
-			t_input_range_init('.kia-form', '.contribution');
+			input_range_init('.kia-form', '.contribution', 0, str, 10000);
 		} catch (err) {};
 		try {
-			t_input_range_init('.kia-form', '.term');
+			input_range_init('.kia-form', '.term', 0, 72, 1);
 		} catch (err) {};
 	});
 

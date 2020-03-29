@@ -7,13 +7,13 @@
 	<!-- <base href="/"> -->
 	<meta name="robots" content="noindex">
 
-	<title>Специальные предложения на KIA в Самаре</title>
-	<meta name="description" content="Специальные цены и подарки на автомобили Kia. Выгодные предложения на весь модельный ряд Kia: в зависимости от года выпуска автомобиля, на первое авто, различные возможности финансовой выгоды. Забронируйте свой автомобиль прямо сейчас!" />	
+	<title>Специальные предложения на сервис KIA в Самаре</title>
+	<meta name="description" content="" />	
     <link rel="canonical" href="https://promo.kia-samara.ru">
 
 	<meta property="og:url" content="https://promo.kia-samara.ru" />
-	<meta property="og:title" content="Специальные предложения на KIA в Самаре" />
-	<meta property="og:description" content="Специальные цены и подарки на автомобили Kia. Выгодные предложения на весь модельный ряд Kia: в зависимости от года выпуска автомобиля, на первое авто, различные возможности финансовой выгоды. Забронируйте свой автомобиль прямо сейчас!" />
+	<meta property="og:title" content="Специальные предложения на сервис KIA в Самаре" />
+	<meta property="og:description" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="/img/kia-logo.svg" />
 
@@ -86,8 +86,8 @@
 		<div class="container">
 			<div class="hero-wrap">
 				<div class="hero-text">
-					<h1>Распродажа авто 2019&nbsp;г.в.</h1>
-					<span class="subtitle">Успей оставить заявку до&nbsp;31&nbsp;марта!<br>Выгода до&nbsp;310&nbsp;000&nbsp;руб.*</span>
+					<h1>Скидки на услуги сервиса</h1>
+					<span class="subtitle">Успей оставить заявку до&nbsp;31&nbsp;марта!</span>
 				</div>
 				<!-- /.hero-text -->
 				<div class="hero-form">
@@ -225,7 +225,7 @@
 	</main>
 
 	<footer class="footer">
-		<p>Специальные предложения на KIA в Самаре</p>
+		<p>Специальные предложения на сервис KIA в Самаре</p>
 		<img src="img/kia-logo.svg" alt="KIA">
 	</footer>
 
@@ -325,25 +325,24 @@
 
 	<!-- /MODALS -->
 
-	<script src="js/scripts.min.js"></script>
-	<script src="js/kia-map.js"></script>
-	<script src="js/kia-map-mosc.js"></script>
-	<script src="js/service-common.js"></script>
+	<script src="js/service-scripts.min.js"></script>
 
 	<script>
 		
 		var services = ["ТО-0", "ТО-1", "ТО-2", "ТО-3", "ТО-4", "ТО-5", "Постгарантия"];
 		var models = ["Ceed", "Ceed SW", "Cerato New", "Cerato Classic", "Mohave","Optima","Picanto","Proceed","Rio","Rio X-Line","Sorento Prime","Sorento","Soul","Sportage","Stringer","K900","Seltos"];
+		var valTrue = "<svg><circle></circle></svg>";
+		var valFalse = "<svg class='o-svg'><circle></circle></svg>";
 		var table = {
 		"rows" : [
 		{"name": "Проверка", "val1": "", "val2": "", "val3": ""},
-		{"name": "Фильтр воздухоочистителя", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
-		{"name": "Хладагент и компрессор системы кондиционирования воздуха (при наличии)", "val1": "<svg class='o-svg'><circle></circle></svg>", "val2": "<svg><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
-		{"name": "Сосотояние аккумуляторной батареи", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
-		{"name": "Фильтр воздухоочистителя", "val1": "<svg class='o-svg'><circle></circle></svg>", "val2": "<svg><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Фильтр воздухоочистителя", "val1": valTrue, "val2": valFalse, "val3": valTrue},
+		{"name": "Хладагент и компрессор системы кондиционирования воздуха (при наличии)", "val1": valFalse, "val2": valTrue, "val3": valTrue},
+		{"name": "Сосотояние аккумуляторной батареи", "val1": valTrue, "val2": valFalse, "val3": valTrue},
+		{"name": "Фильтр воздухоочистителя", "val1": valFalse, "val2": valTrue, "val3": valTrue},
 		{"name": "Замена", "val1": "", "val2": "", "val3": ""},
-		{"name": "Фильтр воздухоочистителя", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
-		{"name": "Сосотояние аккумуляторной батареи", "val1": "<svg><circle></circle></svg>", "val2": "<svg class='o-svg'><circle></circle></svg>", "val3": "<svg><circle></circle></svg>"},
+		{"name": "Фильтр воздухоочистителя", "val1": valTrue, "val2": valFalse, "val3": valTrue},
+		{"name": "Сосотояние аккумуляторной батареи", "val1": valTrue, "val2": valFalse, "val3": valTrue},
 		]
 		};
 
