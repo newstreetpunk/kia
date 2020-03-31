@@ -98,7 +98,8 @@
 	padding-left: 10px
 	position: relative
 	display: block
-
+	+media-breakpoint-down(xs)
+		width: 14%
 	&:before
 		content: ''
 		display: block
@@ -122,6 +123,9 @@
 		display: none
 	&:nth-child(1)
 		width: 55%
+		+media-breakpoint-down(xs)
+			width: 58%
+			padding-right: 10px
 
 .serv-table-row:first-child() .serv-table-td
 	text-align: center
