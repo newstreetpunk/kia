@@ -6877,6 +6877,7 @@ strong {
 h1 {
   font-size: 52px;
   margin-top: -15px;
+  line-height: 1;
 }
 
 .subtitle {

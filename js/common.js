@@ -36,6 +36,25 @@ jQuery(function($) {
 		return false;
 	});
 
+	$("form").submit(function() {
+		var th = $(this);
+		var rq = $.ajax({
+			type: 'POST',
+			url: 'https://script.google.com/macros/s/AKfycbwAAys-ruP5TbG5ERYos9YS91mRiTYQwTIqrkFZZsJ-ftpAuso/exec',
+			data: th.serialize(),
+			dataType: 'jsonp'
+		});
+		rq.done(function(data) {
+		//var data = JSON.stringify(data);
+		console.log('success', data);
+		});
+		rq.fail(function(err) {
+		//var err = JSON.stringify(err);
+		console.log('error', err);
+		});
+		return false;
+	});
+
 	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
 	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
@@ -103,6 +122,16 @@ jQuery(function($) {
 			input_range_init('.kia-form', '.term', 0, 72, 1);
 		} catch (err) {};
 	});
+
+	$('.btn-wrap a, .car-link').on('click', function(){
+		var th = $(this);
+		var parent = th.closest('.car');
+		var model = parent.find('h2').text();
+		$('#cheaper form #val-model, #credit form #val-model').val(model);
+	});
+
+	$('input[type="tel"]').mask('8 (999) 999-99-99');
+
 
 	$('.lazyload').lazyload();
 

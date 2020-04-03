@@ -19,7 +19,7 @@ jQuery(function($) {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "/kia/inc/mail.php", //Change
+			url: "/kia-service/inc/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			setTimeout(function() {
@@ -32,6 +32,25 @@ jQuery(function($) {
 				});
 				th.trigger("reset");
 			}, 1000);
+		});
+		return false;
+	});
+
+	$("form").submit(function() {
+		var th = $(this);
+		var rq = $.ajax({
+			type: 'POST',
+			url: 'https://script.google.com/macros/s/AKfycbwAAys-ruP5TbG5ERYos9YS91mRiTYQwTIqrkFZZsJ-ftpAuso/exec',
+			data: th.serialize(),
+			dataType: 'jsonp'
+		});
+		rq.done(function(data) {
+		//var data = JSON.stringify(data);
+		console.log('success', data);
+		});
+		rq.fail(function(err) {
+		//var err = JSON.stringify(err);
+		console.log('error', err);
 		});
 		return false;
 	});
@@ -146,5 +165,7 @@ jQuery(function($) {
 	$(window).on('resize', function(){
 		words();
 	});
+
+	$('input[type="tel"]').mask('8 (999) 999-99-99');
 
 });
