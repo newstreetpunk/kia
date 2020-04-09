@@ -93,7 +93,7 @@ jQuery(function($) {
 		$('html').removeAttr('style');
 	});
 
-	$('.credit-link').click(function(){
+	$('a[href="#credit"]').click(function(){
 		var price = $(this).parent().prev().find('.relevant-price').text();
 		var str = price.replace(/[^\d]/g, '');
 		$('.contribution').find('.range').attr('max', str);
@@ -106,7 +106,7 @@ jQuery(function($) {
 		} catch (err) {};
 	});
 
-	$('.btn-wrap a, .car-link').on('click', function(){
+	$('a[href="#cheaper"]').on('click', function(){
 		var th = $(this);
 		var parent = th.closest('.car');
 		var model = parent.find('h2').text();
@@ -116,5 +116,99 @@ jQuery(function($) {
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
 
 	$('.lazyload').lazyload();
+
+
+	var goals = [
+		{
+			selector: 'a[href^="tel:"]',
+			action: 'click',
+			goal: 'lead-click',
+			title: 'Клик по телефону',
+		},
+
+		{
+			selector: '.hero-form form',
+			action: 'submit',
+			hit: '/tilda/form127083022/submitted',
+			title: 'Отправили форму на обложке',
+		},
+
+		{
+			selector: '.offer-form form',
+			action: 'submit',
+			hit: '/tilda/form127083029/submitted',
+			title: 'Отправили форму с комментарием внизу страницы',
+		},
+
+		{
+			selector: 'a[href="#cheaper"]',
+			action: 'click',
+			hit: '/tilda/popup/rec129284270/opened',
+			title: 'Открыли форму при клике на машину',
+		},
+		{
+			selector: '#cheaper form',
+			action: 'submit',
+			hit: '/tilda/form129284270/submitted',
+			title: 'Отправили форму при клике на машину',
+		},
+		
+		{
+			selector: 'a[href="#credit"]',
+			action: 'click',
+			hit: '/tilda/popup/rec149722414/opened',
+			title: 'Открыли форму Рассчитать кредит',
+		},
+		{
+			selector: '#credit form',
+			action: 'submit',
+			hit: '/tilda/form149722414/submitted',
+			title: 'Отправили форму Рассчитать кредит',
+		},
+		
+		/*{
+			selector: 'a[href="#callbackForm"]',
+			action: 'click',
+			hit: '/tilda/click/rec127105691/button1',
+			title: 'Нажали на кноку Обратного звонка',
+		},*/
+		{
+			selector: 'a[href="#callbackForm"]',
+			action: 'click',
+			hit: '/tilda/popup/rec138809081/opened',
+			title: 'Открыли форму Обратного звонка',
+		},
+		{
+			selector: '#callbackForm form',
+			action: 'submit',
+			hit: '/tilda/form138809081/submitted',
+			title: 'Отправили форму Обратного звонка',
+		},
+
+		{
+			selector: 'a[href="#popup"]',
+			action: 'click',
+			hit: '/tilda/popup/rec138246172/opened',
+			title: 'Смотрели соглашение в попапе',
+		},
+	];
+
+	goals.forEach(function(value, index, array){
+		if(value.goal != null) {
+			$(value.selector).on(value.action, function(){
+				ymGoal(value.goal);
+			});
+		} else if(value.hit != null) {
+			$(value.selector).on(value.action, function(){
+				dataLayer.push({
+					event:"pageView",
+					eventAction: value.hit,
+					title: value.title,
+				});
+			});
+		} else {
+
+		}
+	});
 
 });

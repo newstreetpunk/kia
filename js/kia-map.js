@@ -17,8 +17,8 @@ $(function() {
         var myPlacemarkTemp = new ymaps.Placemark(
             [53.1836, 50.1530], {
                 balloonContentHeader: 'КИА Центр Самара',
-                balloonContentBody: '<a href="tel:+78469777700" class="dealer-phone">+7 (846) 977-77-00</a><br><a href="mailto:client@kia-samara.ru" class="dealer-email">client@kia-samara.ru</a><br><br> \
-                <a href="https://yandex.ru/maps/?z=17&ll=50.15299999999999,53.18359999999777&l=map&rtext=~53.1836,50.153&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">Как добраться</a><br>',
+                balloonContentBody: '<a href="tel:+78469777700" class="dealer-phone">☎️ +7 (846) 977-77-00</a><br><a href="mailto:client@kia-samara.ru" class="dealer-email">📩 client@kia-samara.ru</a><br><br> \
+                <a href="https://yandex.ru/maps/?z=17&ll=50.15299999999999,53.18359999999777&l=map&rtext=~53.1836,50.153&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
                 balloonContentFooter: 'пн — вс: 8:00 — 20:00',
                 hintContent: 'КИА Центр Самара'
             }, {

@@ -17,8 +17,8 @@ $(function() {
         var myPlacemarkTemp = new ymaps.Placemark(
             [53.2487, 50.2155], {
                 balloonContentHeader: 'КИА Центр на Московском',
-                balloonContentBody: '<a href="tel:+78462059999" class="dealer-phone">+7 (846) 205-99-99</a><br><a href="mailto:client@kia-na-moskovskom.ru" class="dealer-email">client@kia-na-moskovskom.ru</a><br><br>\
-                    <a href="https://yandex.ru/maps/?z=17&ll=50.2155,53.24869999999764&l=map&rtext=~53.2487,50.2155&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">Как добраться</a><br>',
+                balloonContentBody: '<a href="tel:+78462059999" class="dealer-phone">☎️ +7 (846) 205-99-99</a><br><a href="mailto:client@kia-na-moskovskom.ru" class="dealer-email">📩 client@kia-na-moskovskom.ru</a><br><br>\
+                    <a href="https://yandex.ru/maps/?z=17&ll=50.2155,53.24869999999764&l=map&rtext=~53.2487,50.2155&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
                 balloonContentFooter: 'пн — вс: 8:00 — 20:00',
                 hintContent: 'КИА Центр на Московском'
             }, {
