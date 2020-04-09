@@ -113,7 +113,7 @@ jQuery(function($) {
 		$('#cheaper form #val-model, #credit form #val-model').val(model);
 	});
 
-	$('input[type="tel"]').mask('8 (999) 999-99-99');
+	// $('input[type="tel"]').mask('8 (999) 999-99-99');
 
 	$('.lazyload').lazyload();
 

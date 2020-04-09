@@ -6823,6 +6823,16 @@ strong {
   z-index: 1;
 }
 
+.hero.cover {
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero.cover:before {
+  z-index: -1;
+}
+
 .hero .container {
   z-index: 2;
 }
@@ -6979,16 +6989,6 @@ form small a {
 
 form small a:hover {
   color: #000;
-}
-
-.hero {
-  z-index: 1;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero:before {
-  z-index: -1;
 }
 
 .services {
@@ -7841,7 +7841,7 @@ form small a:hover {
   .maps .dealer-info {
     padding-left: 5%;
   }
-  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2 {
+  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2, #map1, #map2 {
     min-height: auto;
     height: 400px;
   }
