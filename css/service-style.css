@@ -7822,7 +7822,7 @@ form small a:hover {
   .subtitle {
     font-size: 22px;
   }
-  .hero {
+  .hero, .hero.cover {
     background-position: top -270px center;
     background-repeat: no-repeat;
     background-color: #93989e;

@@ -1,26 +1,48 @@
 $(function() {
-    //Переменная для включения/отключения индикатора загрузки
-    var spinner = jQuery('.dealer-map').children('.loader');
-    //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
-    var check_if_load = false;
-    //Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
-    var myMapTemp, myPlacemarkTemp;
+
+    let maps = [
+            {
+                parent: '.dealer-map',
+                id: "map1",
+                position: [53.1836, 50.1530],
+                zoom: 17,
+                balloonContentHeader: 'КИА Центр Самара',
+                balloonContentBody: '<a href="tel:+78469777700" class="dealer-phone">☎️ +7 (846) 977-77-00</a><br><a href="mailto:client@kia-samara.ru" class="dealer-email">📩 client@kia-samara.ru</a><br><br> \
+                    <a href="https://yandex.ru/maps/?z=17&ll=50.15299999999999,53.18359999999777&l=map&rtext=~53.1836,50.153&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
+                hintContent: 'КИА Центр Самара'
+            },
+            {
+                parent: '.dealer-map2',
+                id: "map2",
+                position: [53.2487, 50.2155],
+                zoom: 17,
+                balloonContentHeader: 'КИА Центр на Московском',
+                balloonContentBody: '<a href="tel:+78462059999" class="dealer-phone">☎️ +7 (846) 205-99-99</a><br><a href="mailto:client@kia-na-moskovskom.ru" class="dealer-email">📩 client@kia-na-moskovskom.ru</a><br><br>\
+                    <a href="https://yandex.ru/maps/?z=17&ll=50.2155,53.24869999999764&l=map&rtext=~53.2487,50.2155&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
+                hintContent: 'КИА Центр на Московском'
+            },
+
+        ],
+        start_load_script = false, // Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
+        end_load_script = false; // Переменная для определения был ли загружен скрипт Яндекс.Карт полностью (чтобы не возникли какие-нибудь ошибки, если мы загружаем несколько карт одновременно)
+
 
     //Функция создания карты сайта и затем вставки ее в блок с идентификатором "map-yandex"
     function init() {
-        var myMapTemp = new ymaps.Map("map1", {
-            center: [53.1836, 50.1530], // координаты центра на карте
-            zoom: 17, // коэффициент приближения карты
+        var myMapTemp = new ymaps.Map(this.id, {
+            center: this.position, // координаты центра на карте
+            zoom: this.zoom, // коэффициент приближения карты
         });
         myMapTemp.behaviors.disable('scrollZoom');
 
         var myPlacemarkTemp = new ymaps.Placemark(
-            [53.1836, 50.1530], {
-                balloonContentHeader: 'КИА Центр Самара',
-                balloonContentBody: '<a href="tel:+78469777700" class="dealer-phone">☎️ +7 (846) 977-77-00</a><br><a href="mailto:client@kia-samara.ru" class="dealer-email">📩 client@kia-samara.ru</a><br><br> \
-                <a href="https://yandex.ru/maps/?z=17&ll=50.15299999999999,53.18359999999777&l=map&rtext=~53.1836,50.153&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
-                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
-                hintContent: 'КИА Центр Самара'
+            this.position, {
+                balloonContentHeader: this.balloonContentHeader,
+                balloonContentBody: this.balloonContentBody,
+                balloonContentFooter: this.balloonContentFooter,
+                hintContent: this.hintContent
             }, {
                 preset: 'islands#blueAutoIcon',
                 iconColor: '#bb162a'
@@ -28,12 +50,13 @@ $(function() {
         myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
 
         // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
-        var layer = myMapTemp.layers.get(0).get(0);
+        var layer = myMapTemp.layers.get(0).get(0),
+            parent = this.parent;
 
         // Решение по callback-у для определния полной загрузки карты
-        waitForTilesLoad(layer).then(function() {
+        waitForTilesLoad(layer).then(function(value) {
             // Скрываем индикатор загрузки после полной загрузки карты
-            jQuery('.dealer-map').children('.loader').removeClass('is-active');
+            jQuery(parent).children('.loader').removeClass('is-active');
         });
     }
 
@@ -94,25 +117,35 @@ $(function() {
     }
 
     // Основная функция, которая проверяет когда мы навели на блок с классом "ymap-container"
-    var ymap = function() {
-        jQuery('.dealer-map').mouseenter(function() {
-            if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
+    function ymap(map) {
+        jQuery(map.parent).one("mouseenter", function() {
+            // Показываем индикатор загрузки до тех пор, пока карта не загрузится
+            jQuery(map.parent).children('.loader').addClass('is-active');
+
+            if (!start_load_script) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
 
                 // Чтобы не было повторной загрузки карты, мы изменяем значение переменной
-                check_if_load = true;
-
-                // Показываем индикатор загрузки до тех пор, пока карта не загрузится
-                jQuery('.dealer-map').children('.loader').addClass('is-active');
+                start_load_script = true;
 
                 // Загружаем API Яндекс.Карт
                 loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&loadByRequire=1", function() {
+                    end_load_script = !end_load_script;
                     // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором "map-yandex"
-                    ymaps.load(init);
+                    ymaps.load(init, map);
                 });
+            } else {
+                var check_load = setInterval(function() {
+                    if(end_load_script) {
+                        clearInterval(check_load);
+                        ymaps.load(init, map);
+                    } 
+                }, 100);
             }
         });
     }
 
-    //Запускаем основную функцию
-    ymap();
+    //Запускаем основную функцию для массива карт
+    maps.forEach(function(map){
+        ymap(map)
+    });
 });
