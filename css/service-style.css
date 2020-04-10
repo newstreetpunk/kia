@@ -6949,7 +6949,7 @@ h1 {
   opacity: 1;
 }
 
-form input, form button, form small, form textarea {
+form input, form button, form small, form textarea, form a.btn {
   display: block;
   width: 100%;
 }
@@ -6969,7 +6969,7 @@ form .dealer-choice {
   display: block;
 }
 
-form button {
+form button, form a.btn {
   margin: 20px 0;
 }
 

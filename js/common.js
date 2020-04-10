@@ -17,22 +17,39 @@ jQuery(function($) {
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change
 		var th = $(this);
+		var btnSubmit = th.find('button[type="submit"]');
+		btnSubmit.attr("disabled", true);
 		var url = window.location.href;
 		var replUrl = url.replace('?', '&');
 		$.ajax({
 			type: "POST",
 			url: "/mail.php", //Change
 			data: th.serialize() +'&referer=' + replUrl
-		}).done(function() {
+		}).done(function( data ) {
+			// console.log( "success data:", data );
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
 					items: {
-						src: '.thanks',
+						src: (data == 'OK') ? '.thanks' : '.error',
 						type: 'inline'
 					}
 				});
-				th.trigger("reset");
+				if(data == 'OK'){
+					th.trigger("reset");
+				}
+				btnSubmit.removeAttr("disabled");
+			}, 1000);
+		}).fail(function() {
+			setTimeout(function() {
+				$.magnificPopup.close();
+				$.magnificPopup.open({
+					items: {
+						src: '.error',
+						type: 'inline'
+					}
+				});
+				btnSubmit.removeAttr("disabled");
 			}, 1000);
 		});
 		return false;
@@ -118,109 +135,5 @@ jQuery(function($) {
 	$('.lazyload').lazyload();
 
 
-
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    var $$$ = function(name) { return document.querySelector(name) },
-        $$ = function(name) { return document.querySelectorAll(name) };
-        
-	var goals = [
-		{
-			selector: 'a[href^="tel:"]',
-			action: 'click',
-			goal: 'lead-click',
-			title: 'Клик по телефону',
-		},
-
-		{
-			selector: '.hero-form form',
-			action: 'submit',
-			hit: '/tilda/form127083022/submitted',
-			title: 'Отправили форму на обложке',
-		},
-
-		{
-			selector: '.offer-form form',
-			action: 'submit',
-			hit: '/tilda/form127083029/submitted',
-			title: 'Отправили форму с комментарием внизу страницы',
-		},
-
-		{
-			selector: 'a[href="#cheaper"]',
-			action: 'click',
-			hit: '/tilda/popup/rec129284270/opened',
-			title: 'Открыли форму при клике на машину',
-		},
-		{
-			selector: '#cheaper form',
-			action: 'submit',
-			hit: '/tilda/form129284270/submitted',
-			title: 'Отправили форму при клике на машину',
-		},
-		
-		{
-			selector: 'a[href="#credit"]',
-			action: 'click',
-			hit: '/tilda/popup/rec149722414/opened',
-			title: 'Открыли форму Рассчитать кредит',
-		},
-		{
-			selector: '#credit form',
-			action: 'submit',
-			hit: '/tilda/form149722414/submitted',
-			title: 'Отправили форму Рассчитать кредит',
-		},
-		
-		/*{
-			selector: 'a[href="#callbackForm"]',
-			action: 'click',
-			hit: '/tilda/click/rec127105691/button1',
-			title: 'Нажали на кноку Обратного звонка',
-		},*/
-		{
-			selector: 'a[href="#callbackForm"]',
-			action: 'click',
-			hit: '/tilda/popup/rec138809081/opened',
-			title: 'Открыли форму Обратного звонка',
-		},
-		{
-			selector: '#callbackForm form',
-			action: 'submit',
-			hit: '/tilda/form138809081/submitted',
-			title: 'Отправили форму Обратного звонка',
-		},
-
-		{
-			selector: 'a[href="#popup"]',
-			action: 'click',
-			hit: '/tilda/popup/rec138246172/opened',
-			title: 'Смотрели соглашение в попапе',
-		},
-	];
-
-	goals.forEach(function(value, index, array){
-		if(value.goal != null) {
-			$$(value.selector).forEach(function(element) {
-				element.addEventListener(value.action, function(){
-					ymGoal(value.goal);
-				});
-			});
-		} else if(value.hit != null) {
-			$$(value.selector).forEach(function(element) {
-				element.addEventListener(value.action, function(){
-					dataLayer.push({
-						event:"pageView",
-						eventAction: value.hit,
-						title: value.title,
-					});
-				});
-			});
-		} else {
-
-		}
-	});
 
 });

@@ -6702,7 +6702,8 @@ strong {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
-  padding: 12px 30px;
+  padding: 12px 15px;
+  text-align: center;
   text-transform: uppercase;
   font-weight: 500;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -6949,7 +6950,7 @@ h1 {
   opacity: 1;
 }
 
-form input, form button, form small, form textarea {
+form input, form button, form small, form textarea, form a.btn {
   display: block;
   width: 100%;
 }
@@ -6969,7 +6970,7 @@ form .dealer-choice {
   display: block;
 }
 
-form button {
+form button, form a.btn {
   margin: 20px 0;
 }
 
