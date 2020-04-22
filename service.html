@@ -68,65 +68,57 @@
 	</header>
 	<!-- /.header -->
 
-	<div class="hero cover" style="background-image: url(img/hero-bg3.jpg);">
-		<!-- <div id="bgndVideo" class="player"
-		data-property="{
-		videoURL: 'https://www.youtube.com/embed/6Tc5XFR7xz4',
-		containment: '.hero',
-		autoPlay: true,
-		mute: true,
-		startAt: 0,
-		opacity: 1,
-		showControls: false,
-		useOnMobile: false,
-		coverImage: 'img/hero-bg3.jpg',
-		mobileFallbackImage: 'img/mob-bg.jpg',
-		loop: true }">
-		</div> -->
-		<div class="container">
-			<div class="hero-wrap">
-				<div class="hero-text">
-					<h1>Скидки на услуги сервиса</h1>
+	<div class="banner">
+		<div class="banner-wrap banner-slider">
+			<div class="banner-slide" style="background-image: url(img/hero-bg.jpg);">
+				<div class="banner-text">
+					<span class="big-title">Скидки на услуги сервиса</span>
 					<span class="subtitle">Успей оставить заявку до&nbsp;30&nbsp;апреля!</span>
 				</div>
-				<!-- /.hero-text -->
-				<div class="hero-form">
-					<h2>Хотите узнать о снижении цен и о максимальных скидках?</h2>
-					<p>Оставьте свой номер телефона, и наш менеджер перезвонит Вам</p>
-					<form method="POST">
-						<!-- Hidden Required Fields -->
-						<input type="hidden" name="project_name" value="KIA">
-						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
-						<input type="hidden" name="form_subject" value="Форма из баннера">
-						<!-- END Hidden Required Fields -->
-
-						<input type="text" placeholder="Ваше имя*" name="Имя" required>
-						<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
-						<span class="dealer-choice">выберите дилерский центр:</span>
-						<div class="rand">
-							<div>
-								<label class="t-radio__control t-text t-text_xs">
-									<input type="radio" name="Дилер" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
-									<span class="t-radio__indicator"></span>КИА Центр Самара
-								</label>
-							</div>
-							<div>
-								<label class="t-radio__control t-text t-text_xs">
-									<input type="radio" name="Дилер" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
-									<span class="t-radio__indicator"></span>КИА Центр на Московском
-								</label>
-							</div>
-						</div>
-						<button class="btn">Подписаться</button>
-						<small>Нажимая на кнопку "Подписаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
-					</form>
-				</div>
-				<!-- /.hero-form -->
 			</div>
+			<!-- /.banner-slide -->
+			<div class="banner-slide" style="background-image: url(img/hero-bg3.jpg);">
+				<div class="banner-text">
+					<span class="big-title">Скидки на услуги сервиса</span>
+					<span class="subtitle">Успей оставить заявку до&nbsp;30&nbsp;апреля!</span>
+				</div>
+			</div>
+			<!-- /.banner-slide -->
 		</div>
-		<!-- /.container -->
+		<div class="banner-form">
+			<h2>Хотите узнать о снижении цен и о максимальных скидках?</h2>
+			<p>Оставьте свой номер телефона, и наш менеджер перезвонит Вам</p>
+			<form method="POST">
+				<!-- Hidden Required Fields -->
+				<input type="hidden" name="project_name" value="KIA">
+				<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+				<input type="hidden" name="form_subject" value="Форма из баннера">
+				<!-- END Hidden Required Fields -->
+
+				<input type="text" placeholder="Ваше имя*" name="Имя" required>
+				<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
+				<span class="dealer-choice">выберите дилерский центр:</span>
+				<div class="rand">
+					<div>
+						<label class="t-radio__control t-text t-text_xs">
+							<input type="radio" name="Дилер" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
+							<span class="t-radio__indicator"></span>КИА Центр Самара
+						</label>
+					</div>
+					<div>
+						<label class="t-radio__control t-text t-text_xs">
+							<input type="radio" name="Дилер" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
+							<span class="t-radio__indicator"></span>КИА Центр на Московском
+						</label>
+					</div>
+				</div>
+				<button class="btn">Подписаться</button>
+				<small>Нажимая на кнопку "Подписаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+			</form>
+		</div>
+		<!-- /.banner-form -->
 	</div>
-	<!-- /.hero -->
+	<!-- /.banner -->
 
 	<main>
 
