@@ -17,7 +17,7 @@
 			src: [
 				base.kia + '/libs/jquery/dist/jquery.min.js',
 				base.kia + '/libs/Magnific-Popup-master/jquery.magnific-popup.js',
-				base.kia + '/libs/slick-1.8.1/slick/slick.min.js',
+				'node_modules/slick-1.8.1/slick/slick.min.js',
 				base.kia + '/libs/animate-css.js',
 				base.kia + '/libs/lazyload.min.js',
 				base.kia + '/libs/waypoint.js',
