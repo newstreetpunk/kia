@@ -27,3 +27,15 @@
 			dest:       base.kia + '/js',
 			output:     'service-scripts.min.js',
 		},
+		scripts_cars: {
+			src: [
+				base.kia + '/libs/jquery/dist/jquery.min.js',
+				base.kia + '/libs/Magnific-Popup-master/jquery.magnific-popup.js',
+				base.kia + '/libs/animate-css.js',
+				base.kia + '/libs/lazyload.min.js',
+				base.kia + '/libs/waypoint.js',
+				base.kia + '/js/cars-common.js', // Custom scripts. Always at the end
+			],
+			dest:       base.kia + '/js',
+			output:     'cars-scripts.min.js',
+		},
