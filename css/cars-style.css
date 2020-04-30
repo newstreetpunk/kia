@@ -6748,8 +6748,9 @@ form small a:hover {
   color: #000;
 }
 
-main {
-  padding-top: 120px;
+h1 {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .header {
@@ -6977,6 +6978,14 @@ main {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 /*==========  Desktop First  ==========*/
