@@ -6852,13 +6852,17 @@ strong {
 }
 
 .hero-form {
-  background-color: #fff;
+  background-color: #ffffffcc;
   color: #333;
   max-width: 400px;
   width: 100%;
   height: auto;
   padding: 34px;
   opacity: 0;
+}
+
+.hero-form input {
+  background-color: #ffffff99;
 }
 
 .hero-form button {

@@ -7075,7 +7075,7 @@ strong {
 }
 
 .banner-form {
-  background-color: #fff;
+  background-color: #ffffffcc;
   color: #333;
   max-width: 400px;
   width: 100%;
@@ -7084,6 +7084,12 @@ strong {
   position: absolute;
   top: 160px;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .banner-form input {
+    background-color: #ffffff99;
+  }
 }
 
 @media (max-width: 1084px) {
