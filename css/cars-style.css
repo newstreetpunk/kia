@@ -6748,6 +6748,10 @@ form small a:hover {
   color: #000;
 }
 
+main {
+  padding-top: 120px;
+}
+
 .header {
   background-color: #fff;
   -webkit-box-shadow: 0 5px 50px rgba(0, 0, 0, 0.3);
