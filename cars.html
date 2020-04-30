@@ -77,7 +77,20 @@
 				<div class="avn__list">
 					
 					<div class="avn__item">
-						123
+						<div class="avn__item--img">
+							<img class="lazyload" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="ALT">
+						</div>
+						<!-- /.avn__item--img -->
+						<div class="avn__item--info">
+							text
+						</div>
+						<!-- /.avn__item--info -->
+						<div class="avn__item--links">
+							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
+							<a href="#cheaper" class="btn modal-link">Забронировать</a>
+							<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a>
+						</div>
+						<!-- /.avn__item--links -->
 					</div>
 					<!-- /.avn__item -->
 
@@ -154,7 +167,6 @@
 	<!-- Узнать цену -->
 	<div class="modal mfp-hide white-popup-block" id="cheaper">
 		<h2></h2>
-		<h3></h3>
 		<p>Оставьте свой номер телефона и наш менеджер свяжется с Вами</p>
 		<form method="POST">
 			<!-- Hidden Required Fields -->
@@ -188,6 +200,56 @@
 	<div class="thanks modal mfp-hide white-popup-block">
 		<h2>Спасибо!</h2>
 		<p>Ваше сообщение успешно отправлено!<br>В скором времени мы свяжемся с Вами!</p>
+	</div>
+
+	<!-- Расчитать кредит -->
+	<div class="modal mfp-hide white-popup-block credit" id="credit">
+		<h2>Рассчитать кредит</h2>
+		<p>Оставьте заявку и мы сформируем для Вас персональное предложение</p>
+		<form action="#" method="GET" class="kia-form" style="display: block; width: 100%">
+			<div class="contribution" data-input-lid="contribution">
+				<p class="range__title">Первоначальный взнос</p>
+				<div class="range__wrapper">
+					<input name="Взнос" class="range" type="range" min="0" max="1249900" step="10000" value="500000">
+					<div class="range__value-txt t-descr" style="display: none;"></div>
+					<div class="range__interval-txt-wrapper">
+						<div class="range__interval-txt range__interval-txt_min t-descr">0</div>
+						<div class="range__interval-txt range__interval-txt_max t-descr">1249900</div>
+					</div>
+				</div>				
+			</div>
+			<div class="term" data-input-lid="term">
+				<p class="range__title">Срок кредитования</p>
+				<div class="range__wrapper">
+					<input name="Срок" class="range" type="range" min="0" max="72" step="1" value="36">
+					<div class="range__value-txt t-descr" style="display: none;"></div>
+					<div class="range__interval-txt-wrapper">
+						<div class="range__interval-txt range__interval-txt_min t-descr">0</div>
+						<div class="range__interval-txt range__interval-txt_max t-descr">72</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" placeholder="Ваше имя*" required>
+			<input type="tel" placeholder="+7 (999)999-99-99 " required>
+			<input type="email" name="Email" placeholder="mail@example.com">
+			<span class="dealer-choice">выберите дилерский центр:</span>
+			<div class="rand">
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Самара
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+			</div>
+			<button class="btn">Рассчитать кредит</button>
+			<small>Нажимая на кнопку "Подписаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+		</form>
 	</div>
 
 	<!-- /MODALS -->

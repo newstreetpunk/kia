@@ -97,7 +97,7 @@ jQuery(function($) {
 		$('.contribution').find('.range').attr('max', str);
 		$('.contribution').find('.range__interval-txt_max').text(str);
 		try {
-			input_range_init('.kia-form', '.contribution', 0, str, 10000);
+			input_range_init('.kia-form', '.contribution', 0, 10000, 10000);
 		} catch (err) {};
 		try {
 			input_range_init('.kia-form', '.term', 0, 72, 1);
@@ -106,9 +106,8 @@ jQuery(function($) {
 
 	$('a[href="#cheaper"]').on('click', function(){
 		var th = $(this);
-		var parent = th.closest('.car');
-		var model = parent.find('h2').text();
-		$('#cheaper form #val-model, #credit form #val-model').val(model);
+		var text = th.text();
+		$('#cheaper form #val-model, #credit form #val-model').val(text);
 	});
 
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
