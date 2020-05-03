@@ -1,24 +1,87 @@
 .avn
-	padding-top: 50px
+	padding: 50px 0
+	+media-breakpoint-down(xs)
+		padding: 30px 0
 	&__list
 	&__item
 		display: flex
 		justify-content: space-between
-		border: 2px solid #f1f1f1
-		padding: 20px
+		border: 2px solid #ddd
+		padding: 25px 20px
 		border-radius: 10px
 		box-shadow: 0 0 30px rgba($text, .2)
 		background-color: transparent
 		transition: all .3s linear
+		+media-breakpoint-down(lg)
+			flex-wrap: wrap
+		+media-breakpoint-down(sm)
+			flex-direction: column
+			max-width: 500px
+			align-items: center
+			margin: 0 auto 30px
 		&:hover
 			border-color: $accent
 			box-shadow: 0 0 10px rgba($text, .5)
+		&--info
+			flex: 1
+			padding: 0 20px
+			+media-breakpoint-down(xs)
+				padding: 0
+			&_name
+				max-width: 300px
 		&--img
-			width: 250px
+			width: 300px
+			min-height: 160px
+			position: relative
+			+media-breakpoint-down(sm)
+				margin-bottom: 20px
+			+media-breakpoint-down(xs)
+				max-width: 300px
+				width: 100%
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
 		&--links
 			display: flex
-			justify-content: space-around
+			justify-content: space-between
 			flex-direction: column
+			+media-breakpoint-down(lg)
+				width: 100%
+				justify-content: center
+				flex-direction: row
+			+media-breakpoint-down(sm)
+				flex-direction: column
+				max-width: 300px
+				margin: 0 auto
 			a
 				text-align: center
 				padding: 8px 16px
+				+media-breakpoint-down(lg)
+					margin: 20px 10px 0
+				+media-breakpoint-down(sm)
+					margin: 15px 0 0
+
+.parameter
+	text-transform: uppercase
+	font-size: 14px
+	&__row
+		display: flex
+		+media-breakpoint-down(md)
+			flex-direction: column
+		.parameter
+			flex: 1
+			+media-breakpoint-down(md)
+				margin-bottom: 5px
+	&.parameter-price
+		font-size: 24px
+		margin: 15px 0 25px
+		font-weight: 500
+		strong
+			font-weight: bold
+		+media-breakpoint-down(md)
+			margin-bottom: 20px
+		+media-breakpoint-down(xs)
+			font-size: 18px
+			margin-bottom: 10px
