@@ -112,7 +112,7 @@ jQuery(function($) {
 
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
 
-	$.getJSON('../unload.json', function(data){
+	$.getJSON('unload.json', function(data){
 		$.each(data, function(k, v){
 
 			var name = v.name;
