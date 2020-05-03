@@ -7000,6 +7000,11 @@ h1 {
   max-width: 300px;
 }
 
+.avn__item--info_name h2 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .avn__item--img {
   width: 300px;
   min-height: 160px;
