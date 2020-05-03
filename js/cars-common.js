@@ -127,8 +127,7 @@ jQuery(function($) {
 
 	setTimeout(function(){
 		$('.lazyload').lazyload();
+		$(".avn__item").animated("fadeInUp", "fadeInUp");
 	}, 5000);
-
-	$(".avn__item").animated("fadeInUp", "fadeInUp");
 
 });
