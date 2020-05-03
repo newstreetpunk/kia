@@ -71,6 +71,32 @@
 					margin: 20px 10px 0
 				+media-breakpoint-down(sm)
 					margin: 15px 0 0
+	&__filter
+		margin-bottom: 50px
+		&--head
+			display: flex
+			justify-content: space-between
+			align-items: center
+			text-transform: uppercase
+			font-size: 14px
+			font-weight: 300
+			cursor: pointer
+			margin-bottom: 30px
+		&--title
+			display: flex
+			align-items: center
+			transition: all .3s linear
+			&.open
+				color: $accent
+				svg
+					fill: $accent
+		&--icon
+			height: 20px
+			svg
+				width: 20px
+				height: 20px
+				margin-right: 6px
+				transition: all .3s linear
 
 .parameter
 	text-transform: uppercase

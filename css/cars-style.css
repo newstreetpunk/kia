@@ -7094,6 +7094,65 @@ h1 {
   }
 }
 
+.avn__filter {
+  margin-bottom: 50px;
+}
+
+.avn__filter--head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.avn__filter--title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.avn__filter--title.open {
+  color: #bb162a;
+}
+
+.avn__filter--title.open svg {
+  fill: #bb162a;
+}
+
+.avn__filter--icon {
+  height: 20px;
+}
+
+.avn__filter--icon svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
 .parameter {
   text-transform: uppercase;
   font-size: 14px;
