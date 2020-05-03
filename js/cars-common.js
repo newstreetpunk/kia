@@ -21,7 +21,7 @@ jQuery(function($) {
 			var img = name.match(/(\w+)/);
 			var imgName = img[0].toUpperCase();
 
-			var out = '<div class="avn__item"><div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div><div class="avn__item--info"><div class="avn__item--info_name"><h2>KIA '+name+'</h2></div><div class="parameter parameter-price">Стоимость: <strong>'+v.price+'&nbsp;₽</strong><s>'+v.special+'&nbsp;₽</s></div><div class="parameter">Год: <strong>'+v.year+'</strong></div><div class="parameter__row"><div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div><div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div><div class="parameter__row"><div class="parameter">Привод: <strong>Передний</strong></div><div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div><div class="avn__item--links"><a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a><a href="#cheaper" class="btn modal-link">Забронировать</a><a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div></div>';
+			var out = '<div class="avn__item"><div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div><div class="avn__item--info"><div class="avn__item--info_name"><h2>KIA '+name+'</h2></div><div class="parameter parameter-price">Стоимость: <strong>'+v.price+'&nbsp;₽</strong><s>'+v.special+'&nbsp;₽</s></div><div class="parameter">Год: <strong class="year">'+v.year+'</strong></div><div class="parameter__row"><div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div><div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div><div class="parameter__row"><div class="parameter">Привод: <strong>Передний</strong></div><div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div><div class="avn__item--links"><a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a><a href="#cheaper" class="btn modal-link">Забронировать</a><a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div></div>';
 
 			$('.avn__list').append(out);
 		});
@@ -130,10 +130,28 @@ jQuery(function($) {
 	setTimeout(function(){
 		$('.lazyload').lazyload();
 		$(".avn__item").animated("fadeInUp", "fadeInUp");
-	}, 3000);
+	}, 5000);
 
 	$('.avn__filter--title').click(function(){
-		$(this).toggleClass('open');
+		$(this).toggleClass('open').parent().next().slideToggle();
+	});
+
+	$('.avn__filter--reset').click(function(){
+		$(this).hide();
+		$('.avn__filter--body form').trigger('reset');
+		$('.avn__item').show();
+	});
+
+	$('.avn__filter--body form input').click(function(){
+		let th = $(this);
+		$('.avn__filter--reset').show();
+		let val = th.val();
+		$('.avn__item').each(function(){
+			let year = $(this).find('.year').text();
+			if (year != val) {
+				$(this).hide();
+			}
+		});
 	});
 
 });

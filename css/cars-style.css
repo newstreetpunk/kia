@@ -7153,6 +7153,10 @@ h1 {
   transition: all .3s linear;
 }
 
+.avn__filter--reset {
+  display: none;
+}
+
 .parameter {
   text-transform: uppercase;
   font-size: 14px;
