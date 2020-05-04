@@ -14,7 +14,9 @@ jQuery(function($) {
 		}
 	});
 
-	$('#complect').select2();
+	$('#complect').select2({
+		minimumResultsForSearch: Infinity // поле поиска по option's
+	});
 
 	$.getJSON('unload.json', function(data){
 		$.each(data, function(k, v){
@@ -140,6 +142,8 @@ jQuery(function($) {
 
 	$('.avn__filter--reset').click(function(){
 		$(this).hide();
+		let select = $('#complect').find('option[selected="true"]').val();
+		$('.select2-selection__rendered').text(select);
 		$('.avn__filter--body form').trigger('reset');
 		$('.avn__item').show();
 	});
