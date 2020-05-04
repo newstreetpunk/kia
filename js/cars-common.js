@@ -80,7 +80,7 @@ jQuery(function($) {
 		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
 	});
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > $(window).height()) {
+		if ($(this).scrollTop() > 100) {
 			$('.top').addClass("active");
 		} else {
 			$('.top').removeClass("active");
