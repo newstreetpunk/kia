@@ -181,35 +181,28 @@
 					<!-- <div class="avn__item">
 						<div class="avn__item--img">
 							<img class="lazyload" src="img/loading.gif" data-src="img/cars/Seltos-1.png" alt="ALT">
-						</div> -->
-						<!-- /.avn__item--img -->
-						<!-- <div class="avn__item--info">
+						</div>
+						<div class="avn__item--info">
 							<div class="avn__item--info_name">
 								<img src="img/cars_name/seltos.svg" alt="ALT">
-							</div> -->
-							<!-- /.avn__item--info_name -->
-							<!-- <div class="parameter parameter-price">Стоимость: <strong>1799900&nbsp;₽</strong><s>1900000&nbsp;₽</s></div>
+							</div>
+							<div class="parameter parameter-price">Стоимость: <strong>1799900&nbsp;₽</strong><s>1900000&nbsp;₽</s></div>
 							<div class="parameter">Год: <strong>2020</strong></div>
 							<div class="parameter__row">
 								<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>
 								<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div>
-							</div> -->
-							<!-- /.parametr__row -->
-							<!-- <div class="parameter__row">
+							</div>
+							<div class="parameter__row">
 								<div class="parameter">Привод: <strong>Передний</strong></div>
 								<div class="parameter">Трансмиссия: <strong>AT</strong></div>
-							</div> -->
-							<!-- /.parametr__row -->
-						<!-- </div> -->
-						<!-- /.avn__item--info -->
-						<!-- <div class="avn__item--links">
+							</div>
+						</div>
+						<div class="avn__item--links">
 							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>
 							<a href="#cheaper" class="btn modal-link">Забронировать</a>
 							<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a>
-						</div> -->
-						<!-- /.avn__item--links -->
-					<!-- </div> -->
-					<!-- /.avn__item -->
+						</div>
+					</div> -->
 
 				</div>
 				<!-- /.avn__list -->
@@ -377,5 +370,45 @@
 	<!-- /MODALS -->
 
 	<script src="js/cars-scripts.min.js?040520201505"></script>
+
+	<script>
+		$.getJSON('unload.json', function(data){
+			let i = 0;
+			let ipl = i+1;
+			for(data; i < ipl; i++ ){
+				var name = data[i].name;
+				var img = name.match(/(\w+)/);
+				var imgName = img[0].toUpperCase();
+
+				out = '<div class="avn__item">';
+				out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
+				out += '<div class="avn__item--info">';
+				out += '<div class="avn__item--info_name">';
+				out += '<h2>KIA '+name+'</h2></div>';
+				out += '<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>';
+				out += '<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>';
+				out += '<div class="parameter__row">';
+				out += '<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>';
+				out += '<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div>';
+				out += '<div class="parameter__row">';
+				out += '<div class="parameter">Привод: <strong>Передний</strong></div>';
+				out += '<div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div>';
+				out += '<div class="avn__item--links">';
+				out += '<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>';
+				out += '<a href="#cheaper" class="btn modal-link">Забронировать</a>';
+				out += '<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div>';
+				out += '</div>';
+
+				$('.avn__list').append(out);
+			};
+			console.log(i);
+		});
+
+		setTimeout(function(){
+			$('.lazyload').lazyload();
+			$(".avn__item").animated("fadeInUp", "fadeInUp");
+		}, 5000);
+
+	</script>
 </body>
 </html>
