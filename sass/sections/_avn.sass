@@ -101,6 +101,12 @@
 			display: none
 		&--form
 
+.form-item
+	h4
+		text-transform: uppercase
+		font-weight: 300
+		color: $gray
+		font-size: 14px
 .form-group, .item-group
 	display: flex
 	align-items: center
@@ -112,6 +118,10 @@
 	input
 		width: 0
 		height: 0
+		background-color: transparent
+		border: none
+		position: absolute
+		left: -100px
 		&:checked + label
 			border-color: $accent
 			&:before
@@ -122,23 +132,25 @@
 				background-position: center
 	label
 		padding: 8px 10px 8px 45px
-		border: 2px solid #ddd
+		border: 1px solid $light-gray
 		border-radius: 30px
 		position: relative
-		transition: border-color .3s
+		transition: all .3s
 		cursor: pointer
-		font-weight: 500
+		font-size: 16px
+		z-index: 1
 		&:before
 			content: ''
 			width: 28px
 			height: 28px
 			border-radius: 50%
-			background-color: #ddd
+			background-color: $light-gray
 			position: absolute
-			top: 10px
-			left: 8px
+			top: 7px
+			left: 6px
 			transition: background-color .3s
 			padding: 10px
+			z-index: 1
 
 
 .parameter

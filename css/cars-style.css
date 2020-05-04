@@ -7157,6 +7157,13 @@ h1 {
   display: none;
 }
 
+.form-item h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #979797;
+  font-size: 14px;
+}
+
 .form-group, .item-group {
   display: -webkit-box;
   display: -webkit-flex;
@@ -7179,6 +7186,10 @@ h1 {
 .item-group input {
   width: 0;
   height: 0;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: -100px;
 }
 
 .item-group input:checked + label {
@@ -7195,14 +7206,15 @@ h1 {
 
 .item-group label {
   padding: 8px 10px 8px 45px;
-  border: 2px solid #ddd;
+  border: 1px solid #e9ebee;
   border-radius: 30px;
   position: relative;
-  -webkit-transition: border-color .3s;
-  -o-transition: border-color .3s;
-  transition: border-color .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
   cursor: pointer;
-  font-weight: 500;
+  font-size: 16px;
+  z-index: 1;
 }
 
 .item-group label:before {
@@ -7210,14 +7222,15 @@ h1 {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #e9ebee;
   position: absolute;
-  top: 10px;
-  left: 8px;
+  top: 7px;
+  left: 6px;
   -webkit-transition: background-color .3s;
   -o-transition: background-color .3s;
   transition: background-color .3s;
   padding: 10px;
+  z-index: 1;
 }
 
 .parameter {
