@@ -27,6 +27,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<!-- Style -->
+
 	<link rel="stylesheet" href="css/cars-style.css?04052020">
 
 </head>
@@ -113,17 +114,58 @@
 							<div class="form-item">
 								<h4>Комплектация</h4>
 								<label class="form-group">
+									<select name="complect" id="complect">
+										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
+										<option value="Comfort 1.6 6MT">Comfort 1.8 6MT</option>
+										<option value="Comfort 1.6 6MT">Comfort 2.0 6MT</option>
+										<option value="Comfort 1.6 6MT" selected="true">Luxe 1.6 6MT</option>
+										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
+										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
+									</select>
+								</label>
+							</div>
+							<!-- /.form-item -->
+
+							<div class="form-item">
+								<h4>Двигатель</h4>
+								<label class="form-group">
 									<span class="item-group">
-										<input type="checkbox" name="complect" id="2017" value="2017">
-										<label for="2017">Luxe 1.6 6MT</label>
+										<input type="checkbox" name="engine" id="engine-1">
+										<label for="engine-1">1.6 MPI 128 л.с</label>
 									</span>
 									<span class="item-group">
-										<input type="checkbox" name="complect" id="2019" value="2019">
-										<label for="2019">Luxe 1.6 6MT</label>
+										<input type="checkbox" name="engine" id="engine-2">
+										<label for="engine-2">2.0 MPI 149 л.с</label>
+									</span>
+								</label>
+							</div>
+							<!-- /.form-item -->
+
+							<div class="form-item">
+								<h4>Трансмиссия</h4>
+								<label class="form-group">
+									<span class="item-group">
+										<input type="checkbox" name="transmission" id="transmission-1">
+										<label for="transmission-1">AT</label>
 									</span>
 									<span class="item-group">
-										<input type="checkbox" name="complect" id="2020" value="2020" checked="true">
-										<label for="2020">Luxe 1.6 6MT</label>
+										<input type="checkbox" name="transmission" id="transmission-2">
+										<label for="transmission-2">MT</label>
+									</span>
+								</label>
+							</div>
+							<!-- /.form-item -->
+
+							<div class="form-item">
+								<h4>Привод</h4>
+								<label class="form-group">
+									<span class="item-group">
+										<input type="checkbox" name="wheels" id="wheels-1">
+										<label for="wheels-1">Полный</label>
+									</span>
+									<span class="item-group">
+										<input type="checkbox" name="wheels" id="wheels-2">
+										<label for="wheels-2">Передний</label>
 									</span>
 								</label>
 							</div>
@@ -331,6 +373,5 @@
 	<!-- /MODALS -->
 
 	<script src="js/cars-scripts.min.js"></script>
-
 </body>
 </html>

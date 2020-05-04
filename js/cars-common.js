@@ -14,6 +14,8 @@ jQuery(function($) {
 		}
 	});
 
+	$('#complect').select2();
+
 	$.getJSON('unload.json', function(data){
 		$.each(data, function(k, v){
 
