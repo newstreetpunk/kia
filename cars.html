@@ -130,11 +130,11 @@
 								<h4>Двигатель</h4>
 								<label class="form-group">
 									<span class="item-group">
-										<input type="checkbox" name="engine" id="engine-1">
+										<input type="checkbox" name="engine" id="engine-1" value="1.6 MPI 128">
 										<label for="engine-1">1.6 MPI 128 л.с</label>
 									</span>
 									<span class="item-group">
-										<input type="checkbox" name="engine" id="engine-2">
+										<input type="checkbox" name="engine" id="engine-2" value="2.0 MPI 149">
 										<label for="engine-2">2.0 MPI 149 л.с</label>
 									</span>
 								</label>
@@ -374,13 +374,13 @@
 	<script>
 		$.getJSON('unload.json', function(data){
 			let i = 0;
-			let ipl = i+1;
+			let ipl = i+10;
 			for(data; i < ipl; i++ ){
 				var name = data[i].name;
 				var img = name.match(/(\w+)/);
 				var imgName = img[0].toUpperCase();
 
-				out = '<div class="avn__item">';
+				out = '<div class="avn__item" data-year="'+data[i].year+'">';
 				out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
 				out += '<div class="avn__item--info">';
 				out += '<div class="avn__item--info_name">';
@@ -401,12 +401,12 @@
 
 				$('.avn__list').append(out);
 			};
-			console.log(i);
+			//console.log(i);
 		});
 
 		setTimeout(function(){
 			$('.lazyload').lazyload();
-			$(".avn__item").animated("fadeInUp", "fadeInUp");
+			//$(".avn__item").animated("fadeInUp", "fadeInUp");
 		}, 5000);
 
 	</script>
