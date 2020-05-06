@@ -115,10 +115,11 @@
 								<h4>Комплектация</h4>
 								<label class="form-group">
 									<select name="complect" id="complect">
+										<option disabled selected>Комплектация...</option>
 										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
 										<option value="Comfort 1.8 6MT">Comfort 1.8 6MT</option>
 										<option value="Comfort 2.0 6MT">Comfort 2.0 6MT</option>
-										<option value="Luxe 1.6 6MT" selected="true">Luxe 1.6 6MT</option>
+										<option value="Luxe 1.6 6MT">Luxe 1.6 6MT</option>
 										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
 										<option value="Comfort 1.6 6MT">Comfort 1.6 6MT</option>
 									</select>
@@ -380,7 +381,7 @@
 				var img = name.match(/(\w+)/);
 				var imgName = img[0].toUpperCase();
 
-				out = '<div class="avn__item" data-year="'+data[i].year+'">';
+				out = '<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">';
 				out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
 				out += '<div class="avn__item--info">';
 				out += '<div class="avn__item--info_name">';
