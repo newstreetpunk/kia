@@ -112,10 +112,10 @@
 									<span class="item-group">
 
 										<?php if ($value == '2020') { ?>
-											<input type="radio" name="year" id="<?= $value; ?>" value="<?= $value; ?>" checked="true">
+											<input type="checkbox" name="year" id="<?= $value; ?>" value="<?= $value; ?>" checked="true">
 											<label for="<?= $value; ?>"><?= $value; ?></label>
 										<?php } else{ ?>
-											<input type="radio" name="year" id="<?= $value; ?>" value="<?= $value; ?>">
+											<input type="checkbox" name="year" id="<?= $value; ?>" value="<?= $value; ?>">
 											<label for="<?= $value; ?>"><?= $value; ?></label>
 										<?php }?>
 										
@@ -129,7 +129,6 @@
 								<h4>Комплектация</h4>
 								<label class="form-group">
 									<select name="complect" id="complect">
-											<option disabled selected>Выберите</option>
 										<?php foreach ($code as $key => $value):
 											if ($value != '') {
 												echo '<option value="'.substr($value,-4).'">'.substr($value,-4).'</option>';
@@ -148,7 +147,7 @@
 										<label for="engine-1">1.6 MPI 128 л.с</label>
 									</span>
 									<span class="item-group">
-										<input type="checkbox" name="engine" id="engine-2" value="1">
+										<input type="checkbox" name="engine-2" id="engine-2" value="1">
 										<label for="engine-2">2.0 MPI 149 л.с</label>
 									</span>
 								</label>
