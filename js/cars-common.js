@@ -68,18 +68,32 @@ jQuery(function($) {
 		} else {
 			$('.top').removeClass("active");
 		};
-		if ($(this).scrollTop() > $(document).height() - 1000){
-			$('.avn__filter').css({
-				'position': 'absolute',
-				'height': 'auto',
-				'top': 'auto',
-				'bottom': $('footer').height() + 100,
-				'padding-bottom': 55
-			});
-		}else{
-			$('.avn__filter').removeAttr('style');
-		}
+
+		filterPosition();
+
 	});
+
+	function filterPosition(){
+		if ($(window).width() > 992) {
+			if ($(this).scrollTop() > $(document).height() - 1000){
+				$('.avn__filter').css({
+					'position': 'absolute',
+					'height': 'auto',
+					'top': 'auto',
+					'bottom': $('footer').height() + 100,
+					'padding-bottom': 55
+				});
+			}else{
+				$('.avn__filter').removeAttr('style');
+			}
+		}
+	}
+
+	$(window).on('resize', function(){
+		filterPosition();
+	});
+
+
 
 	$('a[href="#popup"]').on('click', function(){
 		$('.overlay').show();
