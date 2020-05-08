@@ -7,7 +7,7 @@
 			max-width: 95%
 			margin: 0 auto
 	&__list
-		padding-left: 350px
+		padding-left: 360px
 		padding-right: 20px
 		+media-breakpoint-down(md)
 			padding: 0
@@ -84,7 +84,7 @@
 				+media-breakpoint-down(sm)
 					margin: 15px 0 0
 	&__filter
-		width: 340px
+		width: 350px
 		min-height: 400px
 		height: 100%
 		padding-bottom: 150px
@@ -94,6 +94,8 @@
 		top: 120px
 		padding-left: 20px
 		padding-right: 20px
+		background-color: #fff
+		transition: all .3s
 		+media-breakpoint-down(md)
 			position: relative
 			top: auto
@@ -153,8 +155,9 @@
 	display: flex
 	align-items: center
 .form-group
-	&.engine-group
+	&.engine-group, &.complect-group
 		flex-direction: column
+		align-items: flex-start
 		+media-breakpoint-down(md)
 			flex-direction: row
 	+media-breakpoint-down(xs)

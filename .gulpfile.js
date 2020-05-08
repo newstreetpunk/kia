@@ -32,7 +32,6 @@
 				base.kia + '/libs/jquery/dist/jquery.min.js',
 				base.kia + '/libs/Magnific-Popup-master/jquery.magnific-popup.js',
 				base.kia + '/libs/range/range.js',
-				base.kia + '/libs/select2/select2.min.js',
 				base.kia + '/libs/animate-css.js',
 				base.kia + '/libs/lazyload.min.js',
 				base.kia + '/libs/waypoint.js',

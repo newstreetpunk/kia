@@ -14,16 +14,6 @@ jQuery(function($) {
 		}
 	});
 
-	$('#complect').select2({
-		minimumResultsForSearch: Infinity, // поле поиска по option's отключено
-		multiple: true,
-		placeholder: 'This is my placeholder',
-  		allowClear: true
-		// maximumSelectionLength: 2
-		//placeholder: "Комплектация...",
-		//allowClear: true
-	});
-
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change
 		var th = $(this);
@@ -78,6 +68,17 @@ jQuery(function($) {
 		} else {
 			$('.top').removeClass("active");
 		};
+		if ($(this).scrollTop() > $(document).height() - 1000){
+			$('.avn__filter').css({
+				'position': 'absolute',
+				'height': 'auto',
+				'top': 'auto',
+				'bottom': $('footer').height() + 100,
+				'padding-bottom': 55
+			});
+		}else{
+			$('.avn__filter').removeAttr('style');
+		}
 	});
 
 	$('a[href="#popup"]').on('click', function(){
@@ -142,30 +143,28 @@ jQuery(function($) {
 			url: 'filter.php',
 			type: 'get'
 		}).done(function(res){
-			$('.avn__item').remove();
-			$('.avn__list').append(res);
-			// let data = JSON.parse(res);
-			// $.each(data, function(k, v){
-			// 	$('.avn__item').hide();
-			// 	yearVal = data.year;
-			// 	if (k == 'year'){
-			// 		$('.avn__item').each(function(){
-			// 			year = $(this).data('year');
-			// 			if (year == yearVal) {
-			// 				$(this).show();
-			// 			}
-			// 		});
-			// 	}else{
-			// 		val = v;
-			// 		$('.avn__item').each(function(){
-			// 			dataVal = $(this).data(k);
-			// 			year = $(this).data('year');
-			// 			if (year == yearVal && dataVal == val) {
-			// 				$(this).show();
-			// 			}
-			// 		});
-			// 	}
-			// });
+			let data = JSON.parse(res);
+			$.each(data, function(k, v){
+				$('.avn__item').hide();
+				yearVal = data.year;
+				if (k == 'year'){
+					$('.avn__item').each(function(){
+						year = $(this).data('year');
+						if (year == yearVal) {
+							$(this).show();
+						}
+					});
+				}else{
+					val = v;
+					$('.avn__item').each(function(){
+						dataVal = $(this).data(k);
+						year = $(this).data('year');
+						if (year == yearVal && dataVal == val) {
+							$(this).show();
+						}
+					});
+				}
+			});
 		});
 	});
 
