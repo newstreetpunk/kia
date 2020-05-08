@@ -7573,6 +7573,11 @@ h1 {
 
 .avn__list {
   padding-left: 350px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 20px;
 }
 
 @media (max-width: 767.98px) {
