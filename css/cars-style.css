@@ -7936,7 +7936,7 @@ h1 {
 
 .item-group input:checked + label:before {
   background-color: #bb162a;
-  background-image: url(../img/ICONS/icon-checkbox.svg);
+  background-image: url(../img/icons/icon-checkbox.svg);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
