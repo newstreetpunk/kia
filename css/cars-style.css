@@ -7762,6 +7762,9 @@ h1 {
 
 .avn__filter {
   width: 340px;
+  min-height: 400px;
+  height: 100%;
+  padding-bottom: 150px;
   overflow-y: auto;
   position: fixed;
   left: 0;
@@ -7974,6 +7977,8 @@ h1 {
 .parameter {
   text-transform: uppercase;
   font-size: 14px;
+  white-space: nowrap;
+  margin-right: 8px;
 }
 
 @media (max-width: 991.98px) {
