@@ -3,12 +3,14 @@
 	+media-breakpoint-down(xs)
 		padding: 30px 0
 	&__wrap
-		display: flex
-		justify-content: space-between
+		+media-breakpoint-down(md)
+			max-width: 95%
+			margin: 0 auto
 	&__list
 		padding-left: 350px
-		flex: 1
 		padding-right: 20px
+		+media-breakpoint-down(md)
+			padding: 0
 		+media-breakpoint-down(sm)
 			display: flex
 			justify-content: space-between
@@ -16,6 +18,7 @@
 	&__item
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 		border: 2px solid #ddd
 		padding: 25px 20px
 		border-radius: 10px
@@ -23,8 +26,7 @@
 		background-color: transparent
 		transition: all .3s linear
 		margin-bottom: 25px
-		+media-breakpoint-down(lg)
-			flex-wrap: wrap
+
 		+media-breakpoint-down(sm)
 			flex-direction: column
 			width: 48%
@@ -36,6 +38,10 @@
 		&--info
 			flex: 1
 			padding: 0 20px
+			+media-breakpoint-down(lg)
+				width: 50%
+			+media-breakpoint-down(md)
+				width: 100%
 			+media-breakpoint-down(sm)
 				padding: 0
 			&_name
@@ -62,7 +68,7 @@
 			display: flex
 			justify-content: center
 			flex-direction: column
-			+media-breakpoint-down(lg)
+			@media(max-width: 1380px)
 				width: 100%
 				justify-content: center
 				flex-direction: row
@@ -73,7 +79,7 @@
 				text-align: center
 				padding: 8px 16px
 				margin: 8px 0
-				+media-breakpoint-down(lg)
+				@media(max-width: 1380px)
 					margin: 20px 10px 0
 				+media-breakpoint-down(sm)
 					margin: 15px 0 0
@@ -88,6 +94,14 @@
 		top: 120px
 		padding-left: 20px
 		padding-right: 20px
+		+media-breakpoint-down(md)
+			position: relative
+			top: auto
+			left: auto
+			width: 100%
+			padding: 0
+			min-height: 0
+			height: auto
 		+media-breakpoint-down(xs)
 			margin-bottom: 30px
 		&--head
@@ -141,6 +155,8 @@
 .form-group
 	&.engine-group
 		flex-direction: column
+		+media-breakpoint-down(md)
+			flex-direction: row
 	+media-breakpoint-down(xs)
 		flex-wrap: wrap
 .item-group
@@ -194,6 +210,7 @@
 		margin-bottom: 5px
 	&__row
 		display: flex
+		flex-wrap: wrap
 		+media-breakpoint-down(md)
 			flex-direction: column
 		.parameter
@@ -205,6 +222,8 @@
 		display: flex
 		flex-wrap: wrap
 		align-items: center
+		+media-breakpoint-down(lg)
+			font-size: 22px
 		+media-breakpoint-down(md)
 			font-size: 20px
 		s
