@@ -196,7 +196,7 @@
 					for ($array; $i < 10; $i++) : ?>
 						<div class="avn__item" data-year="<?= $array[$i]['year']; ?>" data-engine="2" data-complect="<?=substr($array[$i]['code'],-4)?>">
 							<div class="avn__item--img">
-								<img class="lazyload" src="img/loading.gif" data-src="img/cars/<?=stristr($array[$i]['name'], ' ', true)?>-1.png" alt="ALT">
+								<img class="lazyload" src="img/loading.gif" data-src="img/cars/<?=strtoupper(stristr($array[$i]['name'], ' ', true))?>-1.png" alt="ALT">
 							</div>
 							<div class="avn__item--info">
 								<div class="avn__item--info_name">
