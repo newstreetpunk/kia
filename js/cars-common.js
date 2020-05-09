@@ -151,33 +151,23 @@ jQuery(function($) {
 
 	$('.avn__filter--form').on('change', function(){
 		let data = $(this).serialize();
-
 		$.ajax({
 			data: data,
 			url: 'filter.php',
 			type: 'get'
 		}).done(function(res){
+
 			let data = JSON.parse(res);
+
 			$.each(data, function(k, v){
 				$('.avn__item').hide();
-				yearVal = data.year;
-				if (k == 'year'){
-					$('.avn__item').each(function(){
-						year = $(this).data('year');
-						if (year == yearVal) {
-							$(this).show();
-						}
-					});
-				}else{
-					val = v;
-					$('.avn__item').each(function(){
-						dataVal = $(this).data(k);
-						year = $(this).data('year');
-						if (year == yearVal && dataVal == val) {
-							$(this).show();
-						}
-					});
-				}
+
+				$('.avn__item').each(function(){
+					dataVal = $(this).data(k);
+					if (dataVal == v) {
+						$(this).show();
+					}
+				});
 			});
 		});
 	});
