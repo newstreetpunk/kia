@@ -6971,6 +6971,22 @@ strong {
 
 .banner-text {
   max-width: 50%;
+  position: absolute;
+  top: 50px;
+  left: calc((100% - 1140px) / 2);
+  z-index: 1;
+}
+
+@media (max-width: 1199.98px) {
+  .banner-text {
+    left: calc((100% - 930px) / 2);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .banner-text {
+    left: 3%;
+  }
 }
 
 @media (max-width: 1084px) {
@@ -7039,30 +7055,35 @@ strong {
   margin-right: -5px;
 }
 
-.banner-slide {
+.banner .item {
   min-height: 700px;
-  height: auto;
+  height: calc(100vh - 100px);
+  margin-top: 98px;
   z-index: 1;
   position: relative;
   color: #fff;
   background-size: cover;
   background-position: center;
-  padding-top: 50px;
 }
 
 @media (max-width: 991.98px) {
-  .banner-slide {
-    padding-top: 20px;
+  .banner .item {
+    height: calc(100vh - 84px);
+    margin-top: 84px;
   }
 }
 
 @media (max-width: 767.98px) {
-  .banner-slide {
+  .banner .item {
     min-height: 400px;
+    margin-top: 0;
+  }
+  .banner .item.youtube {
+    background-image: url(../img/mob-bg.jpg) !important;
   }
 }
 
-.banner-slide:before {
+.banner .item:before {
   content: '';
   display: block;
   width: 100%;
@@ -7071,7 +7092,8 @@ strong {
   left: 0;
   top: 0;
   background-color: rgba(51, 51, 51, 0.6);
-  z-index: -1;
+  opacity: 1;
+  z-index: 1;
 }
 
 .banner-form {
@@ -7083,12 +7105,18 @@ strong {
   padding: 34px;
   position: absolute;
   top: 160px;
+  right: calc((100% - 1140px) / 2);
   z-index: 1;
+  opacity: 0;
 }
 
-@media (min-width: 768px) {
-  .banner-form input {
-    background-color: #ffffff99;
+.banner-form input {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 1199.98px) {
+  .banner-form {
+    right: calc((100% - 930px) / 2);
   }
 }
 
@@ -7101,6 +7129,7 @@ strong {
 @media (max-width: 991.98px) {
   .banner-form {
     top: 14%;
+    right: 3%;
   }
 }
 
@@ -7110,6 +7139,7 @@ strong {
     margin: 5% auto 30px;
     -webkit-box-shadow: 0 0 30px rgba(51, 51, 51, 0.3);
             box-shadow: 0 0 30px rgba(51, 51, 51, 0.3);
+    right: auto;
   }
 }
 
@@ -7324,6 +7354,149 @@ form small a:hover {
 
 .slick-dotted.slick-slider {
   margin-bottom: 0;
+}
+
+.slick-slide, .slick-slide::before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.slick-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slider {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.banner-slider.slick-initialized {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slick-slide {
+  position: relative;
+  height: 38vw;
+}
+
+.slick-slide::before {
+  background-color: #000;
+  opacity: .3;
+  z-index: 1;
+}
+
+.slick-slide video {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.slick-slide iframe {
+  position: relative;
+  pointer-events: none;
+  top: -100px !important;
+}
+
+@media (max-width: 1199.98px) {
+  .slick-slide iframe {
+    left: 0 !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .slick-slide iframe {
+    display: none !important;
+  }
+}
+
+.slick-slide figure {
+  position: relative;
+  height: 100%;
+}
+
+.slick-slide .slide-image {
+  opacity: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slick-slide .slide-image.show {
+  opacity: 1;
+}
+
+.slick-slide .image-entity {
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slick-slide .loading {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  width: 100%;
+}
+
+.slick-slide.slick-active {
+  z-index: 1;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    filter:blur(15px) {
+    }
+  }
+  to {
+    filter:blur(0) {
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    filter:blur(15px) {
+    }
+  }
+  to {
+    filter:blur(0) {
+    }
+  }
+}
+
+@-webkit-keyframes slideOut {
+  from {
+    filter:blur(0) {
+    }
+  }
+  to {
+    filter:blur(15px) {
+    }
+  }
+}
+
+@keyframes slideOut {
+  from {
+    filter:blur(0) {
+    }
+  }
+  to {
+    filter:blur(15px) {
+    }
+  }
 }
 
 .services {
