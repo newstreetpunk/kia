@@ -6973,8 +6973,20 @@ strong {
   max-width: 50%;
   position: absolute;
   top: 50px;
-  left: 10%;
+  left: calc((100% - 1140px) / 2);
   z-index: 1;
+}
+
+@media (max-width: 1199.98px) {
+  .banner-text {
+    left: calc((100% - 930px) / 2);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .banner-text {
+    left: 3%;
+  }
 }
 
 @media (max-width: 1084px) {
@@ -7054,9 +7066,20 @@ strong {
   background-position: center;
 }
 
+@media (max-width: 991.98px) {
+  .banner .item {
+    height: calc(100vh - 84px);
+    margin-top: 84px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .banner .item {
     min-height: 400px;
+    margin-top: 0;
+  }
+  .banner .item.youtube {
+    background-image: url(../img/mob-bg.jpg) !important;
   }
 }
 
@@ -7082,14 +7105,18 @@ strong {
   padding: 34px;
   position: absolute;
   top: 160px;
-  right: 10%;
+  right: calc((100% - 1140px) / 2);
   z-index: 1;
   opacity: 0;
 }
 
-@media (min-width: 768px) {
-  .banner-form input {
-    background-color: #ffffff99;
+.banner-form input {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 1199.98px) {
+  .banner-form {
+    right: calc((100% - 930px) / 2);
   }
 }
 
@@ -7102,6 +7129,7 @@ strong {
 @media (max-width: 991.98px) {
   .banner-form {
     top: 14%;
+    right: 3%;
   }
 }
 
@@ -7111,6 +7139,7 @@ strong {
     margin: 5% auto 30px;
     -webkit-box-shadow: 0 0 30px rgba(51, 51, 51, 0.3);
             box-shadow: 0 0 30px rgba(51, 51, 51, 0.3);
+    right: auto;
   }
 }
 
@@ -7379,6 +7408,12 @@ form small a:hover {
   position: relative;
   pointer-events: none;
   top: -100px !important;
+}
+
+@media (max-width: 1199.98px) {
+  .slick-slide iframe {
+    left: 0 !important;
+  }
 }
 
 @media (max-width: 767.98px) {
