@@ -4,7 +4,11 @@
 	position: relative
 	padding-bottom: 5vmax
 	color: #fff
-	&:before
+	&.absolute
+		position: absolute
+		width: 100vw
+		z-index: 10
+	&.before:before
 		content: ''
 		display: block
 		width: 100%
@@ -27,6 +31,8 @@
 		display: flex
 		justify-content: space-between
 		padding-top: 6%
+		&.flex-end
+			justify-content: flex-end
 	&-form
 		background-color: #ffffffcc
 		color: $text
@@ -49,6 +55,7 @@
 		p
 			font-size: 14px
 			line-height: 1.55
+
 h1
 	font-size: 52px
 	margin-top: -15px

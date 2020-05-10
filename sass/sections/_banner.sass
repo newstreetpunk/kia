@@ -10,6 +10,8 @@
 			padding: 30px 15px 50px
 	&-slider
 		position: relative
+		a:hover
+			color: white
 		.arrow
 			position: absolute
 			top: 52%
@@ -35,13 +37,14 @@
 				height: 100%
 		.prev-arrow
 			svg
-				margin-left: -5px
+				margin-left: -2px
+				transform: scale(2)
 		.next-arrow
 			left: auto
 			right: 20px
 			svg
-				transform: rotate(180deg)
-				margin-right: -5px
+				transform: rotate(180deg) scale(2)
+				margin-right: -2px
 	&-slide
 		min-height: 700px
 		height: auto
