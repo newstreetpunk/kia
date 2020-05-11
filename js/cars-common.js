@@ -153,22 +153,30 @@ jQuery(function($) {
 		let data = $(this).serialize();
 		$.ajax({
 			data: data,
-			url: 'filter.php',
-			type: 'get'
+			url: 'filter2.php',
+			type: 'get',
+			beforeSend: function(){
+				$('body').css('filter', 'blur(5px)');
+			}
 		}).done(function(res){
 
-			let data = JSON.parse(res);
+			$('.avn__item').remove();
+			$('.avn__list').append(res);
+			$('body').removeAttr('style');
 
-			$.each(data, function(k, v){
-				$('.avn__item').hide();
 
-				$('.avn__item').each(function(){
-					dataVal = $(this).data(k);
-					if (dataVal == v) {
-						$(this).show();
-					}
-				});
-			});
+			// let data = JSON.parse(res);
+
+			// $.each(data, function(k, v){
+			// 	$('.avn__item').hide();
+
+			// 	$('.avn__item').each(function(){
+			// 		dataVal = $(this).data(k);
+			// 		if (dataVal == v) {
+			// 			$(this).show();
+			// 		}
+			// 	});
+			// });
 		});
 	});
 

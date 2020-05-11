@@ -6657,6 +6657,9 @@ body {
   overflow-x: hidden;
   font-weight: 300;
   color: #333;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 body input, body textarea {
@@ -6924,6 +6927,7 @@ h1 {
 .avn__list {
   padding-left: 360px;
   padding-right: 20px;
+  min-height: 100vh;
 }
 
 @media (max-width: 991.98px) {
