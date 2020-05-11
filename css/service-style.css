@@ -7917,7 +7917,7 @@ form small a:hover {
   font-size: 18px;
 }
 
-.maps .dealer-map, .maps .dealer-map2 {
+.maps .dealer-map1, .maps .dealer-map2 {
   background-color: #ccc;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7930,7 +7930,7 @@ form small a:hover {
   cursor: pointer;
 }
 
-.maps .dealer-map:before, .maps .dealer-map2:before {
+.maps .dealer-map1:before, .maps .dealer-map2:before {
   content: '';
   display: block;
   position: absolute;
@@ -7958,8 +7958,7 @@ form small a:hover {
   background-color: rgba(0, 0, 0, 0.55);
 }
 
-.loader:after,
-.loader:before {
+.loader:after, .loader:before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -8285,7 +8284,7 @@ form small a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2 {
+  .maps .dealer-info, .maps .dealer-map1, .maps .dealer-map2 {
     width: 100%;
   }
   .cars-list {
@@ -8355,7 +8354,7 @@ form small a:hover {
   .maps .dealer-info {
     padding-left: 5%;
   }
-  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2, #map1, #map2 {
+  .maps .dealer-info, .maps .dealer-map1, .maps .dealer-map2, #map1, #map2 {
     min-height: auto;
     height: 400px;
   }

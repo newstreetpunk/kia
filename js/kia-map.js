@@ -1,31 +1,7 @@
 $(function() {
 
-    let maps = [
-            {
-                parent: '.dealer-map',
-                id: "map1",
-                position: [53.1836, 50.1530],
-                zoom: 17,
-                balloonContentHeader: 'КИА Центр Самара',
-                balloonContentBody: '<a href="tel:+78469777700" class="dealer-phone">☎️ +7 (846) 977-77-00</a><br><a href="mailto:client@kia-samara.ru" class="dealer-email">📩 client@kia-samara.ru</a><br><br> \
-                    <a href="https://yandex.ru/maps/?z=17&ll=50.15299999999999,53.18359999999777&l=map&rtext=~53.1836,50.153&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
-                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
-                hintContent: 'КИА Центр Самара'
-            },
-            {
-                parent: '.dealer-map2',
-                id: "map2",
-                position: [53.2487, 50.2155],
-                zoom: 17,
-                balloonContentHeader: 'КИА Центр на Московском',
-                balloonContentBody: '<a href="tel:+78462059999" class="dealer-phone">☎️ +7 (846) 205-99-99</a><br><a href="mailto:client@kia-na-moskovskom.ru" class="dealer-email">📩 client@kia-na-moskovskom.ru</a><br><br>\
-                    <a href="https://yandex.ru/maps/?z=17&ll=50.2155,53.24869999999764&l=map&rtext=~53.2487,50.2155&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
-                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
-                hintContent: 'КИА Центр на Московском'
-            },
-
-        ],
-        start_load_script = false, // Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
+    
+    let start_load_script = false, // Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
         end_load_script = false; // Переменная для определения был ли загружен скрипт Яндекс.Карт полностью (чтобы не возникли какие-нибудь ошибки, если мы загружаем несколько карт одновременно)
 
 
