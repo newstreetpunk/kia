@@ -153,7 +153,7 @@ jQuery(function($) {
 		let data = $(this).serialize();
 		$.ajax({
 			data: data,
-			url: 'filter2.php',
+			url: 'filter.php',
 			type: 'get',
 			beforeSend: function(){
 				$('body').css('filter', 'blur(5px)');
