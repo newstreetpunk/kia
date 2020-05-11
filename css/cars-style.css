@@ -7815,7 +7815,7 @@ main {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .maps .dealer-info, .maps .dealer-map1, .maps .dealer-map2 {
+  .maps .dealer-info, .maps .dealer-map {
     width: 100%;
   }
   .cars-list {
@@ -7885,7 +7885,7 @@ main {
   .maps .dealer-info {
     padding-left: 5%;
   }
-  .maps .dealer-info, .maps .dealer-map1, .maps .dealer-map2, #map1, #map2 {
+  .maps .dealer-info, .maps .dealer-map, .map-here {
     min-height: auto;
     height: 400px;
   }

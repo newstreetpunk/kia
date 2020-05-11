@@ -1,5 +1,8 @@
 
 *.php
 !filter.php
+!cars.php
+/inc/
 phpmailer
 sftp-config.json
+*.json

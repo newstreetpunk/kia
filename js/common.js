@@ -127,7 +127,7 @@ jQuery(function($) {
 		var th = $(this);
 		var parent = th.closest('.car');
 		var model = parent.find('h2').text();
-		$('#cheaper form #val-model, #credit form #val-model').val(model);
+		$('#cheaper form .val-model, #credit form .val-model').val(model);
 	});
 
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
