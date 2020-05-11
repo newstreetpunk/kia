@@ -150,7 +150,11 @@ jQuery(function($) {
 	});
 
 	$('.avn__filter--form').on('change', function(){
-		let data = $(this).serialize();
+		filter();
+	});
+
+	function filter(){
+		let data = $('.avn__filter--form').serialize();
 		$.ajax({
 			data: data,
 			url: 'filter.php',
@@ -178,6 +182,8 @@ jQuery(function($) {
 			// 	});
 			// });
 		});
-	});
+	};
+
+	filter();
 
 });
