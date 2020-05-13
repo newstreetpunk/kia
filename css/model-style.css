@@ -7030,17 +7030,31 @@ h1 {
 
 .model__header--img {
   width: 50%;
+  height: 280px;
+  position: relative;
 }
 
 @media (max-width: 767.98px) {
   .model__header--img {
     width: 100%;
-    margin-bottom: 30px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .model__header--img {
+    height: 150px;
+    margin-bottom: 10px;
   }
 }
 
 .model__header--img img {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (max-width: 767.98px) {
