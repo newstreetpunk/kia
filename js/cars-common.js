@@ -184,6 +184,6 @@ jQuery(function($) {
 		});
 	};
 
-	filter();
+	// filter();
 
 });

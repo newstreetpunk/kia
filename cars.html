@@ -376,35 +376,67 @@
 	<script src="js/cars-scripts.min.js?080520201432"></script>
 
 	<script>
+		
+		/* qwe=asd&zxc=rty#cvb */
+		let query = document.location.hash.substring(1);
+		console.log("query : " + query); // cvb
+
+		let params = window.location.search.substring(1);
+		console.log("params : " + params); // qwe=asd&zxc=rty
+
+		let vars = params.split("&");
+		console.log("vars : " + vars); // qwe=asd,zxc=rty
+
+		let model = '';
+
+		for (let i = 0; i < vars.length; i++) { 
+			let pair=vars[i].split("=");
+			console.log(" pair : " + pair); // qwe,asd  zxc,rty
+			if(pair[0] === 'name') {
+				model = pair[1];
+			}
+
+		}
+
 		$.getJSON('unload.json', function(data){
-			let i = 0;
-			let ipl = i+10;
-			for(data; i < ipl; i++ ){
-				var name = data[i].name;
-				var img = name.match(/(\w+)/);
-				var imgName = img[0].toUpperCase();
+			
+			let i = 0;	
 
-				out = '<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">';
-				out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
-				out += '<div class="avn__item--info">';
-				out += '<div class="avn__item--info_name">';
-				out += '<h2>KIA '+name+'</h2></div>';
-				out += '<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>';
-				out += '<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>';
-				out += '<div class="parameter__row">';
-				out += '<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>';
-				out += '<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div>';
-				out += '<div class="parameter__row">';
-				out += '<div class="parameter">Привод: <strong>Передний</strong></div>';
-				out += '<div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div>';
-				out += '<div class="avn__item--links">';
-				out += '<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>';
-				out += '<a href="#cheaper" class="btn modal-link">Забронировать</a>';
-				out += '<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div>';
-				out += '</div>';
+			let check_load = setInterval(function() {
+				
+				let name = data[i].name;
+				
+				if( name.toLowerCase().includes(model.toLowerCase()) === true ) {
+					let img = name.match(/(\w+)/);
+					let imgName = img[0].toUpperCase();
 
-				$('.avn__list').append(out);
-			};
+					out = '<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">';
+					out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
+					out += '<div class="avn__item--info">';
+					out += '<div class="avn__item--info_name">';
+					out += '<h2>KIA '+name+'</h2></div>';
+					out += '<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>';
+					out += '<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>';
+					out += '<div class="parameter__row">';
+					out += '<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>';
+					out += '<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div>';
+					out += '<div class="parameter__row">';
+					out += '<div class="parameter">Привод: <strong>Передний</strong></div>';
+					out += '<div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div>';
+					out += '<div class="avn__item--links">';
+					out += '<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>';
+					out += '<a href="#cheaper" class="btn modal-link">Забронировать</a>';
+					out += '<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div>';
+					out += '</div>';
+
+					$('.avn__list').append(out);
+				}
+
+				i++;
+                if( i >= data.length ) {
+                    clearInterval(check_load);
+                } 
+            }, 100);
 			//console.log(i);
 		});
 
