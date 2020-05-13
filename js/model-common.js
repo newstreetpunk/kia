@@ -112,12 +112,11 @@ jQuery(function($) {
 		preloader: false,
 	});
 
-	$('.model__info--item h2').each(function(){
+	$('.model__info--item').each(function(){
 		var th = $(this);
-		if (th.hasClass('active')) {
-			th.next().slideDown();
-		}else{
-			th.next().slideUp();
+		var title = th.find('h2');
+		if (title.hasClass('active')) {
+			title.next().show();
 		}
 	});
 
