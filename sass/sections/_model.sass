@@ -11,7 +11,7 @@
 			font-size: 20px
 	&__header
 		display: flex
-		margin-bottom: 40px
+		margin-bottom: 80px
 		+media-breakpoint-down(lg)
 			align-items: center
 		+media-breakpoint-down(sm)
@@ -105,3 +105,49 @@
 					+media-breakpoint-down(xs)
 						width: 100%
 						margin: 5px 0
+	&__info
+		&--item
+			h2
+				line-height: 1
+				margin: 0
+				padding: 20px 0
+				position: relative
+				border-bottom: 1px solid #aaa
+				transition: all .25s ease
+				cursor: pointer
+				font-weight: 500
+				font-size: 18px
+				text-transform: uppercase
+				svg
+					width: 20px
+					height: 20px
+					position: absolute
+					right: 0
+					top: 50%
+					margin-top: -10px
+					transform: rotate(0)
+					transition: all .25s ease
+					stroke: $text
+				&.active
+					border-color: $accent
+					svg
+						transform: rotate(540deg)
+						stroke: $accent
+		&--table
+			padding: 20px 0
+			font-size: 16px
+			display: none
+			ul
+				padding: 0
+				margin-bottom: 20px
+				li
+					list-style-type: none
+					padding-left: 23px
+					background-image: url(../img/icons/icon-checkbox-green.svg)
+					background-position: left bottom 7px
+					background-repeat: no-repeat
+					background-size: 15px
+			&_title
+				font-weight: 500
+				display: block
+				margin-bottom: 6px

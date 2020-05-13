@@ -110,4 +110,30 @@ jQuery(function($) {
 		preloader: false,
 	});
 
+	$('.model__info--item h2').each(function(){
+		var th = $(this);
+		if (th.hasClass('active')) {
+			th.next().slideDown();
+		}else{
+			th.next().slideUp();
+		}
+	});
+
+	$('.model__info--table ul').each(function(){
+		var li = $(this).find('li').lenght;
+		for( var i=0; i < li; i++){
+			console.log(i);
+		}
+	});
+	
+	$('.model__info--item h2').on('click', function(){
+		var th = $(this);
+		th.toggleClass('active');
+		if (th.hasClass('active')) {
+			th.next().slideDown();
+		}else{
+			th.next().slideUp();
+		}
+	});
+
 });
