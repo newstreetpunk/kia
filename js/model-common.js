@@ -55,9 +55,9 @@ jQuery(function($) {
 		return false;
 	});
 
-	$("section h2, h1, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
-	$(".subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
-	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
+	$("section h2, h1, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
+	$(".subtitle, .maps .dealer:nth-child(odd) .dealer-info, .model__header--img").animated("fadeInLeft", "fadeInLeft");
+	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info, .model__header--text").animated("fadeInRight", "fadeInRight");
 
 	$('.top').click(function() {
 		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
@@ -68,32 +68,7 @@ jQuery(function($) {
 		} else {
 			$('.top').removeClass("active");
 		};
-
-		filterPosition();
-
 	});
-
-	function filterPosition(){
-		if ($(window).width() > 992) {
-			if ($(this).scrollTop() > $(document).height() - 1000){
-				$('.avn__filter').css({
-					'position': 'absolute',
-					'height': 'auto',
-					'top': 'auto',
-					'bottom': $('footer').height() + 100,
-					'padding-bottom': 55
-				});
-			}else{
-				$('.avn__filter').removeAttr('style');
-			}
-		}
-	}
-
-	$(window).on('resize', function(){
-		filterPosition();
-	});
-
-
 
 	$('a[href="#popup"]').on('click', function(){
 		$('.overlay').show();
@@ -111,7 +86,7 @@ jQuery(function($) {
 	});
 
 	$('a[href="#credit"]').click(function(){
-		var price = $(this).closest('.avn__item').find('.parameter-price strong').text();
+		var price = $(this).closest('.model__header--text').find('.real-price').text();
 		var str = price.replace(/[^\d]/g, '');
 		$('.contribution').find('.range').attr('max', str);
 		$('.contribution').find('.range__interval-txt_max').text(str);
