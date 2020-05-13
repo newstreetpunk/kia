@@ -6974,6 +6974,27 @@ h1 {
   margin: 0;
 }
 
+.model__header--text .mini-descr li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.model__header--text .mini-descr li span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-bottom: 1px dashed #333;
+  height: 19px;
+  margin: 0 2px;
+}
+
 .model__header--text .btn-wrap {
   display: -webkit-box;
   display: -webkit-flex;
