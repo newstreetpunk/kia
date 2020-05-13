@@ -120,9 +120,10 @@ jQuery(function($) {
 	});
 
 	$('.model__info--table ul').each(function(){
-		var li = $(this).find('li').lenght;
-		for( var i=0; i < li; i++){
-			console.log(i);
+		var li = $(this).find('li');
+		var countLi = li.length;
+		if (countLi > 3) {
+			li.css('width', '33%');
 		}
 	});
 	
