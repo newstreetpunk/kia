@@ -55,7 +55,7 @@ jQuery(function($) {
 		return false;
 	});
 
-	$("section h2, h1, .offer-head .descr, .offer-form").animated("fadeInUp", "fadeInUp");
+	$("section h2, h1, .offer-head .descr, .offer-form, .model__info--table ul").animated("fadeInUp", "fadeInUp");
 	$(".subtitle, .maps .dealer:nth-child(odd) .dealer-info, .model__header--img").animated("fadeInLeft", "fadeInLeft");
 	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info, .model__header--text").animated("fadeInRight", "fadeInRight");
 
