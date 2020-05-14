@@ -28,7 +28,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<!-- Style -->
 
-	<link rel="stylesheet" href="css/cars-style.css?080520201432">
+	<link rel="stylesheet" href="css/cars-style.css?202005142333">
 
 </head>
 
@@ -78,7 +78,7 @@
 
 				<div class="avn__filter">
 					<div class="avn__filter--head">
-						<div class="avn__filter--title open">
+						<div class="avn__filter--title">
 							<div class="avn__filter--icon">
 								<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 321.9 321.9" xml:space="preserve">
 								<path d="M128.25,175.6c1.7,1.8,2.7,4.1,2.7,6.6v139.7l60-51.3v-88.4c0-2.5,1-4.8,2.7-6.6L295.15,65H26.75L128.25,175.6z"/><rect x="13.95" y="0" width="294" height="45"/></svg>
@@ -89,7 +89,7 @@
 						<span class="avn__filter--reset">&times; Сбросить</span>
 					</div>
 					<!-- /.avn__filter--head -->
-					<div class="avn__filter--body">
+					<div class="avn__filter--body" style="display: none;">
 						<form class="avn__filter--form">
 							
 							<div class="form-item">
@@ -104,7 +104,7 @@
 										<label for="2019">2019</label>
 									</span>
 									<span class="item-group">
-										<input type="checkbox" name="year2" id="2020" value="2020" checked="true">
+										<input type="checkbox" name="year2" id="2020" value="2020">
 										<label for="2020">2020</label>
 									</span>
 								</label>
@@ -373,83 +373,11 @@
 
 	<!-- /MODALS -->
 
-	<script src="js/cars-scripts.min.js?080520201432"></script>
+	<script src="js/cars-scripts.min.js?202005142333"></script>
 
 	<script>
 		
-		/* qwe=asd&zxc=rty#cvb */
-		let query = document.location.hash.substring(1);
-		console.log("query : " + query); // cvb
-
-		let params = window.location.search.substring(1);
-		console.log("params : " + params); // qwe=asd&zxc=rty
-
-		let vars = params.split("&");
-		console.log("vars : " + vars); // qwe=asd,zxc=rty
-
-		let model = '';
-
-		for (let i = 0; i < vars.length; i++) { 
-			let pair=vars[i].split("=");
-			console.log(" pair : " + pair); // qwe,asd  zxc,rty
-			if(pair[0] === 'name') {
-				model = pair[1];
-			}
-
-		}
-
-		$.getJSON('unload.json', function(data){
-			
-			let i = 0;	
-
-			let check_load = setInterval(function() {
-				
-				let name = data[i].name;
-				
-				if( name.toLowerCase().includes(model.toLowerCase()) === true ) {
-					let img = name.match(/(\w+)/);
-					let imgName = img[0].toUpperCase();
-
-					out = '\
-					<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">\
-						<a href="model.html" class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></a>\
-						<div class="avn__item--info">\
-							<a href="model.html" class="avn__item--info_name"><h2>KIA '+name+'</h2></a>\
-							<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>\
-							<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>\
-							<div class="parameter__row">\
-								<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>\
-								<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div>\
-							</div>\
-							<div class="parameter__row">\
-								<div class="parameter">Привод: <strong>Передний</strong></div>\
-								<div class="parameter">Трансмиссия: <strong>AT</strong></div>\
-							</div>\
-						</div>\
-						<div class="avn__item--links">\
-							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>\
-							<a href="#cheaper" class="btn modal-link">Забронировать</a>\
-							<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a>\
-						</div>\
-					</div>\
-					';
-
-					$('.avn__list').append(out);
-				}
-
-				i++;
-                if( i >= data.length ) {
-                    clearInterval(check_load);
-                } 
-            }, 100);
-			//console.log(i);
-		});
-
-		setTimeout(function(){
-			$('.lazyload').lazyload();
-			//$(".avn__item").animated("fadeInUp", "fadeInUp");
-		}, 5000);
-
+		
 	</script>
 </body>
 </html>
