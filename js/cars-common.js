@@ -154,6 +154,44 @@ jQuery(function($) {
 
 	$('.avn__filter--form').on('change', function(){
 		// filter();
+		
+		let data = $('.avn__filter--form').serializeArray();
+
+		$('.avn__item').removeClass("show");
+		$('.avn__item').removeClass("notshow");
+		if(data.length == 0) {
+			$('.avn__item').show();
+		} else {
+			$.each(data, function(index, el) {
+				var data = 'data-'+el.name+'="'+el.value+'"';
+				$('.avn__item['+data+']').addClass("show");
+				$('.avn__item:not(['+data+'])').addClass("notshow");
+			});
+			$('.avn__item.show:not(.notshow)').show();
+			$('.avn__item.notshow').hide();
+			$('.avn__item:not(.show)').hide();
+		}
+
+		console.log(['form-change',data]);
+
+
+	});
+	$('input[type="checkbox"]').change(function() {
+		/* * /
+		var data = 'data-'+$(this).prop('name')+'="'+$(this).prop('value')+'"';
+		if(this.checked) {
+			console.log(['checked', $(this).prop('name'), $(this).prop('value')], $('.avn__item[data-'+$(this).prop('name')+'="'+$(this).prop('value')+'"]'));
+			$('.avn__item['+data+']').addClass("show");
+			$('.avn__item:not(['+data+'])').addClass("notshow");
+		} else {
+			console.log(['unchecked', $(this).prop('name'), $(this).prop('value')]);
+			// $('.avn__item['+data+']').removeClass("notshow");
+			$('.avn__item.show['+data+']').removeClass("notshow");
+		}
+		$('.avn__item.show:not(.notshow)').show();
+		$('.avn__item.notshow').hide();
+		$('.avn__item:not(.show)').hide();
+		/**/
 	});
 
 	function filter(){
@@ -244,22 +282,26 @@ jQuery(function($) {
 			let name = cars[i].name;
 			
 			if( name.toLowerCase().includes(model.toLowerCase()) === true ) {
-				let img = name.match(/(\w+)/);
-				let imgName = img[0].toUpperCase();
+				let img = name.match(/(\w+)/),
+					imgName = img[0].toUpperCase(),
+					engine = (Math.random()<0.5?'1.6 MPI 128 л.с':'2.0 MPI 149 л.с'),
+					complect = (Math.random()<0.5?'Classic':(Math.random()<0.5?'Comfort':'Luxe')),
+					transmission = (Math.random()<0.5?'AT':'MT'),
+					wheels = (Math.random()<0.5?'Полный':'Передний');
 				out = '\
-				<div class="avn__item" data-year="'+cars[i].year+'" data-engine="1.6 MPI 128">\
+				<div class="avn__item" data-year="'+cars[i].year+'" data-engine="'+engine+'" data-complect="'+complect+'" data-transmission="'+transmission+'" data-wheels="'+wheels+'">\
 					<a href="model.html" class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></a>\
 					<div class="avn__item--info">\
 						<a href="model.html" class="avn__item--info_name"><h2>KIA '+name+'</h2></a>\
 						<div class="parameter parameter-price">Стоимость: <strong>'+cars[i].price+'&nbsp;₽</strong><s>'+cars[i].special+'&nbsp;₽</s></div>\
 						<div class="parameter">Год: <strong class="year">'+cars[i].year+'</strong></div>\
 						<div class="parameter__row">\
-							<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>\
-							<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div>\
+							<div class="parameter">Комплектация: <strong>'+complect+'</strong></div>\
+							<div class="parameter">Двигатель: <strong>'+engine+'</strong></div>\
 						</div>\
 						<div class="parameter__row">\
-							<div class="parameter">Привод: <strong>Передний</strong></div>\
-							<div class="parameter">Трансмиссия: <strong>AT</strong></div>\
+							<div class="parameter">Привод: <strong>'+wheels+'</strong></div>\
+							<div class="parameter">Трансмиссия: <strong>'+transmission+'</strong></div>\
 						</div>\
 					</div>\
 					<div class="avn__item--links">\
