@@ -410,24 +410,29 @@
 					let img = name.match(/(\w+)/);
 					let imgName = img[0].toUpperCase();
 
-					out = '<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">';
-					out += '<div class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></div>';
-					out += '<div class="avn__item--info">';
-					out += '<div class="avn__item--info_name">';
-					out += '<h2>KIA '+name+'</h2></div>';
-					out += '<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>';
-					out += '<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>';
-					out += '<div class="parameter__row">';
-					out += '<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>';
-					out += '<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div></div>';
-					out += '<div class="parameter__row">';
-					out += '<div class="parameter">Привод: <strong>Передний</strong></div>';
-					out += '<div class="parameter">Трансмиссия: <strong>AT</strong></div></div></div>';
-					out += '<div class="avn__item--links">';
-					out += '<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>';
-					out += '<a href="#cheaper" class="btn modal-link">Забронировать</a>';
-					out += '<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a></div>';
-					out += '</div>';
+					out = '\
+					<div class="avn__item" data-year="'+data[i].year+'" data-engine="1.6 MPI 128">\
+						<a href="model.html" class="avn__item--img"><img class="lazyload" src="img/loading.gif" data-src="img/cars/'+imgName+'-1.png" alt="'+name+'"></a>\
+						<div class="avn__item--info">\
+							<a href="model.html" class="avn__item--info_name"><h2>KIA '+name+'</h2></a>\
+							<div class="parameter parameter-price">Стоимость: <strong>'+data[i].price+'&nbsp;₽</strong><s>'+data[i].special+'&nbsp;₽</s></div>\
+							<div class="parameter">Год: <strong class="year">'+data[i].year+'</strong></div>\
+							<div class="parameter__row">\
+								<div class="parameter">Комплектация: <strong>Classic 1.6 6AT</strong></div>\
+								<div class="parameter">Двигатель: <strong>1.6 MPI 123 л.с</strong></div>\
+							</div>\
+							<div class="parameter__row">\
+								<div class="parameter">Привод: <strong>Передний</strong></div>\
+								<div class="parameter">Трансмиссия: <strong>AT</strong></div>\
+							</div>\
+						</div>\
+						<div class="avn__item--links">\
+							<a href="#cheaper" class="btn btn-white modal-link">Хочу дешевле</a>\
+							<a href="#cheaper" class="btn modal-link">Забронировать</a>\
+							<a href="#credit" class="btn modal-link btn-white credit-link">Расчитать кредит</a>\
+						</div>\
+					</div>\
+					';
 
 					$('.avn__list').append(out);
 				}
