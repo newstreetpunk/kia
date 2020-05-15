@@ -55,10 +55,6 @@ jQuery(function($) {
 		return false;
 	});
 
-	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
-	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
-	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
-
 	if ($(window).width() > 768) {
 		$('.player').mb_YTPlayer();
 	}
@@ -134,6 +130,25 @@ jQuery(function($) {
 
 	$('.lazyload').lazyload();
 
+	document.querySelectorAll('.cars-links a').forEach(function(car){
+		if(car.innerText != 'SELTOS') {
+			var fileName = car.getAttribute('data');
+			var newCar = document.querySelector('.cars-list .car').cloneNode(true);
+			newCar.querySelector('h2').innerText = car.innerText;
+			newCar.querySelector('a').href = 'cars.html?model='+car.innerText;
+			newCar.querySelector('a').id = fileName;
+			newCar.querySelectorAll('.photo img').forEach(function(image, index){
+				image.alt = 'KIA '+car.innerText;
+				image.src = 'img/cars/'+fileName+'-'+(index+1)+'.png';
+				image.setAttribute('data-scr', 'img/cars/'+fileName+'-'+(index+1)+'.png');
 
+			})
+			document.querySelector('.cars-list').append(newCar);
+		}
+	});
+
+	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
+	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
+	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
 
 });
