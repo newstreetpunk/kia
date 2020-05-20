@@ -119,7 +119,7 @@ jQuery(function($) {
 		var th = $(this);
 		var parent = th.parent();
 		th.closest('.services-item').find('.services-item__car').removeClass('active');
-		th.closest('.services-item').find('.serv-table').slideUp(100);
+		th.closest('.services-item').find('.services-item--dropdown').slideUp(100);
 
 		if (parent.hasClass('active')) {
 			parent.removeClass('active');
@@ -138,17 +138,17 @@ jQuery(function($) {
 		var th = $(this);
 		var id = th.attr('id');
 
-		th.closest('.services-item').find('.serv-table').slideUp(100);
+		th.closest('.services-item').find('.services-item--dropdown').slideUp(100);
 
 		if (th.hasClass('active')) {
 			th.removeClass('active');
 			th.closest('.services-item').find('.services-item__car').removeClass('active');
-			th.closest('.services-item').find('.serv-table').slideUp(100);
+			th.closest('.services-item').find('.services-item--dropdown').slideUp(100);
 		}else{
 			th.closest('.services-item').find('.services-item__car').removeClass('active');
-			th.closest('.services-item').find('.serv-table').slideUp(100);
+			th.closest('.services-item').find('.services-item--dropdown').slideUp(100);
 			th.addClass('active');
-			th.closest('.services-item').find('.serv-table[data-id="'+ id +'"]').slideDown(300);
+			th.closest('.services-item').find('.services-item--dropdown[data-id="'+ id +'"]').slideDown(300);
 		}
 
 	});

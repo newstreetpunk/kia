@@ -406,7 +406,98 @@
 			out += '</ul>';
 			$.each(table, function(key, rows){
 				for (var i = 0; i <= models.length; i++) {
-					out += '<span class="serv-table" data-id="'+ i +'">';
+					out += '<div class="services-item--dropdown" data-id="'+ i +'">';
+					out +='\
+						<div class="avn__filter">\
+					<div class="avn__filter--head">\
+						<div class="avn__filter--title">\
+							<div class="avn__filter--icon">\
+								<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 321.9 321.9" xml:space="preserve">\
+								<path d="M128.25,175.6c1.7,1.8,2.7,4.1,2.7,6.6v139.7l60-51.3v-88.4c0-2.5,1-4.8,2.7-6.6L295.15,65H26.75L128.25,175.6z"/><rect x="13.95" y="0" width="294" height="45"/></svg>\
+							</div>\
+							<span>Фильтр</span>\
+						</div>\
+						<span class="avn__filter--reset">&times; Сбросить</span>\
+					</div>\
+					<div class="avn__filter--body">\
+						<form class="avn__filter--form">\
+							<div class="form-item">\
+								<h4>Год</h4>\
+								<label class="form-group">\
+									<span class="item-group">\
+										<input type="radio" name="year" id="'+ i +'-2017" value="2017">\
+										<label for="'+ i +'-2017">2017</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="year" id="'+ i +'-2019" value="2019">\
+										<label for="'+ i +'-2019">2019</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="year" id="'+ i +'-2020" value="2020">\
+										<label for="'+ i +'-2020">2020</label>\
+									</span>\
+								</label>\
+							</div>\
+							<div class="form-item">\
+								<h4>Комплектация</h4>\
+								<label class="form-group complect-group">\
+									<span class="item-group">\
+										<input type="radio" name="complect" id="'+ i +'-complect-1" value="Classic">\
+										<label for="'+ i +'-complect-1">Classic</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="complect" id="'+ i +'-complect-2" value="Comfort">\
+										<label for="'+ i +'-complect-2">Comfort</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="complect" id="'+ i +'-complect-3" value="Luxe">\
+										<label for="'+ i +'-complect-3">Luxe</label>\
+									</span>\
+								</label>\
+							</div>\
+							<div class="form-item">\
+								<h4>Двигатель</h4>\
+								<label class="form-group engine-group">\
+									<span class="item-group">\
+										<input type="radio" name="engine" id="'+ i +'-engine-1" value="1.6 MPI 128 л.с">\
+										<label for="'+ i +'-engine-1">1.6 MPI 128 л.с</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="engine" id="'+ i +'-engine-2" value="2.0 MPI 149 л.с">\
+										<label for="'+ i +'-engine-2">2.0 MPI 149 л.с</label>\
+									</span>\
+								</label>\
+							</div>\
+							<div class="form-item">\
+								<h4>Трансмиссия</h4>\
+								<label class="form-group">\
+									<span class="item-group">\
+										<input type="radio" name="transmission" id="'+ i +'-transmission-1" value="AT">\
+										<label for="'+ i +'-transmission-1">AT</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="transmission" id="'+ i +'-transmission-2" value="MT">\
+										<label for="'+ i +'-transmission-2">MT</label>\
+									</span>\
+								</label>\
+							</div>\
+							<div class="form-item">\
+								<h4>Привод</h4>\
+								<label class="form-group">\
+									<span class="item-group">\
+										<input type="radio" name="wheels" id="'+ i +'-wheels-1" value="Полный">\
+										<label for="'+ i +'-wheels-1">Полный</label>\
+									</span>\
+									<span class="item-group">\
+										<input type="radio" name="wheels" id="'+ i +'-wheels-2" value="Передний">\
+										<label for="'+ i +'-wheels-2">Передний</label>\
+									</span>\
+								</label>\
+							</div>\
+						</form>\
+					</div>\
+				</div>\ ';
+					out += '<span class="serv-table">';
 					out += '<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span><span class="serv-table-td"></span><span class="serv-table-td"></span><span class="serv-table-td"></span></span>';
 					$.each(rows, function(index, row){
 						if(row['val1'] === "" & row['val2'] === "" & row['val3'] === ""){
@@ -421,7 +512,7 @@
 						out += '</span>';							
 					});
 					out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span></span>';
-					out += '</span>';
+					out += '</span></div>';
 				}
 			});
 			out += '</div>';
