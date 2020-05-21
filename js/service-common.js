@@ -154,7 +154,7 @@ jQuery(function($) {
 	});
 
 	$('.prace-link').on('click', function(){
-		var dataId = $(this).closest('.serv-table').data('id');
+		var dataId = $(this).closest('.services-item--dropdown').data('id');
 		console.log(dataId);
 		var carModel = $(this).closest('.services-item').find("#" + dataId).text();
 		var servName = $(this).closest('.services-item').children('.services-item__title').text();
@@ -182,4 +182,43 @@ jQuery(function($) {
 	$(window).on('resize', function(){
 		words();
 	});
+
+
+	$('.avn__filter--form').on('change', function(){
+		$('.avn__filter--reset').show();
+	});
+
+	$('.avn__filter--reset').on('click', function(){
+		$('.avn__filter--form').trigger('reset');
+		$(this).hide();
+	});
+
+	nowDate = new Date();
+	nowYear = nowDate.getFullYear();
+
+
+	$('.services-item__title').each(function(index, val){
+		parent = $(this).closest('.services-item');
+		formYearItem = parent.find('.year-item');
+		formYearItemGroup = formYearItem.find('.form-group');
+		formYearItem.each(function(){
+			dropdownId = $(this).closest('.services-item--dropdown').data('id');
+		});
+
+		title = $(this).text();
+		title = title.replace(/[^\d]/g, '');
+
+
+		if (title != '') {
+			i = nowYear - title - 1;
+			for (i; i <= nowYear; i++) {
+				formYearItemGroup.append(
+					'<span class="item-group">\
+						<input type="radio" name="year" id="'+ index +'-'+ dropdownId +'-'+ i +'" value="'+ i +'">\
+						<label for="'+ index +'-'+ dropdownId +'-'+ i +'">'+ i +'</label>\
+					</span>');
+			}
+		}
+	});
+
 });

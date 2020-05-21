@@ -7606,6 +7606,10 @@ form small a:hover {
   transition: all .3s;
 }
 
+.services-item--dropdown .form-item.year-item {
+  max-width: 37%;
+}
+
 .serv-table {
   text-align: center;
   width: 100%;
@@ -8175,6 +8179,9 @@ form small a:hover {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .form-group.engine-group, .form-group.complect-group {
