@@ -7621,6 +7621,7 @@ form small a:hover {
   cursor: default;
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
 @media (max-width: 575.98px) {

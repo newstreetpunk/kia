@@ -190,6 +190,7 @@ jQuery(function($) {
 
 	$('.avn__filter--reset').on('click', function(){
 		$('.avn__filter--form').trigger('reset');
+		$('.serv-table').hide();
 		$('input[type="radio"]').removeAttr('checked');
 		$('.avn__filter--reset').hide();
 	});
@@ -244,6 +245,7 @@ jQuery(function($) {
 	});
 
 	$('input[type="radio"]').change(function(){
+		$('.serv-table').show();
 		name = $(this).attr('name');
 		value = $(this).val();
 		$('input[name="'+name+'"]').removeAttr('checked');
