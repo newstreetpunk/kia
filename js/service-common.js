@@ -198,16 +198,15 @@ jQuery(function($) {
 
 
 	$('.services-item__title').each(function(index, val){
-		parent = $(this).closest('.services-item');
-		formYearItem = parent.find('.year-item');
-		formYearItemGroup = formYearItem.find('.form-group');
-		formYearItem.each(function(){
-			dropdownId = $(this).closest('.services-item--dropdown').data('id');
-		});
-
 		title = $(this).text();
 		title = title.replace(/[^\d]/g, '');
 
+		parent = $(this).closest('.services-item');
+		formYearItemGroup = parent.find('.year-item .form-group');
+
+		formYearItemGroup.each(function(){
+			dropdownId = $(this).closest('.services-item--dropdown').data('id');
+		});
 
 		if (title != '') {
 			i = nowYear - title - 1;
