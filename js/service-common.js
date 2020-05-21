@@ -190,6 +190,7 @@ jQuery(function($) {
 
 	$('.avn__filter--reset').on('click', function(){
 		$('.avn__filter--form').trigger('reset');
+		$('input[type="radio"]').removeAttr('checked');
 		$('.avn__filter--reset').hide();
 	});
 
@@ -209,6 +210,7 @@ jQuery(function($) {
 		carname = parent.find('.services-item__car#'+ id +'').text();
 		carname = carname.replace(/\s/g, '-').toLowerCase();
 
+		// ЕСЛИ НЕ ПОСТГАРАНТИЯ
 		if (title != '') {
 
 			i = nowYear - title - 1;
@@ -227,7 +229,9 @@ jQuery(function($) {
 					$(this).next().attr('for', carname+'-'+title+'-'+val);
 				});
 			});
+
 		}else{
+
 			formItem.each(function(){
 				$(this).find('input').each(function(){
 					val = $(this).attr('id');
@@ -236,6 +240,21 @@ jQuery(function($) {
 				});
 			});
 		}
+
+	});
+
+	$('input[type="radio"]').change(function(){
+		name = $(this).attr('name');
+		value = $(this).val();
+		$('input[name="'+name+'"]').removeAttr('checked');
+		$(this).attr('checked', true);
+		$('input[name="'+name+'"]').each(function(){
+			value2 = $(this).val();
+			if (value == value2) {
+				$(this).attr('checked', true);
+				$('.avn__filter--form').trigger('reset');
+			}
+		});
 
 	});
 
