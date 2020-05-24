@@ -7636,6 +7636,10 @@ form small a:hover {
           transform: translate(-50%, 0);
 }
 
+.modal.error .rand {
+  text-align: center;
+}
+
 .privacy {
   max-width: 960px;
   width: 97%;

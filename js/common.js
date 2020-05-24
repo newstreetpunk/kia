@@ -39,8 +39,13 @@ jQuery(function($) {
 					th.trigger("reset");
 				}
 				btnSubmit.removeAttr("disabled");
-			}, 1000);
+			}, 100);
 		}).fail(function() {
+			$.ajax({
+				type: "GET",
+				url: "/", //Change
+				data: th.serialize() +'&referer=' + replUrl
+			})
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
@@ -50,7 +55,7 @@ jQuery(function($) {
 					}
 				});
 				btnSubmit.removeAttr("disabled");
-			}, 1000);
+			}, 100);
 		});
 		return false;
 	});
@@ -130,6 +135,8 @@ jQuery(function($) {
 
 	$('.lazyload').lazyload();
 
+
+	if(location.hostname == 'localhost' || location.hostname == 'newstreetpunk.github.io') {
 	document.querySelectorAll('.cars-links a').forEach(function(car){
 		if(car.innerText != 'SELTOS') {
 			var fileName = car.getAttribute('data');
@@ -146,6 +153,7 @@ jQuery(function($) {
 			document.querySelector('.cars-list').append(newCar);
 		}
 	});
+	}
 
 	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
