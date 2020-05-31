@@ -1,4 +1,5 @@
-
+.logs
+.alexsab
 *.php
 /inc/
 phpmailer

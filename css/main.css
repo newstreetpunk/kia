@@ -7380,6 +7380,10 @@ form small a:hover {
   padding: 50px 0 0;
 }
 
+.maps small {
+  display: block;
+}
+
 .maps .dealer {
   background-color: #F6F7F8;
   display: -webkit-box;
@@ -7419,6 +7423,12 @@ form small a:hover {
 .maps .dealer-info h2 {
   font-size: 42px;
   color: #000;
+}
+
+@media (max-width: 575.98px) {
+  .maps .dealer-info h2 {
+    font-size: 32px;
+  }
 }
 
 .maps .dealer-contacts {
