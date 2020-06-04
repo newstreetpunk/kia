@@ -8763,12 +8763,20 @@ form small a:hover {
   width: 100%;
 }
 
+.modal#gosprogram {
+  max-width: 550px;
+}
+
 .modal-link {
   white-space: nowrap;
 }
 
 .modal h2, .modal p {
   text-align: center;
+}
+
+.modal h2 {
+  line-height: 1em;
 }
 
 .modal p {

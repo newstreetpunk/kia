@@ -51,6 +51,13 @@
 							<small>Московское шоссе, 262 А</small>
 						</span>							
 					</div>
+					<div class="phone phone-two">
+						<img src="img/phone.svg" alt="Иконка">
+						<span class="phone-info">
+							<a href="tel:+78462790000">+7 (846) 279-00-00</a>
+							<small>Московское шоссе, 19-й км, 7</small>
+						</span>							
+					</div>
 				</div>
 				<!-- /.header-phones -->
 				<div class="header-right">
@@ -105,6 +112,12 @@
 							<label class="t-radio__control t-text t-text_xs">
 								<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
 								<span class="t-radio__indicator"></span>КИА Центр на Московском
+							</label>
+						</div>
+						<div>
+							<label class="t-radio__control t-text t-text_xs">
+								<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+								<span class="t-radio__indicator"></span>КИА Центр Мехзавод
 							</label>
 						</div>
 					</div>
@@ -173,6 +186,14 @@
 									<img src="img/icons/credit.svg" alt="ALT">
 									<span class="descr-text">Кредит от 6000₽ в месяц на 3 года</span>
 								</span>
+								<span class="descr-item present">
+									<img src="img/icons/present.svg" alt="ALT">
+									<span class="descr-text">Подарок</span>
+								</span>
+								<span class="descr-item">
+									<img src="img/icons/trade-in.svg" alt="ALT">
+									<span class="descr-text">Трейд-ин</span>
+								</span>
 							</span>
 							<span class="price">
 								<!-- <img src="img/icons/credit.svg" alt="ALT"> -->
@@ -221,6 +242,12 @@
 									<span class="t-radio__indicator"></span>КИА Центр на Московском
 								</label>
 							</div>
+							<div>
+								<label class="t-radio__control t-text t-text_xs">
+									<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+									<span class="t-radio__indicator"></span>КИА Центр Мехзавод
+								</label>
+							</div>
 						</div>
 						<textarea placeholder="Комментарии"></textarea>
 						<button class="btn bounce">Записаться</button>
@@ -246,7 +273,7 @@
 					<span class="dealer-address">г. Самара, Ново-Урицкая, 22</span>
 					<sapn class="dealer-time">пн — вс: 8:00 — 20:00</sapn>
 				</span>
-				<span class="dealer-map dealer-kcs lazyload" style="background-image: url(img/loading-simple.gif);" data-srcbefore="img/kia-map.jpg">
+				<span class="dealer-map dealer-kcs lazyload" style="background-image: url(img/loading-simple.gif);" data-srcbefore="img/kia-map-nu.jpg">
 					<span class="loader loader-default"></span>
 					<span id="map-kcs" class="map-here"></span>
 				</span>
@@ -263,9 +290,26 @@
 					<span class="dealer-address">Московское шоссе, 262 А</span>
 					<sapn class="dealer-time">пн — вс: 8:00 — 20:00</sapn>
 				</span>
-				<span class="dealer-map dealer-kcnm lazyload" style="background-image: url(img/loading-simple.gif);" data-srcbefore="img/kia-mosc-map.jpg">
+				<span class="dealer-map dealer-kcnm lazyload" style="background-image: url(img/loading-simple.gif);" data-srcbefore="img/kia-map-mosc.jpg">
 					<span class="loader loader-default"></span>
 					<span id="map-kcnm" class="map-here"></span>
+				</span>
+			</div>
+			<!-- /.dealer -->
+
+			<div class="dealer">
+				<span class="dealer-info">
+					<h2>КИА Центр Мехзавод</h2>
+					<span class="dealer-contacts">
+						<a href="tel:+78462790000" class="dealer-phone">+7 (846) 279-00-00</a>
+						<a href="mailto:client@kia-na-moskovskom.ru" class="dealer-email">client@kia-mehzavod.ru</a>	
+					</span>
+					<span class="dealer-address">Московское шоссе, 19-й километр, 7</span>
+					<sapn class="dealer-time">пн — вс: 8:00 — 20:00</sapn>
+				</span>
+				<span class="dealer-map dealer-mexico lazyload" style="background-image: url(img/loading-simple.gif);" data-srcbefore="img/kia-map-mexico.jpg">
+					<span class="loader loader-default"></span>
+					<span id="map-mexico" class="map-here"></span>
 				</span>
 			</div>
 			<!-- /.dealer -->
@@ -293,6 +337,17 @@
 		                    <a href="https://yandex.ru/maps/?z=17&ll=50.2155,53.24869999999764&l=map&rtext=~53.2487,50.2155&origin=jsapi_2_1_76&from=api-maps" rel="noreferrer" target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
 		                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
 		                hintContent: 'КИА Центр на Московском'
+		            },
+					            {
+		                parent: ".dealer-mexico",
+		                id: "map-mexico",
+		                position: [53.291231, 50.285478],
+		                zoom: 17,
+		                balloonContentHeader: 'КИА Центр Мехзавод',
+		                balloonContentBody: '<a href="tel:+78462790000" class="dealer-phone">☎️ +7 (846) 279-00-00</a><br><a href="mailto:client@kia-mehzavod.ru" class="dealer-email">📩 client@kia-mehzavod.ru</a><br><br> \
+		                    <a href="https://yandex.ru/maps/?z=17&ll=50.285477999999955,53.29123099999758&l=map&rtext=~53.291231,50.285478&origin=jsapi_2_1_76&from=api-maps" rel="noreferrer" target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+		                balloonContentFooter: 'пн — вс: 8:00 — 20:00',
+		                hintContent: 'КИА Центр Мехзавод'
 		            },
 				];
 			</script>
@@ -351,6 +406,12 @@
 						<span class="t-radio__indicator"></span>КИА Центр на Московском
 					</label>
 				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Мехзавод
+					</label>
+				</div>
 			</div>
 			<button class="btn">Перезвоните мне</button>
 			<small>Нажимая на кнопку "Перезвоните мне", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
@@ -377,6 +438,46 @@
 					<label class="t-radio__control t-text t-text_xs">
 						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
 						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Мехзавод
+					</label>
+				</div>
+			</div>
+			<button class="btn">Хочу дешевле</button>
+			<small>Нажимая на кнопку "Хочу дешевле", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+		</form>
+	</div>
+
+	<!-- Гос программа -->
+	<div class="modal mfp-hide white-popup-block" id="gosprogram">
+		<h2>Обновленные государственные программы льготного автокредитования</h2>
+		<p>Теперь семьям даже с одним ребенком, медработникам, при покупке первого автомобиля, а также при сдаче в трейд-ин авто старше 6 лет предоставляется <b>скидка 10%</b></p>
+		<form action="#">
+			<input type="text" placeholder="Ваше имя*" required>
+			<input type="tel" placeholder="+7 (999)999-99-99 " required>
+			<input type="email" name="Email" placeholder="mail@example.com">
+			<span class="dealer-choice">выберите дилерский центр:</span>
+			<div class="rand">
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Самара" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Самара
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Мехзавод
 					</label>
 				</div>
 			</div>
@@ -427,6 +528,12 @@
 					<label class="t-radio__control t-text t-text_xs">
 						<input type="radio" name="dealer" value="КИА Центр на Московском" class="t-radio js-tilda-rule" required>
 						<span class="t-radio__indicator"></span>КИА Центр на Московском
+					</label>
+				</div>
+				<div>
+					<label class="t-radio__control t-text t-text_xs">
+						<input type="radio" name="dealer" value="КИА Центр Мехзавод" class="t-radio js-tilda-rule" required>
+						<span class="t-radio__indicator"></span>КИА Центр Мехзавод
 					</label>
 				</div>
 			</div>

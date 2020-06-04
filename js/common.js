@@ -1,5 +1,25 @@
 jQuery(function($) {
 
+	if(location.hostname == 'localhost' || location.hostname == 'newstreetpunk.github.io') {
+	document.querySelectorAll('.cars-links a').forEach(function(car){
+		if(car.innerText != 'SELTOS') {
+			var fileName = car.getAttribute('data');
+			var newCar = document.querySelector('.cars-list .car').cloneNode(true);
+			newCar.querySelector('h2').innerText = car.innerText;
+			newCar.querySelector('a').href = 'cars.html?model='+car.innerText;
+			newCar.querySelector('a').id = fileName;
+			newCar.querySelectorAll('.photo img').forEach(function(image, index){
+				image.alt = 'KIA '+car.innerText;
+				image.src = 'img/cars/'+fileName+'-'+(index+1)+'.png';
+				image.setAttribute('data-src', 'img/cars/'+fileName+'-'+(index+1)+'.png');
+
+			})
+			document.querySelector('.cars-list').append(newCar);
+		}
+	});
+	}
+
+
 	$('.rand').each(function(){
 		var $divs = $(this).children('div');
 		var arr = [];
@@ -131,29 +151,19 @@ jQuery(function($) {
 		$('#cheaper form .val-model, #credit form .val-model').val(model);
 	});
 
+	$('.present').on('click', function(event){
+		event.preventDefault();
+		$.magnificPopup.open({
+			items: {
+				src: '#gosprogram',
+				type: 'inline'
+			}
+		});
+	});
+
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
 
 	$('.lazyload').lazyload();
-
-
-	if(location.hostname == 'localhost' || location.hostname == 'newstreetpunk.github.io') {
-	document.querySelectorAll('.cars-links a').forEach(function(car){
-		if(car.innerText != 'SELTOS') {
-			var fileName = car.getAttribute('data');
-			var newCar = document.querySelector('.cars-list .car').cloneNode(true);
-			newCar.querySelector('h2').innerText = car.innerText;
-			newCar.querySelector('a').href = 'cars.html?model='+car.innerText;
-			newCar.querySelector('a').id = fileName;
-			newCar.querySelectorAll('.photo img').forEach(function(image, index){
-				image.alt = 'KIA '+car.innerText;
-				image.src = 'img/cars/'+fileName+'-'+(index+1)+'.png';
-				image.setAttribute('data-scr', 'img/cars/'+fileName+'-'+(index+1)+'.png');
-
-			})
-			document.querySelector('.cars-list').append(newCar);
-		}
-	});
-	}
 
 	$("section h2, .offer-head .descr, .offer-form, .benefit").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
