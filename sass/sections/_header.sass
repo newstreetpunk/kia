@@ -8,6 +8,7 @@
 	width: 100%
 	z-index: 10
 	&-logo
+		flex-basis: auto
 		img
 			width: 120px
 	&-wrap
@@ -22,10 +23,15 @@
 			display: block
 	&-phones
 		display: flex
+		// flex: 1 0 auto
+		justify-content: space-evenly
+		flex-wrap: wrap
+		flex-grow: 1
+		width: 100%
 	.phone
 		display: inline-block
 		vertical-align: middle
-		margin-right: 25px
+		// margin-right: 25px
 		&:last-child()
 			margin-right: 0
 		a:hover

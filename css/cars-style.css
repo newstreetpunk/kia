@@ -6839,6 +6839,12 @@ h1 {
   z-index: 10;
 }
 
+.header-logo {
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
+}
+
 .header-logo img {
   width: 120px;
 }
@@ -6873,12 +6879,23 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
 }
 
 .header .phone {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 25px;
 }
 
 .header .phone:last-child {
@@ -7605,10 +7622,6 @@ h1 {
 
 .modal#gosprogram {
   max-width: 550px;
-}
-
-.modal-link {
-  white-space: nowrap;
 }
 
 .modal h2, .modal p {

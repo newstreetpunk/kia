@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-	if(location.hostname == 'localhost' || location.hostname == 'newstreetpunk.github.io') {
+	if((location.hostname == 'localhost' && location.pathname == '/index.html') || location.hostname == 'newstreetpunk.github.io') {
 	document.querySelectorAll('.cars-links a').forEach(function(car){
 		if(car.innerText != 'SELTOS') {
 			var fileName = car.getAttribute('data');
@@ -47,20 +47,26 @@ jQuery(function($) {
 			data: th.serialize() +'&referer=' + replUrl
 		}).done(function( data ) {
 			// console.log( "success data:", data );
+			var res = JSON.parse(data);
+			if(res.error) 
+				$('.error-message').html(res.error);
+			else
+				$('.error-message').html("");
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
 					items: {
-						src: (data == 'OK') ? '.thanks' : '.error',
+						src: (res.answer == 'OK') ? '.thanks' : '.error',
 						type: 'inline'
 					}
 				});
-				if(data == 'OK'){
+				if(res.answer == 'OK') {
 					th.trigger("reset");
 				}
 				btnSubmit.removeAttr("disabled");
 			}, 100);
-		}).fail(function() {
+		}).fail(function( jqXHR, textStatus ) {
+			$('.error-message').html("Request failed: " + textStatus);
 			$.ajax({
 				type: "GET",
 				url: "/", //Change
@@ -116,6 +122,48 @@ jQuery(function($) {
 		preloader: false,
 	});
 
+	$('.gosprogram').on('click', function(event){
+		event.preventDefault();
+		$.magnificPopup.open({
+			items: {
+				src: '#gosprogram',
+				type: 'inline'
+			}
+		});
+	});
+
+	$('.modal-link-parent').each(function(el){
+		var src = $(this)[0].hash;
+		// console.log(['modal-link-parent', $(this)[0].hash, el, src]);
+		$(this).find('h2, .benefit, .photo, .price, .descr-item:not(.gosprogram)').on('click', function(event) {
+			event.preventDefault();
+
+			$.magnificPopup.open({
+				items: {
+					src: src,
+					type: 'inline',
+				}
+			});
+		})
+		
+	});
+
+	$(function() {
+	    count = -1; // start with -1
+	    initText = "от стоимости автомобиля"; //set your init text here
+	    wordsArray = ["для семей с&nbsp;одним ребёнком", "для медработников", "при покупке первого авто", "при сдаче авто старше 6&nbsp;лет"]; //change this text items to your own
+
+	    $(".descr-text .word").html(initText).delay(2000);
+
+	    setInterval(function() {
+	        count++;
+	        $(".descr-text .word").fadeOut(400, function() {
+	            $(this).html(wordsArray[count % wordsArray.length]).fadeIn(400);
+	        });
+	    }, 2500); // set interval time
+	});
+
+
 	$('a[href="#popup"]').on('click', function(){
 		$('.overlay').show();
 		$('.privacy-wrap').show();
@@ -144,21 +192,11 @@ jQuery(function($) {
 		} catch (err) {};
 	});
 
-	$('a[href="#cheaper"]').on('click', function(){
+	$('a[href="#cheaper"], a[href="#credit"]').on('click', function(){
 		var th = $(this);
 		var parent = th.closest('.car');
 		var model = parent.find('h2').text();
-		$('#cheaper form .val-model, #credit form .val-model').val(model);
-	});
-
-	$('.present').on('click', function(event){
-		event.preventDefault();
-		$.magnificPopup.open({
-			items: {
-				src: '#gosprogram',
-				type: 'inline'
-			}
-		});
+		$('#cheaper form .val-model, #credit form .val-model, #gosprogram form .val-model').val(model);
 	});
 
 	// $('input[type="tel"]').mask('8 (999) 999-99-99');
