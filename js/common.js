@@ -56,11 +56,11 @@ jQuery(function($) {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
 					items: {
-						src: (res.answer == 'OK') ? '.thanks' : '.error',
+						src: (res.answer == 'ok') ? '.thanks' : '.error',
 						type: 'inline'
 					}
 				});
-				if(res.answer == 'OK') {
+				if(res.answer == 'ok') {
 					th.trigger("reset");
 				}
 				btnSubmit.removeAttr("disabled");
