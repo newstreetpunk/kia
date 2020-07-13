@@ -6823,7 +6823,7 @@ strong {
 
 .hero {
   min-height: 100vh;
-  padding-top: 97px;
+  margin-top: 74px;
   position: relative;
   padding-bottom: 5vmax;
   color: #fff;
@@ -6837,7 +6837,7 @@ strong {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgba(51, 51, 51, 0.7);
+  background-color: rgba(51, 51, 51, 0.2);
   z-index: 1;
 }
 
@@ -7015,9 +7015,11 @@ form small a:hover {
 
 .cars-head {
   padding: 50px 0;
+  margin-top: -20px;
   background-size: cover;
   background-position: center;
   position: relative;
+  background-color: white;
   z-index: 1;
 }
 
@@ -7808,7 +7810,7 @@ form small a:hover {
   }
   .hero {
     padding-top: 0;
-    background-image: url(../img/mob-bg.jpg) !important;
+    background-image: url(../img/bg/special-t.jpg) !important;
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -7888,6 +7890,9 @@ form small a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     margin-bottom: 5px;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
   }
   .header .phone {
     margin-bottom: 15px;
@@ -7900,9 +7905,11 @@ form small a:hover {
     font-size: 22px;
   }
   .hero, .hero.cover {
-    background-position: top -270px center;
+    background-position-x: 40%;
+    background-position-y: -230px;
     background-repeat: no-repeat;
-    background-color: #93989e;
+    background-color: #877d73;
+    background-size: 200%;
     min-height: 0;
     height: auto;
   }
@@ -7970,6 +7977,30 @@ form small a:hover {
   .privacy p {
     font-size: 15px;
     text-align: left;
+  }
+}
+
+@media (max-width: 515px) {
+  .hero, .hero.cover {
+    background-position-y: -190px;
+  }
+}
+
+@media (max-width: 475px) {
+  .hero, .hero.cover {
+    background-position-y: -170px;
+  }
+}
+
+@media (max-width: 435px) {
+  .hero, .hero.cover {
+    background-position-y: -100px;
+  }
+}
+
+@media (max-width: 385px) {
+  .hero, .hero.cover {
+    background-position-y: -40px;
   }
 }
 
