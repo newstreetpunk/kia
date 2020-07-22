@@ -6496,18 +6496,6 @@ img.mfp-img {
   animation-duration: 3s;
 }
 
-@media (print), (prefers-reduced-motion: reduce) {
-  .animated {
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-transition-duration: 1ms !important;
-    -o-transition-duration: 1ms !important;
-       transition-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-  }
-}
-
 /* Slider */
 .slick-loading .slick-list {
   background: #fff url("./ajax-loader.gif") center center no-repeat;
@@ -7537,6 +7525,16 @@ form small a:hover {
           box-shadow: 0 0 30px rgba(188, 23, 42, 0.5);
 }
 
+.services-item.active .services-item__title .arrow {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+      -ms-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
+}
+
+.services-item.active .services-item__title .arrow:before, .services-item.active .services-item__title .arrow:after {
+  background-color: #bb162a;
+}
+
 .services-item__title {
   margin: 0;
   border-radius: 12px;
@@ -7557,6 +7555,44 @@ form small a:hover {
 .services-item__title:hover {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services-item__title .arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(0deg);
+      -ms-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg);
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.services-item__title .arrow:before, .services-item__title .arrow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 25%;
+  width: 15px;
+  height: 2px;
+  background-color: #979797;
+}
+
+.services-item__title .arrow:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 9px;
+}
+
+.services-item__title .arrow:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 9px;
 }
 
 .services-item__car--list {

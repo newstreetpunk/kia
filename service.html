@@ -398,7 +398,7 @@
 
 		$.each(services, function(key, val){
 			out = '<div class="services-item" data-id="'+ key +'">';
-			out += '<h2 class="services-item__title">'+ val +'</h2>';
+			out += '<h2 class="services-item__title">'+ val +'<span class="arrow"></span></h2>';
 			out += '<ul class="services-item__car--list">';
 			$.each(models, function(index, car){
 				out += '<li class="services-item__car" id="'+ index +'">'+ car +'</li>';
