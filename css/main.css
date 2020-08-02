@@ -7476,9 +7476,9 @@ form small a:hover {
 }
 
 .maps .dealer-map {
-  background-color: #ccc;
+  background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   width: 50%;
   min-height: 500px;

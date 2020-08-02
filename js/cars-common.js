@@ -269,7 +269,7 @@ jQuery(function($) {
 
 	let cars = [],
 		jsonCount = 2,
-		modelParam = getModel('model'),
+		modelParam = getModel('model').replace(' ','-').replace('%20','-'),
 		model = modelParam;
 
 	if(model.toLowerCase().includes('line')) model = 'line';
@@ -297,11 +297,10 @@ jQuery(function($) {
 
 		let check_load = setInterval(function() {
 			
-			let name = cars[i].name;
+			let name = (model != 'line') ? cars[i].name : 'RIO-X-LINE';
 			
 			if( name.toLowerCase().includes(model.toLowerCase()) === true ) {
-				let img = name.match(/(\w+)/),
-					imgName = img[0].toUpperCase(),
+				let imgName = modelParam.toUpperCase(),
 					engine = (Math.random()<0.5?'1.6 MPI 128 л.с':'2.0 MPI 149 л.с'),
 					complect = (Math.random()<0.5?'Classic':(Math.random()<0.5?'Comfort':'Luxe')),
 					transmission = (Math.random()<0.5?'AT':'MT'),
