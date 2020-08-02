@@ -6884,10 +6884,7 @@ h1 {
 .header .phone {
   display: inline-block;
   vertical-align: middle;
-}
-
-.header .phone:last-child {
-  margin-right: 0;
+  margin: 0 10px;
 }
 
 .header .phone a:hover {

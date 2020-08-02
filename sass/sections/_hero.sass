@@ -1,5 +1,7 @@
 .hero
-	min-height: 100vh
+	// min-height: 100vh
+	height: 100%
+	max-height: 1024px
 	margin-top: 74px
 	position: relative
 	padding-bottom: 5vmax
@@ -51,7 +53,7 @@
 			line-height: 1.55
 h1
 	font-size: 50px
-	margin-top: -15px
+	// margin-top: -15px
 	line-height: 1
 .subtitle
 	font-size: 26px
@@ -97,6 +99,17 @@ h1
 		transition: all 0.2s
 .t-radio__control .t-radio:checked ~ .t-radio__indicator:after
 	opacity: 1
+
+@media screen and (min-width: 768px) and (max-width: 935px)
+	.phone3 .hero
+		margin-top: 125px
+	.hero-form
+		max-width: 350px
+
+@media screen and (max-width: 767.98px)
+	.hero
+		margin-top: 0
+
 
 form
 	input, button, small, textarea, a.btn
