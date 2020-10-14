@@ -39,7 +39,7 @@ if(typeof port == 'undefined')
 	global.port = 8100;
 
 
-projects.newstreetpunk_kia = {
+projects.kia_promo = {
 
 	port: ++port,
 
@@ -143,17 +143,17 @@ projects.newstreetpunk_kia = {
 
 
 
-/* newstreetpunk_kia BEGIN */
+/* kia_promo BEGIN */
 
 // Local Server
-function newstreetpunk_kia_browsersync() {
+function kia_promo_browsersync() {
 	connect.server({
-		port: projects.newstreetpunk_kia.port,
-		base: projects.newstreetpunk_kia.base,
+		port: projects.kia_promo.port,
+		base: projects.kia_promo.base,
 	}, function (){
 		browserSync.init({
-			// server: { baseDir: projects.newstreetpunk_kia.base + '/' },
-			proxy: '127.0.0.1:' + projects.newstreetpunk_kia.port,
+			// server: { baseDir: projects.kia_promo.base + '/' },
+			proxy: '127.0.0.1:' + projects.kia_promo.port,
 			notify: false,
 			online: online
 		});
@@ -161,96 +161,96 @@ function newstreetpunk_kia_browsersync() {
 };
 
 // Custom Styles
-function newstreetpunk_kia_styles_promo() {
-	return src(projects.newstreetpunk_kia.styles_promo.src)
+function kia_promo_styles_promo() {
+	return src(projects.kia_promo.styles_promo.src)
 	.pipe(eval(preprocessor)({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(concat(projects.newstreetpunk_kia.styles_promo.output))
+	.pipe(concat(projects.kia_promo.styles_promo.output))
 	.pipe(autoprefixer({ grid: true, overrideBrowserslist: ['last 10 versions'] }))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(dest(projects.newstreetpunk_kia.styles_promo.dest))
+	.pipe(dest(projects.kia_promo.styles_promo.dest))
 	.pipe(browserSync.stream())
 
 };
-function newstreetpunk_kia_styles_service() {
-	return src(projects.newstreetpunk_kia.styles_service.src)
+function kia_promo_styles_service() {
+	return src(projects.kia_promo.styles_service.src)
 	.pipe(eval(preprocessor)({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(concat(projects.newstreetpunk_kia.styles_service.output))
+	.pipe(concat(projects.kia_promo.styles_service.output))
 	.pipe(autoprefixer({ grid: true, overrideBrowserslist: ['last 10 versions'] }))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(dest(projects.newstreetpunk_kia.styles_service.dest))
+	.pipe(dest(projects.kia_promo.styles_service.dest))
 	.pipe(browserSync.stream())
 
 };
-function newstreetpunk_kia_styles_cars() {
-	return src(projects.newstreetpunk_kia.styles_cars.src)
+function kia_promo_styles_cars() {
+	return src(projects.kia_promo.styles_cars.src)
 	.pipe(eval(preprocessor)({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(concat(projects.newstreetpunk_kia.styles_cars.output))
+	.pipe(concat(projects.kia_promo.styles_cars.output))
 	.pipe(autoprefixer({ grid: true, overrideBrowserslist: ['last 10 versions'] }))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(dest(projects.newstreetpunk_kia.styles_cars.dest))
+	.pipe(dest(projects.kia_promo.styles_cars.dest))
 	.pipe(browserSync.stream())
 
 };
-function newstreetpunk_kia_styles_model() {
-	return src(projects.newstreetpunk_kia.styles_model.src)
+function kia_promo_styles_model() {
+	return src(projects.kia_promo.styles_model.src)
 	.pipe(eval(preprocessor)({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(concat(projects.newstreetpunk_kia.styles_model.output))
+	.pipe(concat(projects.kia_promo.styles_model.output))
 	.pipe(autoprefixer({ grid: true, overrideBrowserslist: ['last 10 versions'] }))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(dest(projects.newstreetpunk_kia.styles_model.dest))
+	.pipe(dest(projects.kia_promo.styles_model.dest))
 	.pipe(browserSync.stream())
 
 };
 
 
 // Scripts & JS Libraries
-function newstreetpunk_kia_scripts_promo() {
-	return src(projects.newstreetpunk_kia.scripts_promo.src)
-	.pipe(concat(projects.newstreetpunk_kia.scripts_promo.output))
+function kia_promo_scripts_promo() {
+	return src(projects.kia_promo.scripts_promo.src)
+	.pipe(concat(projects.kia_promo.scripts_promo.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(projects.newstreetpunk_kia.forProd))
-	.pipe(dest(projects.newstreetpunk_kia.scripts_promo.dest))
+	.pipe(header(projects.kia_promo.forProd))
+	.pipe(dest(projects.kia_promo.scripts_promo.dest))
 	.pipe(browserSync.stream())
 };
-function newstreetpunk_kia_scripts_service() {
-	return src(projects.newstreetpunk_kia.scripts_service.src)
-	.pipe(concat(projects.newstreetpunk_kia.scripts_service.output))
+function kia_promo_scripts_service() {
+	return src(projects.kia_promo.scripts_service.src)
+	.pipe(concat(projects.kia_promo.scripts_service.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(projects.newstreetpunk_kia.forProd))
-	.pipe(dest(projects.newstreetpunk_kia.scripts_service.dest))
+	.pipe(header(projects.kia_promo.forProd))
+	.pipe(dest(projects.kia_promo.scripts_service.dest))
 	.pipe(browserSync.stream())
 };
-function newstreetpunk_kia_scripts_cars() {
-	return src(projects.newstreetpunk_kia.scripts_cars.src)
-	.pipe(concat(projects.newstreetpunk_kia.scripts_cars.output))
+function kia_promo_scripts_cars() {
+	return src(projects.kia_promo.scripts_cars.src)
+	.pipe(concat(projects.kia_promo.scripts_cars.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(projects.newstreetpunk_kia.forProd))
-	.pipe(dest(projects.newstreetpunk_kia.scripts_cars.dest))
+	.pipe(header(projects.kia_promo.forProd))
+	.pipe(dest(projects.kia_promo.scripts_cars.dest))
 	.pipe(browserSync.stream())
 };
-function newstreetpunk_kia_scripts_model() {
-	return src(projects.newstreetpunk_kia.scripts_model.src)
-	.pipe(concat(projects.newstreetpunk_kia.scripts_model.output))
+function kia_promo_scripts_model() {
+	return src(projects.kia_promo.scripts_model.src)
+	.pipe(concat(projects.kia_promo.scripts_model.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(projects.newstreetpunk_kia.forProd))
-	.pipe(dest(projects.newstreetpunk_kia.scripts_model.dest))
+	.pipe(header(projects.kia_promo.forProd))
+	.pipe(dest(projects.kia_promo.scripts_model.dest))
 	.pipe(browserSync.stream())
 };
 
-function newstreetpunk_kia_watch() {
-	watch(projects.newstreetpunk_kia.styles_promo.watch, newstreetpunk_kia_styles_promo);
-	watch(projects.newstreetpunk_kia.styles_service.watch, newstreetpunk_kia_styles_service);
-	watch(projects.newstreetpunk_kia.styles_cars.watch, newstreetpunk_kia_styles_cars);
-	watch(projects.newstreetpunk_kia.styles_model.watch, newstreetpunk_kia_styles_model);
-	watch(projects.newstreetpunk_kia.scripts_promo.src, newstreetpunk_kia_scripts_promo);
-	watch(projects.newstreetpunk_kia.scripts_service.src, newstreetpunk_kia_scripts_service);
-	watch(projects.newstreetpunk_kia.scripts_cars.src, newstreetpunk_kia_scripts_cars);
-	watch(projects.newstreetpunk_kia.scripts_model.src, newstreetpunk_kia_scripts_model);
+function kia_promo_watch() {
+	watch(projects.kia_promo.styles_promo.watch, kia_promo_styles_promo);
+	watch(projects.kia_promo.styles_service.watch, kia_promo_styles_service);
+	watch(projects.kia_promo.styles_cars.watch, kia_promo_styles_cars);
+	watch(projects.kia_promo.styles_model.watch, kia_promo_styles_model);
+	watch(projects.kia_promo.scripts_promo.src, kia_promo_scripts_promo);
+	watch(projects.kia_promo.scripts_service.src, kia_promo_scripts_service);
+	watch(projects.kia_promo.scripts_cars.src, kia_promo_scripts_cars);
+	watch(projects.kia_promo.scripts_model.src, kia_promo_scripts_model);
 
-	watch(projects.newstreetpunk_kia.code.src).on('change', browserSync.reload);
+	watch(projects.kia_promo.code.src).on('change', browserSync.reload);
 };
 
-module.exports = parallel(newstreetpunk_kia_styles_promo, newstreetpunk_kia_styles_service, newstreetpunk_kia_styles_cars, newstreetpunk_kia_styles_model, newstreetpunk_kia_scripts_promo, newstreetpunk_kia_scripts_service, newstreetpunk_kia_scripts_cars, newstreetpunk_kia_scripts_model, newstreetpunk_kia_browsersync, newstreetpunk_kia_watch);
+exports.kia_promo = parallel(kia_promo_styles_promo, kia_promo_styles_service, kia_promo_styles_cars, kia_promo_styles_model, kia_promo_scripts_promo, kia_promo_scripts_service, kia_promo_scripts_cars, kia_promo_scripts_model, kia_promo_browsersync, kia_promo_watch);
 
 
-/* newstreetpunk_kia END */
+/* kia_promo END */
