@@ -64,7 +64,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 [tabindex="-1"]:focus {
@@ -6319,12 +6319,12 @@ img.mfp-img {
 
 ::-moz-selection {
   background-color: #bb162a;
-  color: #fff;
+  color: #ffffff;
 }
 
 ::selection {
   background-color: #bb162a;
-  color: #fff;
+  color: #ffffff;
 }
 
 body {
@@ -6378,7 +6378,7 @@ strong {
 
 .btn {
   background-color: #bb162a;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
   padding: 12px 15px;
@@ -6392,7 +6392,7 @@ strong {
 }
 
 .btn:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #ad1427;
 }
 
@@ -6404,8 +6404,16 @@ strong {
           box-shadow: none;
 }
 
+input[tabindex="-1"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -100;
+  max-width: 200px;
+  height: 0;
+}
+
 .header {
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-box-shadow: 0 5px 50px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 50px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -6495,7 +6503,11 @@ strong {
   margin-top: 74px;
   position: relative;
   padding-bottom: 5vmax;
-  color: #fff;
+  color: #ffffff;
+}
+
+.hero h1 {
+  line-height: 1.1;
 }
 
 .hero:before {
@@ -6565,7 +6577,7 @@ strong {
 
 .hero-form h2 {
   font-size: 18px;
-  color: #000;
+  color: #000000;
 }
 
 .hero-form p {
@@ -6602,7 +6614,7 @@ h1 {
   vertical-align: middle;
   height: 20px;
   width: 20px;
-  border-color: #000;
+  border-color: #000000;
   border-style: solid;
   border-width: 2px;
   -webkit-box-sizing: border-box;
@@ -6619,7 +6631,7 @@ h1 {
   content: '';
   width: 10px;
   height: 10px;
-  background: #000;
+  background: #000000;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -6691,7 +6703,7 @@ form small a {
 }
 
 form small a:hover {
-  color: #000;
+  color: #000000;
 }
 
 .cars-head {
@@ -7261,7 +7273,7 @@ form small a:hover {
 
 .footer p {
   font-size: 14px;
-  color: #9d9d9d;
+  color: #ffffff;
 }
 
 .footer img {
@@ -7289,7 +7301,7 @@ form small a:hover {
 }
 
 .modal {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px 45px;
   position: relative;
   top: 5%;
@@ -7346,7 +7358,7 @@ form small a:hover {
   top: 40px;
   left: 50%;
   z-index: 2000;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px 45px;
   position: relative;
   -webkit-transform: translate(-50%, 0);
@@ -7382,7 +7394,7 @@ form small a:hover {
 }
 
 .privacy-close:hover {
-  color: #000;
+  color: #000000;
 }
 
 .privacy-wrap {
@@ -7535,6 +7547,9 @@ form small a:hover {
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
+  }
+  .cars-head h2 {
+    font-size: 30px;
   }
   .header-phones {
     -webkit-box-orient: vertical;

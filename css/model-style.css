@@ -64,7 +64,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 [tabindex="-1"]:focus {
@@ -6508,7 +6508,7 @@ h1 {
 }
 
 .header {
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-box-shadow: 0 5px 50px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 50px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -7078,7 +7078,7 @@ h1 {
 
 .footer p {
   font-size: 14px;
-  color: #9d9d9d;
+  color: #ffffff;
 }
 
 .footer img {
@@ -7106,7 +7106,7 @@ h1 {
 }
 
 .modal {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px 45px;
   position: relative;
   top: 5%;
@@ -7163,7 +7163,7 @@ h1 {
   top: 40px;
   left: 50%;
   z-index: 2000;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px 45px;
   position: relative;
   -webkit-transform: translate(-50%, 0);
@@ -7199,7 +7199,7 @@ h1 {
 }
 
 .privacy-close:hover {
-  color: #000;
+  color: #000000;
 }
 
 .privacy-wrap {
@@ -7362,6 +7362,9 @@ main {
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
+  }
+  .cars-head h2 {
+    font-size: 30px;
   }
   .header-phones {
     -webkit-box-orient: vertical;
