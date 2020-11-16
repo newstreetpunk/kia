@@ -7536,6 +7536,7 @@ main {
   }
   .maps .dealer-info {
     padding-left: 5%;
+    padding-right: 5%;
   }
   .maps .dealer-info, .maps .dealer-map, .map-here {
     min-height: auto;

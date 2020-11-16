@@ -7278,7 +7278,8 @@ form small a:hover {
 
 .video-bg {
   display: inline-block;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 150px;
   background-size: cover;
   background-position: center;
@@ -7632,6 +7633,7 @@ form small a:hover {
   }
   .maps .dealer-info {
     padding-left: 5%;
+    padding-right: 5%;
   }
   .maps .dealer-info, .maps .dealer-map, .map-here {
     min-height: auto;
