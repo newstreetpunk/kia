@@ -7103,7 +7103,7 @@ form small a:hover {
 
 .maps .dealer-info {
   width: 50%;
-  min-height: 500px;
+  min-height: 550px;
   height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7130,7 +7130,7 @@ form small a:hover {
 }
 
 .maps .dealer-contacts {
-  margin: 30px 0;
+  margin: 10px 0 20px;
 }
 
 .maps .dealer-contacts a {
@@ -7142,7 +7142,7 @@ form small a:hover {
 
 .maps .dealer-address {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .maps .dealer-time {
@@ -7155,7 +7155,7 @@ form small a:hover {
   background-size: auto;
   background-position: center;
   width: 50%;
-  min-height: 500px;
+  min-height: 550px;
   height: 75vh;
   position: relative;
   overflow: hidden;
@@ -7263,6 +7263,48 @@ form small a:hover {
   to {
     opacity: 1;
   }
+}
+
+.video-wrap {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.video-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.video-bg {
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.video-bg:hover .play-button {
+  opacity: 1;
+}
+
+.video-bg .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0.8;
+  -webkit-transition: opacity .2s ease;
+  -o-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.video-bg .play-button img {
+  width: 50px;
+  height: auto;
 }
 
 .footer {
