@@ -8768,10 +8768,11 @@ form small a:hover {
     font-size: 20px;
   }
   .maps .dealer-info {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 20% 5% 10%;
+    height: auto;
+    min-height: initial;
   }
-  .maps .dealer-info, .maps .dealer-map, .map-here {
+  .maps .dealer-map, .map-here {
     min-height: auto;
     height: 400px;
   }

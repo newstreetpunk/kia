@@ -89,7 +89,7 @@ jQuery(function($) {
 	if ($(window).width() > 768) {
 		$('.player').mb_YTPlayer();
 	}
-		
+
 	$('a[href*=#].scroll').bind("click", function(e){
 		var anchor = $(this);
 		var id = anchor.attr('data');
@@ -190,6 +190,7 @@ jQuery(function($) {
 
 	    $(".descr-text .word").html(initText).delay(2000);
 
+		return;
 	    setInterval(function() {
 	        count++;
 	        $(".descr-text .word").fadeOut(400, function() {
