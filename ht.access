@@ -1,5 +1,12 @@
 <ifModule mod_expires.c>
 
+Options +FollowSymLinks
+RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^kia-mehzavod\.ru$ [NC]
+RewriteCond %{HTTP_HOST} ^mega-kia\.ru$ [NC]
+# RewriteCond %{HTTP_HOST} ^kiavsamare\.ru$ [NC]
+RewriteRule ^(.*)$ https://promo.kia-samara.ru/$1 [R=301,L]
+
 # Add correct content-type for fonts
 AddType application/vnd.ms-fontobject .eot
 AddType application/x-font-ttf .ttf

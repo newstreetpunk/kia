@@ -3,7 +3,7 @@
 *.php
 /inc/
 phpmailer
-sftp-config.json
+sftp-config*.json
 *.json
 !KCS.json
 !KCM.json
