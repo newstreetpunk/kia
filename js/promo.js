@@ -190,7 +190,7 @@ jQuery(function($) {
 
 	    $(".descr-text .word").html(initText).delay(2000);
 
-		return;
+		// return;
 	    setInterval(function() {
 	        count++;
 	        $(".descr-text .word").fadeOut(400, function() {

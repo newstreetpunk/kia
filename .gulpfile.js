@@ -47,25 +47,25 @@ projects.kia_promo = {
 	dest: basename,
 
 	styles_promo: {
-		src:    basename + '/' + preprocessor + '/main.'+preprocessor,
+		src:    basename + '/' + preprocessor + '/promo.'+preprocessor,
 		watch:    basename + '/' + preprocessor + '/**/*.'+preprocessor,
 		dest:   basename + '/css',
-		output: 'main.css',
+		output: 'promo.css',
 	},
 	styles_service: {
-		src:    basename + '/' + preprocessor + '/service-style.'+preprocessor,
+		src:    basename + '/' + preprocessor + '/service.'+preprocessor,
 		watch:    basename + '/' + preprocessor + '/**/*.'+preprocessor,
 		dest:   basename + '/css',
-		output: 'service-style.css',
+		output: 'service.css',
 	},
 	styles_cars: {
-		src:    basename + '/' + preprocessor + '/cars-style.'+preprocessor,
+		src:    basename + '/' + preprocessor + '/cars.'+preprocessor,
 		watch:    basename + '/' + preprocessor + '/**/*.'+preprocessor,
 		dest:   basename + '/css',
-		output: 'cars-style.css',
+		output: 'cars.css',
 	},
 	styles_model: {
-		src:    basename + '/' + preprocessor + '/model-style.'+preprocessor,
+		src:    basename + '/' + preprocessor + '/model.'+preprocessor,
 		watch:    basename + '/' + preprocessor + '/**/*.'+preprocessor,
 		dest:   basename + '/css',
 		output: 'model-style.css',
@@ -81,10 +81,10 @@ projects.kia_promo = {
 			basename + '/libs/lazyload.min.js',
 			basename + '/libs/waypoint.js',
 			basename + '/js/kia-map.js',
-			basename + '/js/common.js', // Custom scripts. Always at the end
+			basename + '/js/promo.js', // Custom scripts. Always at the end
 		],
 		dest:       basename + '/js',
-		output:     'main-scripts.min.js',
+		output:     'promo.min.js',
 	},
 	scripts_service: {
 		src: [
@@ -95,10 +95,10 @@ projects.kia_promo = {
 			basename + '/libs/lazyload.min.js',
 			basename + '/libs/waypoint.js',
 			basename + '/js/kia-map.js',
-			basename + '/js/service-common.js', // Custom scripts. Always at the end
+			basename + '/js/service.js', // Custom scripts. Always at the end
 		],
 		dest:       basename + '/js',
-		output:     'service-scripts.min.js',
+		output:     'service.min.js',
 	},
 	scripts_cars: {
 		src: [
@@ -108,10 +108,10 @@ projects.kia_promo = {
 			basename + '/libs/animate-css.js',
 			basename + '/libs/lazyload.min.js',
 			basename + '/libs/waypoint.js',
-			basename + '/js/cars-common.js', // Custom scripts. Always at the end
+			basename + '/js/cars.js', // Custom scripts. Always at the end
 		],
 		dest:       basename + '/js',
-		output:     'cars-scripts.min.js',
+		output:     'cars.min.js',
 	},
 	scripts_model: {
 		src: [
@@ -121,10 +121,10 @@ projects.kia_promo = {
 			basename + '/libs/animate-css.js',
 			basename + '/libs/lazyload.min.js',
 			basename + '/libs/waypoint.js',
-			basename + '/js/model-common.js', // Custom scripts. Always at the end
+			basename + '/js/model.js', // Custom scripts. Always at the end
 		],
 		dest:       basename + '/js',
-		output:     'model-scripts.min.js',
+		output:     'model.min.js',
 	},
 	code: {
 		src: [

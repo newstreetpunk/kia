@@ -12,17 +12,19 @@ $(function() {
         });
         myMapTemp.behaviors.disable('scrollZoom');
 
-        var myPlacemarkTemp = new ymaps.Placemark(
-            this.position, {
-                balloonContentHeader: this.balloonContentHeader,
-                balloonContentBody: this.balloonContentBody,
-                balloonContentFooter: this.balloonContentFooter,
-                hintContent: this.hintContent
-            }, {
-                preset: 'islands#blueAutoIcon',
-                iconColor: '#bb162a'
-            });
-        myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
+        this.placemarks.forEach(function(placemark){
+            var myPlacemarkTemp = new ymaps.Placemark(
+                placemark.position, {
+                    balloonContentHeader: placemark.balloonContentHeader,
+                    balloonContentBody: placemark.balloonContentBody,
+                    balloonContentFooter: placemark.balloonContentFooter,
+                    hintContent: placemark.hintContent
+                }, {
+                    preset: 'islands#blueAutoIcon',
+                    iconColor: '#bb162a'
+                });
+            myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
+        });
 
         // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
         var layer = myMapTemp.layers.get(0).get(0),
